@@ -1,0 +1,47 @@
+{
+	"build": {
+		"modernizrSource" : "../Projects/Websites/Dev/UI/libs/modernizr/2.8/2.8.2/modernizr.2.8.2.min.js",
+		"modernizrDest" : "js/modernizr.2.7.1.min.js"
+	},
+
+	"watch": {
+		"scss" : ["css/*.scss"],
+		"js" : ["js/script.js"]
+	},
+
+	"debug": {
+		"js" : "js/script-ProjectName.js",
+		"jsSource" : [
+		"../Projects/Websites/Dev/UI/libs/jquery/1.0/1.11.1/jquery-1.11.1.min.js",
+    	"../Projects/Websites/Dev/UI/libs/respond/1.0/1.3.0/respond.1.3.0.js"
+    	],
+    	"jsPath" : [
+			"js/site.js", 
+			"js/script.js", 
+			"//localhost:35729/livereload.js"
+    	],
+    	"cssPath" : "css/site.css",
+    	"proxy" : "localfiles.com",
+    	"masterLayout" : "index.html"
+	},
+
+	"dev": {
+		"js" : "js/site.js",
+		"jsSource" :  [
+			"../../../../Websites/Dev/UI/libs/jquery/1.0/1.11.1/jquery-1.11.1.js",
+			"../../../../Websites/Dev/UI/libs/respond/1.0/1.3.0/respond.1.3.0.js",
+			"js/script.js"
+		],
+		"jsPath" : "js/site.js",
+		"scss" : "css/site.scss",
+		"css" : "css/site.css",
+		"html" : "index.html"
+	}, 
+
+	"release": {
+		"js" : "js/site.min.js",
+		"jsPath" : "js/site.min.js",
+		"css" : "css/site.min.css",
+		"cssPath" : "css/site.min.css"
+	}
+}

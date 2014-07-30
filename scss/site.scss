@@ -1,0 +1,55 @@
+// Boostrap module imports.  Only import the ones that are needed for your specific project. 
+// Change relative path to correspond on where these files are located.
+
+@import "../../../../../../../Websites/Dev/UI/libs/bootstrap/3.0/3.2.0/scss/bootstrap/mixins";
+@import "../../../../../../../Websites/Dev/UI/libs/bootstrap/3.0/3.2.0/scss/bootstrap/variables";
+@import "../../../../../../../Websites/Dev/UI/libs/bootstrap/3.0/3.2.0/scss/bootstrap/normalize";
+@import "../../../../../../../Websites/Dev/UI/libs/bootstrap/3.0/3.2.0/scss/bootstrap/print";
+
+@import "../../../../../../../Websites/Dev/UI/libs/bootstrap/3.0/3.2.0/scss/bootstrap/type";
+//@import "../../../../../../../Websites/Dev/UI/libs/bootstrap/3.0/3.2.0/scss/bootstrap/code";
+//@import "../../../../../../../Websites/Dev/UI/libs/bootstrap/3.0/3.2.0/scss/bootstrap/grid";
+//@import "../../../../../../../Websites/Dev/UI/libs/bootstrap/3.0/3.2.0/scss/bootstrap/tables";
+//@import "../../../../../../../Websites/Dev/UI/libs/bootstrap/3.0/3.2.0/scss/bootstrap/forms";
+//@import "../../../../../../../Websites/Dev/UI/libs/bootstrap/3.0/3.2.0/scss/bootstrap/buttons";
+//@import "../../../../../../../Websites/Dev/UI/libs/bootstrap/3.0/3.2.0/scss/bootstrap/component-animations";
+//@import "../../../../../../../Websites/Dev/UI/libs/bootstrap/3.0/3.2.0/scss/bootstrap/input-groups";
+//@import "../../../../../../../Websites/Dev/UI/libs/bootstrap/3.0/3.2.0/scss/bootstrap/dropdowns";
+//@import "../../../../../../../Websites/Dev/UI/libs/bootstrap/3.0/3.2.0/scss/bootstrap/list-group";
+//@import "../../../../../../../Websites/Dev/UI/libs/bootstrap/3.0/3.2.0/scss/bootstrap/panels";
+//@import "../../../../../../../Websites/Dev/UI/libs/bootstrap/3.0/3.2.0/scss/bootstrap/wells";
+//@import "../../../../../../../Websites/Dev/UI/libs/bootstrap/3.0/3.2.0/scss/bootstrap/close";
+//@import "../../../../../../../Websites/Dev/UI/libs/bootstrap/3.0/3.2.0/scss/bootstrap/navs";
+//@import "../../../../../../../Websites/Dev/UI/libs/bootstrap/3.0/3.2.0/scss/bootstrap/navbar";
+//@import "../../../../../../../Websites/Dev/UI/libs/bootstrap/3.0/3.2.0/scss/bootstrap/button-groups";
+//@import "../../../../../../../Websites/Dev/UI/libs/bootstrap/3.0/3.2.0/scss/bootstrap/breadcrumbs";
+//@import "../../../../../../../Websites/Dev/UI/libs/bootstrap/3.0/3.2.0/scss/bootstrap/pagination";
+//@import "../../../../../../../Websites/Dev/UI/libs/bootstrap/3.0/3.2.0/scss/bootstrap/pager";
+//@import "../../../../../../../Websites/Dev/UI/libs/bootstrap/3.0/3.2.0/scss/bootstrap/modals";
+//@import "../../../../../../../Websites/Dev/UI/libs/bootstrap/3.0/3.2.0/scss/bootstrap/tooltip";
+//@import "../../../../../../../Websites/Dev/UI/libs/bootstrap/3.0/3.2.0/scss/bootstrap/popovers";
+//@import "../../../../../../../Websites/Dev/UI/libs/bootstrap/3.0/3.2.0/scss/bootstrap/alerts";
+//@import "../../../../../../../Websites/Dev/UI/libs/bootstrap/3.0/3.2.0/scss/bootstrap/thumbnails";
+//@import "../../../../../../../Websites/Dev/UI/libs/bootstrap/3.0/3.2.0/scss/bootstrap/media";
+//@import "../../../../../../../Websites/Dev/UI/libs/bootstrap/3.0/3.2.0/scss/bootstrap/labels";
+//@import "../../../../../../../Websites/Dev/UI/libs/bootstrap/3.0/3.2.0/scss/bootstrap/badges";
+//@import "../../../../../../../Websites/Dev/UI/libs/bootstrap/3.0/3.2.0/scss/bootstrap/progress-bars";
+//@import "../../../../../../../Websites/Dev/UI/libs/bootstrap/3.0/3.2.0/scss/bootstrap/carousel";
+//@import "../../../../../../../Websites/Dev/UI/libs/bootstrap/3.0/3.2.0/scss/bootstrap/jumbotron";
+//@import "../../../../../../../Websites/Dev/UI/libs/bootstrap/3.0/3.2.0/scss/bootstrap/utilities"; 
+//@import "../../../../../../../Websites/Dev/UI/libs/bootstrap/3.0/3.2.0/scss/bootstrap/responsive-utilities";
+
+/* Branding Import starts here */
+
+//path to the branding variables
+@import "../../../../../libs/branding/cla/3.0/3.0.0/scss/brandingVariables";
+
+//Variable overrides go here
+$font-path:  "../fonts/";
+
+//path to the branding .scss file
+@import "../../../../../libs/branding/cla/3.0/3.0.0/scss/cla";
+
+//App specific CSS goes in this section 
+
+
