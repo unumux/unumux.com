@@ -1,0 +1,35 @@
+// these are height/width values from the Sketch file; used to make our calculations easier
+$base-height: 1004;
+$base-width: 1440;
+
+$block-scale-start: 0.3;
+$block-transition-duration: .4s;
+$block-transition-stagger: .1s;
+
+$block-opacity: 0.3;
+
+@function vOffset($offset) {
+	@return percentage($offset / $base-height);
+}
+
+@function hOffset($offset) {
+	@return percentage($offset / $base-width);
+}
+
+@mixin pos-helper($top, $right, $bottom, $left, $animate-order) {
+	top: vOffset($top);
+	right: hOffset($right);
+	bottom: vOffset($bottom);
+	left: hOffset($left);
+	transition-delay: $block-transition-stagger * $animate-order;
+}
+
+@mixin menu-child($child, $top, $right, $bottom, $left, $background, $animate-order) {
+	&:nth-child(#{$child}) {
+		@include pos-helper($top, $right, $bottom, $left, $animate-order);
+
+		&:before {
+			background: $background;
+		}
+	}
+}
