@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html class="no-js" ng-app="uxteam">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -21,20 +21,43 @@
         <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-       <!-- begin:css --> <link rel="stylesheet" href="css/site.css"><!-- end:css -->
 
-        <script src="js/modernizr.2.8.2.min.js"></script>
+        <!-- build:css css/app.min.css -->
+        <!-- bower:css -->
+        <!-- endbower -->
+
+        <link rel="stylesheet" href="css/app.css">
+        <!-- endbuild -->
 
     </head>
-    <body>
+    <body class="{{ $root.bodyClass }}">
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
+        
+        <!-- <ng-include src="'views/main.html'" ng-controller="MainController as main" ng-cloak></ng-include> -->
+        <ng-view class="page-animation"></ng-view>
 
-        <!-- Add your content here -->
-        <p>Sup Worl'</p>
+        <!-- build:js(./) js/vendor.min.js -->
+        <!-- bower:js -->
+        <script src="components/jquery/dist/jquery.js"></script>
+        <script src="components/angular/angular.js"></script>
+        <script src="components/angular-animate/angular-animate.js"></script>
+        <script src="components/angular-route/angular-route.js"></script>
+        <script src="components/greensock/src/uncompressed/TweenMax.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
 
+        <!-- build:js js/app.min.js -->
+        <!-- inject:js -->
+        <script src="/.tmp/js/app.js"></script>
+        <script src="/.tmp/js/animation.js"></script>
+        <script src="/.tmp/js/controllers/ProjectsController.js"></script>
+        <script src="/.tmp/js/controllers/mainCtrl.js"></script>
+        <script src="/.tmp/js/directives/logo.js"></script>
+        <script src="/.tmp/js/services/menuButtonSize.js"></script>
+        <!-- endinject -->
+        <!-- endbuild -->
 
-        <!-- begin:js --><script src="js/site.js"></script><!-- end:js -->
     </body>
 </html>

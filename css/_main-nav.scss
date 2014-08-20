@@ -1,0 +1,134 @@
+nav.main-nav {
+	max-width: ($base-width / $base-height) * 100vh;
+	width: 100%;
+	max-height: ($base-height / $base-width) * 100vw;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;	
+	right: 0;
+	margin: 0 auto;
+
+	&:before, &:after {
+		content: '';
+		display: block;
+		position: absolute;
+		opacity: 1;
+		z-index: 9997;
+		transition: $block-transition-duration all;
+		opacity: 1;
+		transform: scale3d(1, 1, 1);
+	}
+
+	&:before {
+		top: vOffset(791);
+		bottom: vOffset(0);
+		left: hOffset(610);
+		right: hOffset(581);
+		background: #D88800;
+		@include pos-helper(791, 581, 0, 610, 5);
+	}
+
+	&:after {
+		@include pos-helper(449, 370, 428, 864, 2);
+		background: #81B245;
+	}
+
+	ul {
+		list-style: none;
+		padding: 0;
+
+		li {
+			display: block;
+			text-decoration: none;
+			color: #fff;
+			position: absolute;
+			transition: $block-transition-duration all;
+			opacity: 1;
+			transform: scale3d(1, 1, 1);
+			overflow: hidden;
+			@include menu-child(1, 134, 1031, 530, 0, url('../images/tiles/process.jpg'), 3);
+			@include menu-child(2, 0, 370, 560, 414, transparent, 6);
+			@include menu-child(3, 479, 1031, 28, 0, url('../images/tiles/tools.jpg'), 1);
+			@include menu-child(4, 449, 581, 218, 414, url('../images/tiles/partners.jpg'), 7);
+			@include menu-child(5, 0, 0, 428, 1074, url('../images/tiles/ux_principles.jpg'), 0);
+			@include menu-child(6, 581, 0, 0, 863, url('../images/tiles/latest_project.jpg'), 4);
+			
+
+			&:before {
+				content: '';
+				display: block;
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				background-size: cover !important;
+				transition: 0.4s opacity;
+				opacity: $block-opacity;
+			}
+
+			a {
+				color: #fff;
+				text-transform: uppercase;
+				font-size: 3vmin;
+				display: table-cell;
+				vertical-align: middle;
+				text-align: center;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+
+				&:before {
+					content: '';
+					width: 0;
+					height: 100%;
+					display: inline-block;
+					vertical-align: middle;
+				}
+			}
+
+			span.title {
+				display: inline-block;
+				vertical-align: middle;
+				width: 95%;
+			}
+
+			.bg-video {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				z-index: -1;
+				opacity: $block-opacity;
+				transition: 0.4s opacity;
+			}
+
+			&:hover:before, &:hover .bg-video {
+				opacity: 1;
+			}
+
+			.content {
+				opacity: 0;
+				visibility: hidden;
+			}
+
+		}
+	}
+}
+
+.ng-enter nav.main-nav {
+	ul li, &:before, &:after {
+		transform: scale3d($block-scale-start, $block-scale-start, $block-scale-start);
+		opacity: 0;
+	}
+}
+
+@keyframes popin {
+	0% {
+		opacity: 0;
+		transform: scale3d($block-scale-start, $block-scale-start, $block-scale-start);
+	}
+	100% {
+		opacity: 1;
+		transform: scale3d(1, 1, 1);
+	}
+}
