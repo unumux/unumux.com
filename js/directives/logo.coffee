@@ -1,6 +1,6 @@
 uxteam = angular.module 'uxteam'
 
-uxteam.directive 'logo', ($timeout) ->
+uxteam.directive 'logo', ($timeout, $rootScope) ->
 	restrict: 'E'
 	replace: true
 	template: '<div class="logo">
@@ -20,12 +20,16 @@ uxteam.directive 'logo', ($timeout) ->
 	</svg>
 	</div>'
 	link: (scope, element) ->
-		paths = element.find('path')
-		for path in paths
-			length = path.getTotalLength()
-			path.style.strokeDasharray = length
-			path.style.strokeDashoffset = length
+		if not $rootScope.animatedLogo
+			$rootScope.animatedLogo = true
+			paths = element.find('path')
+			for path in paths
+				length = path.getTotalLength()
+				path.style.strokeDasharray = length
+				path.style.strokeDashoffset = length
 
-		$timeout ->
-			element.addClass('show')
-		, 1000
+			$timeout ->
+				element.addClass('show')
+			, 1000
+		else
+			element.addClass 'show'
