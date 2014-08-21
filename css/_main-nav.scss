@@ -9,6 +9,8 @@ nav.main-nav {
 	right: 0;
 	margin: 0 auto;
 
+	$border-size: 0.25rem;
+
 	&:before, &:after {
 		content: '';
 		display: block;
@@ -18,19 +20,16 @@ nav.main-nav {
 		transition: $block-transition-duration all;
 		opacity: 1;
 		transform: scale3d(1, 1, 1);
+		border: $border-size solid $steel-blue;
 	}
 
 	&:before {
-		top: vOffset(791);
-		bottom: vOffset(0);
-		left: hOffset(610);
-		right: hOffset(581);
 		background: #D88800;
-		@include pos-helper(791, 581, 0, 610, 5);
+		@include pos-helper(17%, 22%, 78%, 42%, 5);
 	}
 
 	&:after {
-		@include pos-helper(449, 370, 428, 864, 2);
+		@include pos-helper(15%, 14%, 44%, 59%, 2);
 		background: #81B245;
 	}
 
@@ -47,12 +46,16 @@ nav.main-nav {
 			opacity: 1;
 			transform: scale3d(1, 1, 1);
 			overflow: hidden;
-			@include menu-child(1, 134, 1031, 530, 0, url('../images/tiles/process.jpg'), 3);
-			@include menu-child(2, 0, 370, 560, 414, transparent, 6);
-			@include menu-child(3, 479, 1031, 28, 0, url('../images/tiles/tools.jpg'), 1);
-			@include menu-child(4, 449, 581, 218, 414, url('../images/tiles/partners.jpg'), 7);
-			@include menu-child(5, 0, 0, 428, 1074, url('../images/tiles/ux_principles.jpg'), 0);
-			@include menu-child(6, 581, 0, 0, 863, url('../images/tiles/latest_project.jpg'), 4);
+
+			//                    wdth hght top  left
+			@include menu-child(1, 28%, 34%, 13%, 0,    url('../images/tiles/process.jpg'), 3);
+			@include menu-child(2, 46%, 44%, 0,   28%,  transparent, 6);
+			@include menu-child(3, 28%, 49%, 47%, 0,    url('../images/tiles/tools.jpg'), 1);
+			@include menu-child(4, 31%, 34%, 44%, 28%,  url('../images/tiles/partners.jpg'), 7);
+			@include menu-child(5, 26%, 58%, 0,   74%, url('../images/tiles/ux_principles.jpg'), 0);
+			@include menu-child(6, 41%, 42%, 58%, 59%,  url('../images/tiles/latest_project.jpg'), 4);
+
+			border: $border-size solid $steel-blue;
 			
 
 			&:before {

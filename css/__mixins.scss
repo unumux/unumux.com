@@ -16,17 +16,17 @@ $block-opacity: 0.3;
 	@return percentage($offset / $base-width);
 }
 
-@mixin pos-helper($top, $right, $bottom, $left, $animate-order) {
-	top: vOffset($top);
-	right: hOffset($right);
-	bottom: vOffset($bottom);
-	left: hOffset($left);
+@mixin pos-helper($width, $height, $top, $left, $animate-order) {
+	top: $top;
+	left: $left;
+	width: $width;
+	height: $height;
 	transition-delay: $block-transition-stagger * $animate-order;
 }
 
-@mixin menu-child($child, $top, $right, $bottom, $left, $background, $animate-order) {
+@mixin menu-child($child, $width, $height, $top, $left, $background, $animate-order) {
 	&:nth-child(#{$child}) {
-		@include pos-helper($top, $right, $bottom, $left, $animate-order);
+		@include pos-helper($width, $height, $top, $left, $animate-order);
 
 		&:before {
 			background: $background;
