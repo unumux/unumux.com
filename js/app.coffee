@@ -17,3 +17,8 @@ uxteam.config ($routeProvider) ->
       controller: 'MainController'
     .otherwise    
       redirectTo: '/'
+
+
+uxteam.run ->
+  # setup fastclick library
+  FastClick.attach(document.body)
