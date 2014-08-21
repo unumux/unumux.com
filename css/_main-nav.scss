@@ -1,4 +1,7 @@
-nav.main-nav {
+$border-size: 0.25rem;
+$footer-height: 60px;
+
+.main {
 	max-width: ($base-width / $base-height) * 100vh;
 	width: 100%;
 	max-height: ($base-height / $base-width) * 100vw;
@@ -8,8 +11,15 @@ nav.main-nav {
 	left: 0;	
 	right: 0;
 	margin: 0 auto;
+}
 
-	$border-size: 0.25rem;
+nav.main-nav {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: $footer-height;
 
 	&:before, &:after {
 		content: '';
@@ -36,6 +46,7 @@ nav.main-nav {
 	ul {
 		list-style: none;
 		padding: 0;
+		margin: 0;
 
 		li {
 			display: block;
@@ -126,5 +137,53 @@ nav.main-nav {
 	ul li, &:before, &:after {
 		transform: scale3d($block-scale-start, $block-scale-start, $block-scale-start);
 		opacity: 0;
+	}
+}
+
+
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: $footer-height;
+	line-height: $footer-height;
+	color: #fff;
+
+	.copyright {
+		float: left;
+		line-height: $footer-height;
+		width: 50%;
+		font-size: 13px;
+		font-family: 'source_sans_proregular';
+	}
+
+	.logos {
+		float: right;
+		width: 50%;
+		text-align: right;
+
+		h3 {
+			display: inline-block;
+			padding: 0;
+			margin: 0;
+			line-height: $footer-height;
+			margin-right: 5%;
+			font-size: 0;
+			color: transparent;
+
+			&:first-child {
+				background: url('../images/coloniallife_logo.svg') no-repeat 50% 50%;
+				background-size: contain;
+				width: 25%;
+				height: 100%;
+			}
+
+			&:last-child {
+				background: url('../images/unum_logo.svg') no-repeat 50% 50%;
+				background-size: contain;
+				width: 21%;
+				height: 100%;
+			}
+		}
 	}
 }
