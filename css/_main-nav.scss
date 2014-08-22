@@ -8,9 +8,10 @@ $footer-height: 60px;
 	height: 100%;
 	position: absolute;
 	top: 0;
+	bottom: 0;
 	left: 0;	
 	right: 0;
-	margin: 0 auto;
+	margin: auto;
 }
 
 nav.main-nav {
@@ -63,7 +64,7 @@ nav.main-nav {
 			@include menu-child(2, 46%, 44%, 0,   28%,  transparent, 6);
 			@include menu-child(3, 28%, 49%, 47%, 0,    url('../images/tiles/tools.jpg'), 1);
 			@include menu-child(4, 31%, 34%, 44%, 28%,  url('../images/tiles/partners.jpg'), 7);
-			@include menu-child(5, 26%, 58%, 0,   74%, url('../images/tiles/ux_principles.jpg'), 0);
+			@include menu-child(5, 26%, 58%, 0,   74%,  url('../images/tiles/ux_principles.jpg'), 0);
 			@include menu-child(6, 41%, 42%, 58%, 59%,  url('../images/tiles/latest_project.jpg'), 4);
 
 			border: $border-size solid $steel-blue;
@@ -155,12 +156,14 @@ footer {
 		width: 50%;
 		font-size: 13px;
 		font-family: 'source_sans_proregular';
+		padding-left: 3%;
 	}
 
 	.logos {
 		float: right;
 		width: 50%;
 		text-align: right;
+		padding-right: 3%;
 
 		h3 {
 			display: inline-block;
@@ -183,6 +186,7 @@ footer {
 				background-size: contain;
 				width: 21%;
 				height: 100%;
+				margin-right: 0;
 			}
 		}
 	}

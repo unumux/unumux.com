@@ -10,6 +10,8 @@ body, html {
 	-webkit-font-smoothing: antialiased;
 }
 
+html { position: fixed; top: 0px; bottom: 0px; width: 100%; }
+
 .expanding-section {
 	background: no-repeat 50% 50%;
 	background-size: cover;
