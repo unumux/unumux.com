@@ -38,6 +38,18 @@
         <!-- <ng-include src="'views/main.html'" ng-controller="MainController as main" ng-cloak></ng-include> -->
         <ng-view class="page-animation"></ng-view>
 
+        
+
+        <script type="text/javascript">
+        if (navigator.userAgent.match(/iPad;.*CPU.*OS 7_\d/i)) 
+        {
+            document.getElementsByTagName("html")[0].style.height = window.innerHeight +"px !important";
+            document.body.addEventListener('touchmove', function(e) {
+                e.preventDefault();
+            }, false)
+        }
+        </script>
+
         <!-- build:js(./) js/vendor.min.js -->
         <!-- bower:js -->
         <script src="components/jquery/dist/jquery.js"></script>
