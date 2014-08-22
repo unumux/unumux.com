@@ -8,6 +8,8 @@ body, html {
 	position: relative;
 	background: $steel-blue;
 	-webkit-font-smoothing: antialiased;
+	font-family: 'source_sans_proregular',sans-serif;
+	font-size: 20px;
 }
 
 html { position: fixed; top: 0px; bottom: 0px; width: 100%; }
@@ -21,21 +23,63 @@ html { position: fixed; top: 0px; bottom: 0px; width: 100%; }
 	right: 0;
 	bottom: 0;
 	z-index: 9999;
+	padding: 10vmin;
+	letter-spacing: -0.31em;
+	*letter-spacing: normal;
+	word-spacing: -0.43em;
+	font-size: 1.7vw;
+	color: #fff;
+
+	&:before {
+		content: '';
+		display: inline-block;
+		vertical-align: middle;
+		width: 0;
+		height: 100%;
+	}
+
+	h2 {
+		font-family: 'ff-dax-wide-web-pro', sans-serif;
+		text-transform: uppercase;
+		font-size: 3em;
+		font-weight: 400;
+		text-align: center;
+		margin-bottom: 1em;
+	}
+
+	.content {
+		display: inline-block;
+		vertical-align: middle;
+		letter-spacing: normal;
+		word-spacing: normal;
+		width: 100%;
+	}
+
+	ul {
+		list-style: none;
+		padding: 0;
+		text-align: center;
+	}
+
+	li {
+		font-size: 1.4em;
+		margin: 0.3em 0;
+	}
 }
 
 .close-btn {
-	top: 53px;
-	right: 76px;
-	width: 50px;
-	height: 50px;
+	top: 7vmin;
+	right: 8vmin;
+	width: 6vmin;
+	height: 6vmin;
 	position: absolute;
 	cursor: pointer;
 
 	&:after, &:before {
 		content: '';
 		display: block;
-		width: 4px;
-		height: 62px;
+		width: 8%;
+		height: 124%;
 		background-color: #fff;
 		transform: rotate(45deg);
 		position: absolute;
@@ -54,6 +98,42 @@ html { position: fixed; top: 0px; bottom: 0px; width: 100%; }
 	&:hover {
 		&:after, &:before {
 			background-color: #D88800;
+		}
+	}
+}
+
+.grid-items {
+	display: flex;
+	flex-flow: row wrap;
+
+	h3 {
+		margin-top: 0;
+		font-family: 'ff-dax-wide-web-pro',sans-serif;
+		font-size: 1.7em;
+		font-weight: 400;
+	}
+
+	.grid-item {
+		border: 1px solid #fff;
+		flex: 0 0 33.3333%;
+		padding: 1.5em;
+		margin-left: -1px;
+		margin-top: -1px;
+
+		&:nth-child(3n-2) {
+			border-left: none;
+		}
+
+		&:nth-child(3n) {
+			border-right: none;
+		}
+
+		&:nth-child(n):nth-child(-n+3)   {
+			border-top: none;
+		}
+
+		&:nth-child(n):nth-last-child(-n+3) {
+			border-bottom: none;
 		}
 	}
 }
