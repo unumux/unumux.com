@@ -1,6 +1,8 @@
 uxteam = angular.module 'uxteam', [
   'ngAnimate',
-  'ngRoute'
+  'ngRoute',
+  'ngSanitize',
+  'angular-carousel'
 ]
 
 uxteam.config ($routeProvider) ->

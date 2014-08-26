@@ -6,7 +6,6 @@
 	top: 0;
 	left: 0;
 	z-index: 9999;
-	padding: 85px 130px;
 	overflow: auto;
 
 
@@ -24,13 +23,6 @@
 	}
 
 	nav {
-		position: fixed;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
-		z-index: 0;
-
 		$arrow-height: 5em;
 		$arrow-width: 5em;
 		$arrow-stroke-width: 0.4em;
@@ -38,15 +30,15 @@
 
 		a {
 			position: fixed;
-			height: 0;
-			width: 0;
-			top: 0;
-			bottom: 0;
-			margin: auto 0;
+			display: block;
+			height: 100px;
+			width: 100px;
+			top: 50%;
 			border-top: $arrow-height solid transparent;
 			border-bottom: $arrow-height solid transparent;
 			font-size: 1vw;
 			color: transparent;
+			z-index: 9999;
 
 			&:after {
 				content: '';
@@ -67,10 +59,13 @@
 			left: 2vw;
 			border-right: $arrow-width solid $border-color;
 
+			&:hover {
+				border-right-color: #D88800; 
+			}
+
 			&:after {
 				right: -$arrow-width;
 				border-right: $arrow-height - $arrow-stroke-width solid #fff;
-
 			}
 		}
 
@@ -78,11 +73,19 @@
 			right: 2vw;
 			border-left: $arrow-width solid $border-color;
 
+			&:hover {
+				border-left-color: #D88800; 
+			}
+
 			&:after {
 				left: -$arrow-width;
 				border-left: $arrow-height - $arrow-stroke-width solid #fff;
 			}
 		}
+	}
+
+	.project {
+		padding: 85px 130px;
 	}
 
 	.content {
