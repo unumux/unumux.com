@@ -35,9 +35,9 @@ gulp.task "inject-sass", ->
 gulp.task "inject-coffee", ->
   gulp.src('./index.html')
     .pipe plugins.inject(
-      gulp.src ['.tmp/js/app.js', '.tmp/js/**/*.js'], {read: false}),
+      gulp.src ['js/app.js', 'js/**/*.js'], {read: false, cwd: '.tmp/'}),
         relative: true
-        ignorePath: '.tmp'
+        addRootSlash: false
     .pipe(gulp.dest('./'));
 
 gulp.task "sass", ->
@@ -97,16 +97,41 @@ gulp.task "watch", ['setup-tmp'], ->
   plugins.watch({ glob: ['index.html', 'views/**/*.html'] })
     .pipe(browserSync.reload(stream: true))
 
+
+###
+Clean build folder
+###
+gulp.task 'clean-build', (cb) ->
+  rimraf './build', cb
+
+
 ###
 Minify and concatenate files
 ###
-gulp.task 'build', ->
-  gulp.src('.tmp/index.html')
-    .pipe usemin
-      css: [minifyCss(), 'concat'],
-      html: [minifyHtml({empty: true})],
-      js: [uglify()]
+gulp.task 'build', ['clean-build'], ->
+  staticStream = gulp.src(['fonts/**/*', 'images/**/*', 'video/**/*', 'views/**/*'], {base: './'})
     .pipe(gulp.dest('build/'))
+
+  indexStream = gulp.src('./index.html')
+    .pipe plugins.usemin
+      css: [plugins.minifyCss(), 'concat'],
+      html: [plugins.minifyHtml({empty: true})],
+      js: [plugins.ngAnnotate(), plugins.uglify()]
+    .pipe(gulp.dest('build/'))
+
+  merge(staticStream, indexStream)
+
+###
+Deploy
+###
+
+gulp.task 'deploy', ['build'], ->
+  gulp.src('build/**/*')
+    .pipe plugins.ftp
+      host: 'ftp.unumux.com',
+      user: 'deploy',
+      pass: '1pG*lxgBcqE5'
+  
 
 
 # ###
