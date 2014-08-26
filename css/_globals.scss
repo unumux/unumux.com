@@ -99,6 +99,7 @@ img {
 	height: 6vmin;
 	position: absolute;
 	cursor: pointer;
+	z-index: 1;
 
 	&:after, &:before {
 		content: '';
