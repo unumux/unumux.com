@@ -31,13 +31,13 @@
 		left: 0;
 		z-index: 0;
 
-		$arrow-height: 5vw;
-		$arrow-width: 5vw;
-		$arrow-stroke-width: 0.4vw;
+		$arrow-height: 5em;
+		$arrow-width: 5em;
+		$arrow-stroke-width: 0.4em;
 		$border-color: #5E5E5E;
 
 		a {
-			position: absolute;
+			position: fixed;
 			height: 0;
 			width: 0;
 			top: 0;
@@ -45,7 +45,7 @@
 			margin: auto 0;
 			border-top: $arrow-height solid transparent;
 			border-bottom: $arrow-height solid transparent;
-			font-size: 0;
+			font-size: 1vw;
 			color: transparent;
 
 			&:after {
