@@ -52,8 +52,9 @@ img {
 	letter-spacing: -0.31em;
 	*letter-spacing: normal;
 	word-spacing: -0.43em;
-	font-size: 1.7vw;
+	font-size: 1.3vw;
 	color: #fff;
+	overflow: auto;
 
 	&:before {
 		content: '';
@@ -78,6 +79,8 @@ img {
 		letter-spacing: normal;
 		word-spacing: normal;
 		width: 100%;
+		max-width: 100%;
+		margin: 0 auto;
 	}
 
 	ul {
