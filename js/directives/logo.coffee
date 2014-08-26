@@ -4,7 +4,7 @@ uxteam.directive 'logo', ($timeout, $rootScope) ->
 	restrict: 'E'
 	replace: true
 	template: '<div class="logo">
-	<svg viewBox="0 0 76 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="meet">
+	<svg viewBox="0 0 76 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMinYMid meet">
 		<title>UX: Enterprise User Experience</title>
 		<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" shape-rendering="geometricPrecision">
 			<g id="logo" stroke="#D88800" stroke-width="5">

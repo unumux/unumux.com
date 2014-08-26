@@ -22,3 +22,4 @@ uxteam.config ($routeProvider) ->
 uxteam.run ->
   # setup fastclick library
   FastClick.attach(document.body)
+  bouncefix.add('srcollable')
