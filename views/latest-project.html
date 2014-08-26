@@ -1,14 +1,16 @@
 <div id="latest-project" class="slide-up">
 	<a href="#/" class="close-btn"></a>
 	<nav class="project-nav">
-		<a href="#">Previous Project</a>
-		<a href="#">Next Project</a>
+		<a href="#" ng-hide="projects.currentProject <= 0" ng-click="projects.prevProject($event)">Previous Project</a>
+		<a href="#" ng-hide="projects.currentProject >= projects.allProjects.length - 1" ng-click="projects.nextProject($event)">Next Project</a>
 	</nav>
-	<div class="content">
-		<h2 class="project-title">{{ projects.title }}</h2>
-		<img class="featured" src="images/project-images/sample/browserview_sample.jpg" alt="Sample image alt">
-		<p class="details">Aliquam in fringilla ante. Nunc elementum mollis sodales. Morbi sit amet porttitor mauris. Nam sollicitudin, tortor nec sollicitudin pellentesque, erat mi accumsan mi, vitae vestibulum arcu ligula ut lorem. Donec vehicula venenatis facilisis. Vivamus lobortis eget tellus sit amet porta. Vivamus sed dignissim dui. Duis laoreet, mi in suscipit ultricies, enim nisi faucibus nunc, eu eleifend nibh purus id erat. Cras vitae velit lorem.</p>
-		<a href="http://coloniallife.com" class="view-project" target="_blank">LAUNCH TO VIEW</a>
-		<img src="../images/project-images/sample/iphone_laptop_sample.jpg" alt="Sample image alt">
-	</div>
+	<ul rn-carousel rn-carousel-index="projects.currentProject">
+		<li ng-repeat="project in projects.allProjects" class="project">
+			<div class="content">
+				<h2 class="project-title">{{ project.title }}</h2>
+				<img class="featured" ng-src="{{ project.featured_image }}" alt="{{ project.title }}">
+				<div ng-bind-html="project.content"></div>
+			</div>
+		</li>
+	</ul>
 </div>

@@ -1,0 +1,14 @@
+{
+	"projects": [
+		{
+			"title": "Test project 1",
+			"featured_image": "images/project-images/sample/browserview_sample.jpg",
+			"content": "<p class=\"details\">Aliquam in fringilla ante. Nunc elementum mollis sodales. Morbi sit amet porttitor mauris. Nam sollicitudin, tortor nec sollicitudin pellentesque, erat mi accumsan mi, vitae vestibulum arcu ligula ut lorem. Donec vehicula venenatis facilisis. Vivamus lobortis eget tellus sit amet porta. Vivamus sed dignissim dui. Duis laoreet, mi in suscipit ultricies, enim nisi faucibus nunc, eu eleifend nibh purus id erat. Cras vitae velit lorem.</p>\n<a href=\"http://coloniallife.com\" class=\"view-project\" target=\"_blank\">LAUNCH TO VIEW</a>\n<img src=\"../images/project-images/sample/iphone_laptop_sample.jpg\" alt=\"Sample image alt\">"
+		},
+		{
+			"title": "Test project 2",
+			"featured_image": "http://placecage.com/1024/400",
+			"content": "<p class=\"details\">Aliquam in fringilla ante. Nunc elementum mollis sodales. Morbi sit amet porttitor mauris. Nam sollicitudin, tortor nec sollicitudin pellentesque, erat mi accumsan mi, vitae vestibulum arcu ligula ut lorem. Donec vehicula venenatis facilisis. Vivamus lobortis eget tellus sit amet porta. Vivamus sed dignissim dui. Duis laoreet, mi in suscipit ultricies, enim nisi faucibus nunc, eu eleifend nibh purus id erat. Cras vitae velit lorem.</p>\n<a href=\"http://coloniallife.com\" class=\"view-project\" target=\"_blank\">LAUNCH TO VIEW</a>\n<img src=\"../images/project-images/sample/iphone_laptop_sample.jpg\" alt=\"Sample image alt\">"
+		}
+	]
+}

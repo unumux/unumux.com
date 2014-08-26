@@ -15,14 +15,16 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "~1.2.22",
-    "angular-animate": "1.2.22",
+    "angular": "~1.2.23",
+    "angular-animate": "1.2.23",
+    "angular-sanitize": "1.2.23",
     "bootstrap-sass-official": "v3.2.0+1",
-    "angular-route": "1.2.22",
+    "angular-route": "1.2.23",
     "greensock": "~1.12.1",
     "fastclick": "~1.0.3",
     "jquery": "~2.1.1",
-    "bouncefix.js": "~0.3.0"
+    "bouncefix.js": "~0.3.0",
+    "angular-carousel": "~0.2.5"
   },
   "overrides": {
     "bootstrap-sass-official": {
