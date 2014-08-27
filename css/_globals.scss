@@ -1,168 +1,216 @@
 * {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-body, html {
-	position: fixed;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	background: $steel-blue;
-	-webkit-font-smoothing: antialiased;
-	font-family: 'source_sans_proregular',sans-serif;
-	font-size: 20px;
-	overflow: hidden;
+body,
+html {
+    font-family: 'source_sans_proregular',sans-serif;
+    font-size: 20px;
+
+    width: 100%;
+
+    background: $steel-blue;
+
+    -webkit-font-smoothing: antialiased;
 }
 
-html { 
-	position: fixed; 
-	top: 0px; 
-	bottom: 0px; 
-	width: 100%;
-	height: auto;
-	overflow: hidden;
+html {
+    width: 100%;
+    height: auto;
+}
+
+@include respond-to(tablet) {
+    body,
+    html {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+
+        overflow: hidden;
+    }
 }
 
 img {
-	max-width: 100%;
+    max-width: 100%;
 }
 
 .main-view {
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	position: absolute;
-	display: block;
-	overflow: scroll;
-	background: red;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: block;
+    overflow: scroll;
+
+    background: red;
 }
 
 .expanding-section {
-	background: no-repeat 50% 50%;
-	background-size: cover;
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	z-index: 9999;
-	padding: 10vmin;
-	letter-spacing: -0.31em;
-	*letter-spacing: normal;
-	word-spacing: -0.43em;
-	font-size: 1.3vw;
-	color: #fff;
-	overflow: auto;
+    font-size: 1.3vw;
 
-	&:before {
-		content: '';
-		display: inline-block;
-		vertical-align: middle;
-		width: 0;
-		height: 100%;
-	}
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 
-	h2 {
-		font-family: 'ff-dax-wide-web-pro', sans-serif;
-		text-transform: uppercase;
-		font-size: 3em;
-		font-weight: 400;
-		text-align: center;
-		margin-bottom: 1em;
-	}
+    overflow: auto;
 
-	.content {
-		display: inline-block;
-		vertical-align: middle;
-		letter-spacing: normal;
-		word-spacing: normal;
-		width: 100%;
-		max-width: 100%;
-		margin: 0 auto;
-	}
+    padding: 10vmin;
 
-	ul {
-		list-style: none;
-		padding: 0;
-		text-align: center;
-	}
+    letter-spacing: -.31em;
+    word-spacing: -.43em;
 
-	li {
-		font-size: 1.4em;
-		margin: 0.3em 0;
-	}
+    color: #fff;
+    background: no-repeat 50% 50%;
+    background-size: cover;
+
+    *letter-spacing: normal;
+    &:before {
+        display: inline-block;
+
+        width: 0;
+        height: 100%;
+
+        content: '';
+        vertical-align: middle;
+    }
+    h2 {
+        font-family: 'ff-dax-wide-web-pro', sans-serif;
+        font-size: 3em;
+        font-weight: 400;
+
+        margin-bottom: 1em;
+
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .content {
+        display: inline-block;
+
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+
+        vertical-align: middle;
+        letter-spacing: normal;
+        word-spacing: normal;
+    }
+    ul {
+        padding: 0;
+
+        list-style: none;
+
+        text-align: center;
+    }
+    li {
+        font-size: 1.4em;
+
+        margin: .3em 0;
+    }
 }
 
 .close-btn {
-	top: 7vmin;
-	right: 8vmin;
-	width: 6vmin;
-	height: 6vmin;
-	position: absolute;
-	cursor: pointer;
-	z-index: 1;
+    position: absolute;
+    z-index: 1;
+    top: 7vmin;
+    right: 8vmin;
 
-	&:after, &:before {
-		content: '';
-		display: block;
-		width: 8%;
-		height: 124%;
-		background-color: #fff;
-		transform: rotate(45deg);
-		position: absolute;
-		left: 0;
-		bottom: 0;
-		top: 0;
-		right: 0;
-		margin: auto;
-		transition: 0.2s background-color;
-	}
+    width: 6vmin;
+    height: 6vmin;
 
-	&:before {
-		transform: rotate(-45deg);
-	}
+    cursor: pointer;
+    &:after,
+    &:before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
 
-	&:hover {
-		&:after, &:before {
-			background-color: #D88800;
-		}
-	}
+        display: block;
+
+        width: 8%;
+        height: 124%;
+        margin: auto;
+
+        content: '';
+        transition: .2s background-color;
+        transform: rotate(45deg);
+
+        background-color: #fff;
+    }
+    &:before {
+        transform: rotate(-45deg);
+    }
+    &:hover {
+        &:after,
+        &:before {
+            background-color: #d88800;
+        }
+    }
 }
 
 .grid-items {
-	display: flex;
-	flex-flow: row wrap;
+    display: flex;
 
-	h3 {
-		margin-top: 0;
-		font-family: 'ff-dax-wide-web-pro',sans-serif;
-		font-size: 1.7em;
-		font-weight: 400;
-	}
+    flex-flow: row wrap;
+    h3 {
+        font-family: 'ff-dax-wide-web-pro',sans-serif;
+        font-size: 1.7em;
+        font-weight: 400;
 
-	.grid-item {
-		border: 1px solid #fff;
-		flex: 0 0 33.3333%;
-		padding: 1.5em;
-		margin-left: -1px;
-		margin-top: -1px;
+        margin-top: 0;
+    }
+    .grid-item {
+        margin-top: -1px;
+        margin-left: -1px;
+        padding: 1.5em;
 
-		&:nth-child(3n-2) {
-			border-left: none;
-		}
+        flex: 0 0 100%;
 
-		&:nth-child(3n) {
-			border-right: none;
-		}
+        text-align: center;
 
-		&:nth-child(n):nth-child(-n+3)   {
-			border-top: none;
-		}
+        @include respond-to(tablet) {
+        border: 1px solid #fff;
+        text-align: left;
 
-		&:nth-child(n):nth-last-child(-n+3) {
-			border-bottom: none;
-		}
-	}
+                	flex: 0 0 50%;
+
+        }
+
+        @media (min-width: $mobile) and (max-width: $tablet - 1) {
+        	        	        &:nth-child(2n-1) {
+            border-left: none;
+        }
+        &:nth-child(2n) {
+            border-right: none;
+        }
+        &:nth-child(n):nth-child(-n+2) {
+            border-top: none;
+        }
+        &:nth-child(n):nth-last-child(-n+2) {
+            border-bottom: none;
+        }
+        }
+
+        @include respond-to(desktop) {
+        	flex: 0 0 33.3333%;
+        	        &:nth-child(3n-2) {
+            border-left: none;
+        }
+        &:nth-child(3n) {
+            border-right: none;
+        }
+        &:nth-child(n):nth-child(-n+3) {
+            border-top: none;
+        }
+        &:nth-child(n):nth-last-child(-n+3) {
+            border-bottom: none;
+        }
+        }
+    }
 }

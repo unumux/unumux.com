@@ -1,193 +1,256 @@
-$border-size: 0.1rem;
+$border-size: .1rem;
 $footer-height: 60px;
+$tile-mobile-width: 100%;
+$tile-mobile-height: 6em;
 
 .main {
-	max-width: ($base-width / $base-height) * 100vh;
-	width: 100%;
-	max-height: ($base-height / $base-width) * 100vw;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;	
-	right: 0;
-	margin: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    margin: auto;
+
+    @include respond-to(tablet) {
+        max-width: ($base-width / $base-height) * 100vh;
+        max-height: ($base-height / $base-width) * 100vw;
+    }
 }
 
 nav.main-nav {
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: $footer-height;
+    display: block;
 
-	&:before, &:after {
-		content: '';
-		display: block;
-		position: absolute;
-		opacity: 1;
-		z-index: 9997;
-		transition: $block-transition-duration all;
-		opacity: 1;
-		transform: scale3d(1, 1, 1);
-		border: $border-size solid $steel-blue;
-	}
+    @include respond-to(tablet) {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: $footer-height;
+        left: 0;
+        &:before,
+        &:after {
+            position: absolute;
+            z-index: 9997;
 
-	&:before {
-		background: #D88800;
-		@include pos-helper(17%, 22%, 78%, 42%, 5);
-	}
+            display: block;
 
-	&:after {
-		@include pos-helper(15%, 14%, 44%, 59%, 2);
-		background: #81B245;
-	}
+            content: '';
+            transition: $block-transition-duration all;
+            transform: scale3d(1, 1, 1);
 
-	ul {
-		list-style: none;
-		padding: 0;
-		margin: 0;
+            opacity: 1;
+            border: $border-size solid $steel-blue;
+        }
+        &:before {
+            background: #d88800;
 
-		li {
-			display: block;
-			text-decoration: none;
-			color: #fff;
-			position: absolute;
-			transition: $block-transition-duration all;
-			opacity: 1;
-			transform: scale3d(1, 1, 1);
-			overflow: hidden;
+            @include pos-helper(17%, 22%, 78%, 42%, 5);
+        }
+        &:after {
+            background: #81b245;
 
-			//                    wdth hght top  left
-			@include menu-child(1, 28%, 34%, 13%, 0,    url('../images/tiles/process.jpg'), 3);
-			@include menu-child(2, 46%, 44%, 0,   28%,  transparent, 6);
-			@include menu-child(3, 28%, 49%, 47%, 0,    url('../images/tiles/tools.jpg'), 1);
-			@include menu-child(4, 31%, 34%, 44%, 28%,  url('../images/tiles/partners.jpg'), 7);
-			@include menu-child(5, 26%, 58%, 0,   74%,  url('../images/tiles/ux_principles.jpg'), 0);
-			@include menu-child(6, 41%, 42%, 58%, 59%,  url('../images/tiles/latest_project.jpg'), 4);
+            @include pos-helper(15%, 14%, 44%, 59%, 2);
+        }
+    }
+    ul {
+        margin: 0;
+        padding: 0;
 
-			border: $border-size solid $steel-blue;
-			
+        list-style: none;
+        li {
+            position: relative;
 
-			&:before {
-				content: '';
-				display: block;
-				width: 100%;
-				height: 100%;
-				position: absolute;
-				background-size: cover !important;
-				transition: 0.4s opacity;
-				opacity: $block-opacity;
-			}
+            display: block;
+            overflow: hidden;
 
-			a {
-				color: #fff;
-				text-transform: uppercase;
-				font-size: 3.5vmin;
-				font-weight: normal;
-				font-family: 'oswaldbold';
-				display: table-cell;
-				vertical-align: middle;
-				text-align: center;
-				position: absolute;
-				width: 100%;
-				height: 100%;
+            width: $tile-mobile-width;
+            height: $tile-mobile-height;
 
-				&:before {
-					content: '';
-					width: 0;
-					height: 100%;
-					display: inline-block;
-					vertical-align: middle;
-				}
-			}
+            transition: $block-transition-duration all;
+            text-decoration: none;
 
-			span.title {
-				display: inline-block;
-				vertical-align: middle;
-				width: 95%;
-			}
+            opacity: 1;
+            color: #fff;
+            border: $border-size solid $steel-blue;
 
-			.bg-video {
-				position: absolute;
-				top: 0;
-				left: 0;
-				height: 100%;
-				z-index: -1;
-				opacity: $block-opacity;
-				transition: 0.4s opacity;
-			}
+            @include menu-child(1, $tile-mobile-width, $tile-mobile-height, auto, auto,    url('../images/tiles/process.jpg'), 3);
+            @include menu-child(2, $tile-mobile-width, $tile-mobile-height, auto, auto,  transparent, 6);
+            @include menu-child(3, $tile-mobile-width, $tile-mobile-height, auto, auto,    url('../images/tiles/tools.jpg'), 1);
+            @include menu-child(4, $tile-mobile-width, $tile-mobile-height, auto, auto,  url('../images/tiles/partners.jpg'), 7);
+            @include menu-child(5, $tile-mobile-width, $tile-mobile-height, auto, auto,  url('../images/tiles/ux_principles.jpg'), 0);
+            @include menu-child(6, $tile-mobile-width, $tile-mobile-height, auto, auto,  url('../images/tiles/latest_project.jpg'), 4);
+            @include respond-to(tablet) {
+                position: absolute;
 
-			&:hover {
-				&:before, .bg-video {
-					opacity: 1;
-				}
-			}
+                @include menu-child(1, 28%, 34%, 13%, 0,    url('../images/tiles/process.jpg'), 3);
+                @include menu-child(2, 46%, 44%, 0,   28%,  transparent, 6);
+                @include menu-child(3, 28%, 49%, 47%, 0,    url('../images/tiles/tools.jpg'), 1);
+                @include menu-child(4, 31%, 34%, 44%, 28%,  url('../images/tiles/partners.jpg'), 7);
+                @include menu-child(5, 26%, 58%, 0,   74%,  url('../images/tiles/ux_principles.jpg'), 0);
+                @include menu-child(6, 41%, 42%, 58%, 59%,  url('../images/tiles/latest_project.jpg'), 4);
+            }
+            &:before {
+                position: absolute;
 
-			.content {
-				opacity: 0;
-				visibility: hidden;
-			}
+                display: block;
 
-		}
-	}
+                width: 100%;
+                height: 100%;
+
+                content: '';
+                transition: .4s opacity;
+
+                opacity: $block-opacity;
+                background-size: cover !important;
+            }
+            a {
+                font-family: 'oswaldbold';
+                font-size: 6vw;
+                font-weight: normal;
+
+                position: absolute;
+
+                display: table-cell;
+
+                width: 100%;
+                height: 100%;
+
+                text-align: center;
+                vertical-align: middle;
+                text-transform: uppercase;
+
+                color: #fff;
+
+                @include respond-to(tablet) {
+                    font-size: 3.5vmin;
+                }
+                &:before {
+                    display: inline-block;
+
+                    width: 0;
+                    height: 100%;
+
+                    content: '';
+                    vertical-align: middle;
+                }
+            }
+            span.title {
+                display: inline-block;
+
+                width: 95%;
+
+                vertical-align: middle;
+            }
+            .bg-video {
+                position: absolute;
+                z-index: -1;
+                top: 0;
+                left: 0;
+
+                height: 100%;
+
+                transition: .4s opacity;
+
+                opacity: $block-opacity;
+            }
+            &:hover {
+                &:before,
+                .bg-video {
+                    opacity: 1;
+                }
+            }
+            .content {
+                visibility: hidden;
+
+                opacity: 0;
+            }
+        }
+    }
 }
 
 .ng-enter nav.main-nav {
-	ul li, &:before, &:after {
-		transform: scale3d($block-scale-start, $block-scale-start, $block-scale-start);
-		opacity: 0;
-	}
+    ul li,
+    &:before,
+    &:after {
+        transform: scale3d($block-scale-start, $block-scale-start, $block-scale-start);
+
+        opacity: 0;
+    }
 }
 
 
 footer {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	height: $footer-height;
-	line-height: $footer-height;
-	color: #fff;
+    line-height: $footer-height;
 
-	.copyright {
-		float: left;
-		line-height: $footer-height;
-		width: 50%;
-		font-size: 13px;
-		font-family: 'source_sans_proregular';
-		padding-left: 3%;
-	}
+    width: 100%;
+    height: $footer-height;
 
-	.logos {
-		float: right;
-		width: 50%;
-		text-align: right;
-		padding-right: 3%;
+    color: #fff;
 
-		h3 {
-			display: inline-block;
-			padding: 0;
-			margin: 0;
-			line-height: $footer-height;
-			margin-right: 5%;
-			font-size: 0;
-			color: transparent;
+    @include respond-to(tablet) {
+        position: absolute;
+        bottom: 0;
+    }
+    .copyright {
+        font-family: 'source_sans_proregular';
+        font-size: 13px;
 
-			&:first-child {
-				background: url('../images/coloniallife_logo.svg') no-repeat 50% 50%;
-				background-size: contain;
-				width: 25%;
-				height: 100%;
-			}
+        width: 100%;
 
-			&:last-child {
-				background: url('../images/unum_logo.svg') no-repeat 50% 50%;
-				background-size: contain;
-				width: 21%;
-				height: 100%;
-				margin-right: 0;
-			}
-		}
-	}
+        text-align: center;
+
+        @include respond-to(tablet) {
+            line-height: $footer-height;
+
+            float: left;
+
+            width: 50%;
+            padding-left: 3%;
+
+            text-align: left;
+        }
+    }
+    .logos {
+        width: 100%;
+
+        text-align: center;
+
+        @include respond-to(tablet) {
+            float: right;
+
+            width: 50%;
+            padding-right: 3%;
+
+            text-align: right;
+        }
+        h3 {
+            font-size: 0;
+            line-height: $footer-height;
+
+            display: inline-block;
+
+            margin: 0;
+            margin-right: 5%;
+            padding: 0;
+
+            color: transparent;
+            &:first-child {
+                width: 25%;
+                height: 100%;
+
+                background: url('../images/coloniallife_logo.svg') no-repeat 50% 50%;
+                background-size: contain;
+            }
+            &:last-child {
+                width: 21%;
+                height: 100%;
+                margin-right: 0;
+
+                background: url('../images/unum_logo.svg') no-repeat 50% 50%;
+                background-size: contain;
+            }
+        }
+    }
 }
