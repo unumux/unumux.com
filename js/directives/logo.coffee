@@ -24,7 +24,7 @@ uxteam.directive 'logo', ($timeout, $rootScope) ->
 			$rootScope.animatedLogo = true
 			paths = element.find('path')
 			for path in paths
-				length = path.getTotalLength()
+				length = path.getTotalLength() + 10
 				path.style.strokeDasharray = length
 				path.style.strokeDashoffset = length
 
