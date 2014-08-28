@@ -25,12 +25,10 @@ $block-opacity: 0.3;
 }
 
 @mixin menu-child($child, $width, $height, $top, $left, $background, $animate-order) {
-	&:nth-child(#{$child}) {
+	&#{$child} {
 		@include pos-helper($width, $height, $top, $left, $animate-order);
-
-		&:before {
-			background: $background;
-		}
+		background: $background;
+		
 	}
 }
 

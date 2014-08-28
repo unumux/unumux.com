@@ -68,5 +68,15 @@ nav.main-nav {
                 opacity: 1;
             }
         }
+
+        .no-svg & {
+            svg, &:after {
+                display: none;
+            }
+
+            background: url('../images/fallback/ux_logo.png') no-repeat 0 0;
+            background-size: contain;
+            -ms-behavior: url(/backgroundsize.min.htc);
+        }
     }
 }

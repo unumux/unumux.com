@@ -1,4 +1,4 @@
-* {
+*, *:before, *:after {
     box-sizing: border-box;
 }
 
@@ -8,6 +8,7 @@ html {
     font-size: 20px;
 
     width: 100%;
+    margin: 0;
 
     background: $steel-blue;
 
@@ -68,6 +69,7 @@ img {
     background: no-repeat 50% 50%;
     background-size: cover;
 
+    -ms-behavior: url(/backgroundsize.min.htc);
     *letter-spacing: normal;
     &:before {
         display: inline-block;
@@ -152,6 +154,15 @@ img {
             background-color: #d88800;
         }
     }
+    .no-csstransforms & {
+        top: 0;
+        right: 0;
+
+        width: 100px;
+        height: 100px;
+
+        background: red;
+    }
 }
 
 .grid-items {
@@ -170,47 +181,44 @@ img {
         margin-left: -1px;
         padding: 1.5em;
 
-        flex: 0 0 100%;
-
         text-align: center;
 
+        flex: 0 0 100%;
         @include respond-to(tablet) {
-        border: 1px solid #fff;
-        text-align: left;
+            text-align: left;
 
-                	flex: 0 0 50%;
+            border: 1px solid #fff;
 
+            flex: 0 0 50%;
         }
-
-        @media (min-width: $mobile) and (max-width: $tablet - 1) {
-        	        	        &:nth-child(2n-1) {
-            border-left: none;
-        }
-        &:nth-child(2n) {
-            border-right: none;
-        }
-        &:nth-child(n):nth-child(-n+2) {
-            border-top: none;
-        }
-        &:nth-child(n):nth-last-child(-n+2) {
-            border-bottom: none;
-        }
-        }
-
         @include respond-to(desktop) {
-        	flex: 0 0 33.3333%;
-        	        &:nth-child(3n-2) {
-            border-left: none;
+            flex: 0 0 33.3333%;
+            &:nth-child(3n-2) {
+                border-left: none;
+            }
+            &:nth-child(3n) {
+                border-right: none;
+            }
+            &:nth-child(n):nth-child(-n+3) {
+                border-top: none;
+            }
+            &:nth-child(n):nth-last-child(-n+3) {
+                border-bottom: none;
+            }
         }
-        &:nth-child(3n) {
-            border-right: none;
-        }
-        &:nth-child(n):nth-child(-n+3) {
-            border-top: none;
-        }
-        &:nth-child(n):nth-last-child(-n+3) {
-            border-bottom: none;
-        }
+        @media (min-width: $mobile) and (max-width: $tablet - 1) {
+            &:nth-child(2n-1) {
+                border-left: none;
+            }
+            &:nth-child(2n) {
+                border-right: none;
+            }
+            &:nth-child(n):nth-child(-n+2) {
+                border-top: none;
+            }
+            &:nth-child(n):nth-last-child(-n+2) {
+                border-bottom: none;
+            }
         }
     }
 }

@@ -109,16 +109,14 @@ gulp.task 'clean-build', (cb) ->
 Minify and concatenate files
 ###
 gulp.task 'build', ['clean-build'], ->
-  staticStream = gulp.src(['fonts/**/*', 'images/**/*', 'video/**/*', 'views/**/*', 'data/**/*'], {base: './'})
+  staticStream = gulp.src(['fonts/**/*', 'images/**/*', 'video/**/*', 'views/**/*', 'data/**/*', 'backgroundsize.min.htc', 'js/**/*.js'], {base: './'})
     .pipe(gulp.dest('build/'))
 
   indexStream = gulp.src('./index.html')
     .pipe plugins.usemin
       css: [plugins.minifyCss(), 'concat'],
-      html: [plugins.minifyHtml({empty: true})],
+      html: [],
       js: [plugins.ngAnnotate(), plugins.uglify()]
-    .pipe(gulp.dest('build/'))
-    .pipe(plugins.gzip())
     .pipe(gulp.dest('build/'))
 
   merge(staticStream, indexStream)
