@@ -92,7 +92,7 @@ uxteam.animation ".page-animation", ($animate, $window) ->
           transform: "scale3d(1, 1, 1)"
           transition: '0.4s all'
           opacity: 1
-          zIndex: 9999
+          zIndex: 5
           
 
         done()

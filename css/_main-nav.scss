@@ -40,7 +40,7 @@ nav.main-nav {
         &:before,
         &:after {
             position: absolute;
-            z-index: 9997;
+            z-index: 4;
 
             display: block;
 
@@ -182,7 +182,7 @@ nav.main-nav {
                     display: none;
                 }
             }
-            &:hover {
+            .no-touch &:hover {
                 &:before {
                     background-color: #fff;
                 }
