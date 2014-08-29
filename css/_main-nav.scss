@@ -91,7 +91,7 @@ nav.main-nav {
                 position: absolute;
 
                 @include menu-child('.design-process', 28%, 34%, 13%, 0,    url('../images/tiles/process.jpg'), 3);
-                @include menu-child('.the-team', 46%, 44%, 0,   28%,  url('../images/tiles/the_team.jpg'), 6);
+                @include menu-child('.the-team', 46%, 44%, 0,   28%,  transparent, 6);
                 @include menu-child('.tools', 28%, 49%, 47%, 0,    url('../images/tiles/tools.jpg'), 1);
                 @include menu-child('.partners', 31%, 34%, 44%, 28%,  url('../images/tiles/partners.jpg'), 7);
                 @include menu-child('.ux-principles', 26%, 58%, 0,   74%,  url('../images/tiles/ux_principles.jpg'), 0);
@@ -176,13 +176,9 @@ nav.main-nav {
                 height: 100%;
 
                 transition: .4s opacity;
-
-                opacity: $block-opacity;
             }
             &:hover {
-                &:before,
-                .bg-video {
-                    opacity: 0.5;
+                &:before {
                     background-color: #fff;
                 }
             }
