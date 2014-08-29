@@ -9,16 +9,13 @@
 	overflow: auto;
 
 
-	.close-btn {
-
-		&:before, &:after {
-			background-color: #5E5E5E;
+	.close-btn {		
+		&:before {
+			color: #5E5E5E;
 		}
-
-		&:hover {
-			&:before, &:after {
-				background-color: #D88800;
-			}
+		
+		&:hover:before {
+			color: #D88800;
 		}
 	}
 

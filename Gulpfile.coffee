@@ -116,7 +116,7 @@ gulp.task 'build', ['clean-build'], ->
     .pipe plugins.usemin
       css: [plugins.minifyCss(), 'concat'],
       html: [],
-      js: [plugins.ngAnnotate(), plugins.uglify()]
+      js: [plugins.ngAnnotate()]
     .pipe(gulp.dest('build/'))
 
   merge(staticStream, indexStream)
