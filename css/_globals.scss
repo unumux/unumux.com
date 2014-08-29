@@ -44,8 +44,6 @@ img {
 
     display: block;
     overflow: scroll;
-
-    background: red;
 }
 
 .expanding-section {
@@ -70,7 +68,6 @@ img {
     background-size: cover;
 
     -ms-behavior: url(/backgroundsize.min.htc);
-    *letter-spacing: normal;
     &:before {
         display: inline-block;
 
@@ -125,43 +122,19 @@ img {
     height: 6vmin;
 
     cursor: pointer;
-    &:after,
+    text-decoration: none;
+    transition: 0.2s color;
+
     &:before {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-
-        display: block;
-
-        width: 8%;
-        height: 124%;
-        margin: auto;
-
-        content: '';
-        transition: .2s background-color;
-        transform: rotate(45deg);
-
-        background-color: #fff;
-    }
-    &:before {
-        transform: rotate(-45deg);
+        content: "\2000";
+        font-family: 'unum-ux-team';
+        font-size: 5.5vmin;
+        color: #fff;
     }
     &:hover {
-        &:after,
         &:before {
-            background-color: #d88800;
+            color: #d88800;
         }
-    }
-    .no-csstransforms & {
-        top: 0;
-        right: 0;
-
-        width: 100px;
-        height: 100px;
-
-        background: red;
     }
 }
 
