@@ -45,7 +45,7 @@ nav.main-nav {
             display: block;
 
             content: '';
-            transition: $block-transition-duration all;
+            transition: $block-transition-duration transform, $block-transition-duration opacity;
             transform: scale3d(1, 1, 1);
 
             opacity: 1;
@@ -76,7 +76,7 @@ nav.main-nav {
             width: $tile-mobile-width;
             height: $tile-mobile-height;
 
-            transition: $block-transition-duration all;
+            transition: $block-transition-duration transform, $block-transition-duration opacity;
             text-decoration: none;
 
             opacity: 1;

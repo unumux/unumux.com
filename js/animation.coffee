@@ -1,5 +1,10 @@
 uxteam = angular.module 'uxteam'
 
+removeTransition = ->
+  setTimeout =>
+    $(this).css('transition', 'none')
+  , 500
+
 uxteam.animation ".page-animation", ($animate, $window) ->
 
   enter: (element, done) ->
@@ -27,6 +32,9 @@ uxteam.animation ".page-animation", ($animate, $window) ->
         transition: 'none'
         zIndex: 9999
 
+      animatedElement.one $.support.transition.end, ->
+        removeTransition.apply(this)
+
       setTimeout ->
         animatedElement.css
           transition: '0.4s all, 0.3s opacity'
@@ -48,6 +56,9 @@ uxteam.animation ".page-animation", ($animate, $window) ->
       animatedElement.css
         transition: 'none'
         transform: 'translate3d(0, 100%, 0)'
+
+      animatedElement.one $.support.transition.end, ->
+        removeTransition.apply(this)
 
       setTimeout ->
         animatedElement.css
@@ -81,6 +92,9 @@ uxteam.animation ".page-animation", ($animate, $window) ->
         opacity: 0
         zIndex: 9999
 
+      menuElement.add(animatedElement).one $.support.transition.end, ->
+        removeTransition.apply(this)
+
       setTimeout ->
         animatedElement.css
           transition: '0.4s all'
@@ -101,6 +115,9 @@ uxteam.animation ".page-animation", ($animate, $window) ->
       animatedElement.css
         transition: '0.4s all'
         transform: 'translate3d(0, 100%, 0)'
+
+      animatedElement.one $.support.transition.end, ->
+        removeTransition.apply(this)
 
       setTimeout done, 400
     return

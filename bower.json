@@ -43,6 +43,9 @@
     },
     "bouncefix.js": {
       "main": "dist/bouncefix.js"
+    },
+    "flexie": {
+      "main": "src/flexie.js"
     }
   }
 }
