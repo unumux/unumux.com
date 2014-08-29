@@ -7,21 +7,20 @@ uxteam = angular.module 'uxteam', [
 
 uxteam.config ($routeProvider) ->
   $routeProvider
-    .when '/',
-      templateUrl: 'views/main.html'
-      controller: 'MainController'
     .when '/projects',
       templateUrl: 'views/latest-project.html'
       controller: 'ProjectsController as projects'
     .when '/:partial',
       templateUrl: (params) ->
-        "/views/#{params.partial}.html"
+        "views/#{params.partial}.html"
       controller: 'MainController'
     .otherwise    
       redirectTo: '/'
 
 
-uxteam.run ->
+uxteam.run ($rootScope) ->
   # setup fastclick library
-  # FastClick.attach(document.body)
-  # bouncefix.add('srcollable')
+
+  if Modernizr.touch
+    FastClick.attach(document.body)
+    bouncefix.add('scrollable')

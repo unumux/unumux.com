@@ -34,7 +34,7 @@
         </script>
         <script src="js/Modernizr.js"></script>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scaling=no"/> 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <link rel="icon" type="image/x-icon" href="images/icons/favicon.ico" />
         <!-- For MS Windows 8 pinned site icon --> 
@@ -76,8 +76,8 @@
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
-        
-        <ng-view class="page-animation"></ng-view>
+        <div ng-include="'views/main.html'"></div>
+        <div class="page-animation" ng-view></div>
 
         <!-- build:js(./) js/vendor.min.js -->
         <!-- bower:js -->
@@ -92,6 +92,7 @@
         <script src="components/angular-touch/angular-touch.js"></script>
         <script src="components/angular-carousel/dist/angular-carousel.js"></script>
         <script src="components/REM-unit-polyfill/js/rem.js"></script>
+        <script src="components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
