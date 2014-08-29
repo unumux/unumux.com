@@ -7,6 +7,11 @@ uxteam.animation ".page-animation", ($animate, $window) ->
     windowEl = angular.element($window)
     if animatedElement.hasClass('expanding-section')
       menuElement = angular.element(document.querySelectorAll("li.#{animatedElement.attr('id')}"))
+      clonedMenuElement = $(menuElement).clone().appendTo('.main-nav ul')
+
+      clonedMenuElement.one $.support.transition.end, ->
+        clonedMenuElement.remove()
+        
       originLeft = menuElement.offset().left / (windowEl.width() - menuElement.width()) * 100
       originRight = menuElement.offset().top / (windowEl.height() - menuElement.height()) * 100
       animatedElement.css
@@ -16,7 +21,7 @@ uxteam.animation ".page-animation", ($animate, $window) ->
         transformOrigin: "#{originLeft}% #{originRight}%"
         zIndex: 9999
 
-      menuElement.css
+      clonedMenuElement.css
         transform: "scale3d(1, 1, 1)"
         transformOrigin: "#{originLeft}% #{originRight}%"
         transition: 'none'
@@ -29,11 +34,12 @@ uxteam.animation ".page-animation", ($animate, $window) ->
           opacity: 1
           zIndex: 9999
 
-        menuElement.css
+        clonedMenuElement.css
           transform: "scale3d(#{windowEl.width() / menuElement.width()}, #{windowEl.height() / menuElement.height()}, 1)"
           transition: '0.4s all, 0.3s opacity'
           opacity: 0
           zIndex: 9999
+
           
 
         done()
@@ -97,6 +103,4 @@ uxteam.animation ".page-animation", ($animate, $window) ->
         transform: 'translate3d(0, 100%, 0)'
 
       setTimeout done, 400
-    else
-      setTimeout done, 9999999
     return
