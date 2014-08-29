@@ -24,3 +24,4 @@ uxteam.run ($rootScope) ->
   if Modernizr.touch
     FastClick.attach(document.body)
     bouncefix.add('scrollable')
+
