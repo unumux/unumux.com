@@ -71,6 +71,14 @@
         <![endif]-->
         <!-- endbuild -->
 
+        <!-- build:js(./) js/ie9.min.js -->
+        <!--[if lte IE 9]>
+            <script src="components/vminpoly/tokenizer.js"></script>
+            <script src="components/vminpoly/parser.js"></script>
+            <script src="components/vminpoly/vminpoly.js"></script>
+        <![endif]-->
+        <!-- endbuild -->
+
     </head>
     <body class="{{ $root.bodyClass }}">
         <!--[if lt IE 7]>
