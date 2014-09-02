@@ -4,4 +4,4 @@ require('coffee-script/register');
 var gulpfile = 'Gulpfile.coffee';
 
 // Execute CoffeeScript config.
-require('./' + gulpfile);
+var gulp = require('./' + gulpfile);
