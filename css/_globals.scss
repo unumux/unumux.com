@@ -35,12 +35,15 @@ img {
     letter-spacing: -.31em;
 
     color: #fff;
-    background: no-repeat 50% 50%;
+    background: $steel-blue no-repeat 50% 50%;
     background-size: cover;
 
     transition: $block-transition-duration transform, $block-transition-duration opacity;
 
-    -ms-behavior: url(/backgroundsize.min.htc);
+    .no-backgroundsize & {
+        background-image: none;
+    }
+
     &:before {
         display: inline-block;
 

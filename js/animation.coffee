@@ -34,6 +34,7 @@ uxteam.animation ".page-animation", ($animate, $window) ->
 
       animatedElement.one $.support.transition.end, ->
         removeTransition.apply(this)
+        done();
 
       setTimeout ->
         animatedElement.css
@@ -48,9 +49,6 @@ uxteam.animation ".page-animation", ($animate, $window) ->
         #   opacity: 0
         #   zIndex: 9999
 
-          
-
-        done()
       , 10
     else if animatedElement.hasClass('slide-up')
       animatedElement.css
@@ -92,8 +90,11 @@ uxteam.animation ".page-animation", ($animate, $window) ->
       #   opacity: 0
       #   zIndex: 9999
 
-      animatedElement.one $.support.transition.end, ->
-        removeTransition.apply(this)
+      if Modernizr.csstransitions
+        animatedElement.one $.support.transition.end, ->
+          removeTransition.apply(this)
+          done()
+      else
         done()
 
       setTimeout ->
@@ -115,6 +116,7 @@ uxteam.animation ".page-animation", ($animate, $window) ->
       animatedElement.css
         transition: '0.4s all'
         transform: 'translate3d(0, 100%, 0)'
+
 
       animatedElement.one $.support.transition.end, ->
         removeTransition.apply(this)

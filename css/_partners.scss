@@ -1,3 +1,5 @@
 #partners {
-	background-image: url('../images/section-bgs/partners.jpg');
+	.backgroundsize & {
+		background-image: url('../images/section-bgs/partners.jpg');
+	}
 }

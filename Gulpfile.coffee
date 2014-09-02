@@ -45,7 +45,9 @@ gulp.task "sass", ->
     .pipe plugins.plumber()
     .pipe plugins.clipEmptyFiles()
     .pipe plugins.sass
-      onError: browserSync.notify
+      onError: (e) ->
+        browserSync.notify(e)
+        console.log(e)
       includePaths: ['css']
     .pipe plugins.autoprefixer [
         "last 15 versions"

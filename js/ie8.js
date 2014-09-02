@@ -30,3 +30,6 @@ if (!Array.prototype.filter)
       return res;
   };
 }
+
+
+window.ie8 = true;
