@@ -13,7 +13,6 @@ uxteam.config ($routeProvider) ->
     .when '/:partial',
       templateUrl: (params) ->
         "views/#{params.partial}.html"
-      controller: 'MainController'
     .otherwise    
       redirectTo: '/'
 

@@ -45,8 +45,7 @@ nav.main-nav {
             display: block;
 
             content: '';
-            transition: $block-transition-duration transform, $block-transition-duration opacity;
-            transform: scale3d(1, 1, 1);
+            
 
             opacity: 1;
             border: $border-size solid $steel-blue;
@@ -60,6 +59,11 @@ nav.main-nav {
             background: #81b245;
 
             @include pos-helper(15%, 14%, 44%, 59%, 2);
+        }
+
+        ul li, &:after, &:before {
+            transform: scale3d($block-scale-start, $block-scale-start, $block-scale-start);
+            opacity: 0;
         }
     }
     ul {
@@ -76,10 +80,9 @@ nav.main-nav {
             width: $tile-mobile-width;
             height: $tile-mobile-height;
 
-            transition: $block-transition-duration transform, $block-transition-duration opacity;
             text-decoration: none;
-
-            opacity: 1;
+            transform: scale3d($block-scale-start, $block-scale-start, $block-scale-start);
+            opacity: 0;
             color: #fff;
             border: $border-size solid $steel-blue;
             background-size: cover;
@@ -210,13 +213,22 @@ nav.main-nav {
     }
 }
 
-.ng-enter nav.main-nav {
+@keyframes popIn {
+  0%   { opacity: 0; transform: scale3d($block-scale-start, $block-scale-start, $block-scale-start); }
+  100% { opacity: 1; transform: scale3d(1, 1, 1); }
+}
+
+.loaded nav.main-nav {
     ul li,
     &:before,
     &:after {
-        transform: scale3d($block-scale-start, $block-scale-start, $block-scale-start);
-
-        opacity: 0;
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+        @include respond-to(tablet) {
+            animation-name: popIn;
+            animation-duration: $block-transition-duration;
+            animation-fill-mode: backwards;
+        }
     }
 }
 

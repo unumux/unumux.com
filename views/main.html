@@ -1,8 +1,8 @@
-<div class="main scrollable">
+<div class="main scrollable" ng-controller="MainController as main" ng-class="{'loaded': main.imagesLoaded && main.timeoutExpired }">
 	<nav class="main-nav">
 		<a class="page-title" href="#">
 			<h1>UX: Enterprise User Experience</h1>
-			<logo></logo>
+			<logo animate="main.imagesLoaded && main.timeoutExpired"></logo>
 		</a>
 		<ul>
 			<li class="design-process"><a href="#/design-process"><span class="title">Design Process</span></a></li>
@@ -17,7 +17,7 @@
 		</ul>
 	</nav>
 
-	<footer>
+	<footer ng-show="main.imagesLoaded && main.timeoutExpired ">
 		<div class="copyright">&copy; 2014 Unum Group. All rights reserved. </div>
 		<div class="logos">
 			<h3>Colonial Life</h3>

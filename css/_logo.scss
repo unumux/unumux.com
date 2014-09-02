@@ -53,16 +53,15 @@ nav.main-nav {
 
             max-width: 100%;
             height: 90%;
-            path {
-                transition: .6s all;
-            }
-            #x path {
-                transition-delay: .5s;
-            }
+
         }
         &.show {
             path {
                 stroke-dashoffset: 0 !important;
+                transition: .6s all;
+            }
+            #x path {
+                transition-delay: .5s;
             }
             &:after {
                 opacity: 1;
