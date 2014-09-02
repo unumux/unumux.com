@@ -60,16 +60,33 @@ gulp.task "sass", ->
 
 gulp.task "coffee", ->
   rimraf.sync './.tmp/js'
-  gulp.src('js/**/*.coffee')
+  coffeeCompile = gulp.src('js/**/*.coffee')
     .pipe(plugins.coffee(onError: browserSync.notify))
     .pipe(browserSync.reload(stream: true))
     .pipe(gulp.dest('.tmp/js'))
+
+  templateCompile = gulp.src 'views/**/*.html'
+    .pipe plugins.rename (path) ->
+        path.dirname = 'views/' + path.dirname
+        return
+    .pipe plugins.angularTemplatecache('templates.js', { standalone: true })
+    .pipe gulp.dest('.tmp/js')
+
+  merge(coffeeCompile, templateCompile)
 
 
 gulp.task 'bower', ->
   gulp.src(['index.html', 'css/app.scss'], { base: './' })
     .pipe wiredep()
     .pipe gulp.dest('./')
+
+gulp.task 'compile-angular-templates', ->
+  gulp.src 'views/**/*.html', { }
+    .pipe plugins.rename (path) ->
+      path.dirname = 'views/' + path.dirname
+      return
+    .pipe plugins.angularTemplatecache('templates.js', { standalone: true })
+    .pipe gulp.dest('.tmp/js')
 
 
 gulp.task 'clean-tmp', (cb) ->
@@ -99,6 +116,8 @@ gulp.task "watch", ['setup-tmp'], ->
   plugins.watch({ glob: ['index.html', 'views/**/*.html'] })
     .pipe(browserSync.reload(stream: true))
 
+  gulp.watch 'views/**/*.html', ['compile-angular-templates']
+
 
 ###
 Clean build folder
@@ -110,7 +129,7 @@ gulp.task 'clean-build', (cb) ->
 ###
 Minify and concatenate files
 ###
-gulp.task 'build', ['clean-build'], ->
+gulp.task 'build', ['clean-build', 'setup-tmp'], ->
   staticStream = gulp.src(['fonts/**/*', 'images/**/*', 'video/**/*', 'views/**/*', 'data/**/*', 'backgroundsize.min.htc', 'js/**/*.js'], {base: './'})
     .pipe(gulp.dest('build/'))
 

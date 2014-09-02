@@ -2,7 +2,8 @@ uxteam = angular.module 'uxteam', [
   'ngAnimate',
   'ngRoute',
   'ngSanitize',
-  'angular-carousel'
+  'angular-carousel',
+  'templates'
 ]
 
 uxteam.config ($routeProvider) ->
@@ -18,10 +19,12 @@ uxteam.config ($routeProvider) ->
       redirectTo: '/'
 
 
-uxteam.run ($rootScope) ->
+uxteam.run ($rootScope, $templateCache) ->
   # setup fastclick library
 
   if Modernizr.touch
     FastClick.attach(document.body)
     bouncefix.add('scrollable')
+
+
 
