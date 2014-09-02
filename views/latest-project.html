@@ -4,12 +4,20 @@
 		<a href="#" ng-hide="projects.currentProject <= 0" ng-click="projects.prevProject($event)">Previous Project</a>
 		<a href="#" ng-hide="projects.currentProject >= projects.allProjects.length - 1" ng-click="projects.nextProject($event)">Next Project</a>
 	</nav>
-	<ul rn-carousel rn-carousel-index="projects.currentProject">
+	<ul rn-carousel rn-carousel-index="projects.currentProject" rn-carousel-swipe="{{ projects.allProjects.length > 1 }}">
 		<li ng-repeat="project in projects.allProjects" class="project">
 			<div class="content">
 				<h2 class="project-title">{{ project.title }}</h2>
-				<img class="featured" ng-src="{{ project.featured_image }}" alt="{{ project.title }}">
-				<div ng-bind-html="project.content"></div>
+				<img class="featured content-row" ng-src="{{ project.featured_image }}" alt="{{ project.title }}">
+				<!-- <div ng-bind-html="project.content"></div> -->
+				<div ng-repeat="contentBlock in project.content" class="content-row">
+					<div ng-if="contentBlock.type === 'text'">
+						<p ng-bind-html="contentBlock.content"></p>
+					</div>
+					<div ng-if="contentBlock.type === 'image'">
+						<img ng-src="{{ contentBlock.url }}">
+					</div>
+				</div>
 			</div>
 		</li>
 	</ul>
