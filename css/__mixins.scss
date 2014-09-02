@@ -24,11 +24,11 @@ $block-opacity: 0.3;
 	transition-delay: $block-transition-stagger * $animate-order;
 }
 
-@mixin menu-child($child, $width, $height, $top, $left, $background, $animate-order) {
+@mixin menu-child($child, $width, $height, $top, $left, $background, $animate-order, $posx: 50%, $posy: 50%) {
 	&#{$child} {
 		@include pos-helper($width, $height, $top, $left, $animate-order);
-		background: $background;
-		
+		background-image: $background;
+		background-position: $posx $posy;
 	}
 }
 
