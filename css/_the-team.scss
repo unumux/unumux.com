@@ -1,5 +1,7 @@
 #the-team {
-	background-image: url('../images/section-bgs/the_team.jpg');
+	.backgroundsize & {
+		background-image: url('../images/section-bgs/the_team.jpg');
+	}
 
 	h2 {
 		text-align: left;

@@ -26,10 +26,24 @@ $tile-mobile-height: 10em;
         max-width: ($base-width / $base-height) * 100vh;
         max-height: ($base-height / $base-width) * 100vw;
     }
+
+    &:after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background: $steel-blue;
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 99999;
+    }
 }
 
 nav.main-nav {
     display: block;
+    // visibility: hidden;
+
 
     @include respond-to(tablet) {
         position: absolute;
@@ -95,7 +109,7 @@ nav.main-nav {
             @include menu-child('.partners', $tile-mobile-width, $tile-mobile-height, auto, auto,  url('../images/tiles/partners.jpg'), 7);
             @include menu-child('.ux-principles', $tile-mobile-width, $tile-mobile-height, auto, auto,  url('../images/tiles/ux_principles.jpg'), 0);
             @include menu-child('.latest-project', $tile-mobile-width, $tile-mobile-height, auto, auto,  url('../images/tiles/latest_project.jpg'), 4, 50%, 0);
-            -ms-behavior: url(/backgroundsize.min.htc);
+            
 
             @include respond-to(tablet) {
                 position: absolute;
@@ -218,20 +232,30 @@ nav.main-nav {
   100% { opacity: 1; transform: scale3d(1, 1, 1); }
 }
 
-.loaded nav.main-nav {
-    ul li,
-    &:before,
+.main.loaded {
+    
     &:after {
-        opacity: 1;
-        transform: scale3d(1, 1, 1);
-        @include respond-to(tablet) {
-            animation-name: popIn;
-            animation-duration: $block-transition-duration;
-            animation-fill-mode: backwards;
+        display: none;
+    }
+
+    nav.main-nav {
+        ul li,
+        &:before,
+        &:after {
+            opacity: 1;
+            transform: scale3d(1, 1, 1);
+            @include respond-to(tablet) {
+                animation-name: popIn;
+                animation-duration: $block-transition-duration;
+                animation-fill-mode: backwards;
+            }
         }
     }
 }
 
+.load-ms-behavior {
+    -ms-behavior: url(/backgroundsize.min.htc);
+}
 
 footer {
     line-height: $footer-height;

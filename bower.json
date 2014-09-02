@@ -30,7 +30,8 @@
     "normalize.css": "~3.0.1",
     "vminpoly": "*",
     "REM-unit-polyfill": "~1.3.2",
-    "bootstrap-sass-official": "~3.2.0+1"
+    "bootstrap-sass-official": "~3.2.0+1",
+    "waitForImages": "~1.4.2"
   },
   "overrides": {
     "bootstrap-sass-official": {
@@ -46,6 +47,9 @@
     },
     "flexie": {
       "main": "src/flexie.js"
+    },
+    "waitForImages": {
+      "main": "src/jquery.waitforimages.js"
     }
   }
 }
