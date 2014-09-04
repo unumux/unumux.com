@@ -1,7 +1,10 @@
-$border-size: .2rem;
+$border-size: .2em;
 $footer-height: 60px;
 $tile-mobile-width: 100%;
 $tile-mobile-height: 40em;
+$tile-background-color: rgba($steel-blue, 0.5);
+$tile-hover-background-color: rgba($steel-blue, 0);
+$tile-hover-title-background: rgba(255,255,255,0.85);
 
 .main {
     position: fixed;
@@ -10,14 +13,13 @@ $tile-mobile-height: 40em;
     bottom: 0;
     left: 0;
 
+    overflow: auto;
+
     width: 100%;
     height: 100%;
     margin: auto;
 
-    overflow: auto;
     -webkit-overflow-scrolling: touch;
-
-
     @include respond-to(tablet) {
         max-width: ($base-width / $base-height) * 100vh;
         max-height: ($base-height / $base-width) * 100vw;
@@ -26,24 +28,25 @@ $tile-mobile-height: 40em;
         max-width: ($base-width / $base-height) * 100vh;
         max-height: ($base-height / $base-width) * 100vw;
     }
-
     &:after {
-        content: '';
-        width: 100%;
-        height: 100%;
-        background: $steel-blue;
-        display: block;
         position: fixed;
+        z-index: 99999;
         top: 0;
         left: 0;
-        z-index: 99999;
+
+        display: block;
+
+        width: 100%;
+        height: 100%;
+
+        content: '';
+
+        background: $steel-blue;
     }
 }
 
 nav.main-nav {
     display: block;
-    // visibility: hidden;
-
 
     @include respond-to(tablet) {
         position: absolute;
@@ -59,7 +62,6 @@ nav.main-nav {
             display: block;
 
             content: '';
-            
 
             opacity: 1;
             border: $border-size solid $steel-blue;
@@ -74,9 +76,11 @@ nav.main-nav {
 
             @include pos-helper(15%, 14%, 44%, 59%, 2);
         }
-
-        ul li, &:after, &:before {
+        ul li,
+        &:after,
+        &:before {
             transform: scale3d($block-scale-start, $block-scale-start, $block-scale-start);
+
             opacity: 0;
         }
     }
@@ -94,14 +98,15 @@ nav.main-nav {
             width: $tile-mobile-width;
             height: $tile-mobile-height;
 
-            text-decoration: none;
             transform: scale3d($block-scale-start, $block-scale-start, $block-scale-start);
+            text-decoration: none;
+
             opacity: 0;
             color: #fff;
             border: $border-size solid $steel-blue;
-            background-size: cover;
             background-repeat: no-repeat;
             background-position: 50% 50%;
+            background-size: cover;
 
             @include menu-child('.design-process', $tile-mobile-width, $tile-mobile-height, auto, auto,    url('../images/tiles/process.jpg'), 3, 50%, 0);
             @include menu-child('.the-team', $tile-mobile-width, $tile-mobile-height, auto, auto,  url('../images/tiles/the_team.jpg'), 6);
@@ -109,8 +114,6 @@ nav.main-nav {
             @include menu-child('.partners', $tile-mobile-width, $tile-mobile-height, auto, auto,  url('../images/tiles/partners.jpg'), 7);
             @include menu-child('.ux-principles', $tile-mobile-width, $tile-mobile-height, auto, auto,  url('../images/tiles/ux_principles.jpg'), 0);
             @include menu-child('.latest-project', $tile-mobile-width, $tile-mobile-height, auto, auto,  url('../images/tiles/latest_project.jpg'), 4, 50%, 0);
-            
-
             @include respond-to(tablet) {
                 position: absolute;
 
@@ -122,43 +125,37 @@ nav.main-nav {
                 @include menu-child('.latest-project', 41%, 42%, 58%, 59%,  url('../images/tiles/latest_project.jpg'), 4);
             }
 
-            &:before {
-                position: absolute;
-                top: -5%;
-                left: -5%;
-                right: -5%;
-                bottom: -5%;
+            span.title {
+                position: relative;
+                z-index: 3;
 
-                display: block;
+                display: inline-block;
 
-                content: '';
-                transition: .4s background-color, .4s opacity;
-                z-index: 1;
-                opacity: 1 - $block-opacity;
-                background-color: $steel-blue;
-                .no-opacity & {
-                    background: url('../images/fallback/steel-blue-trans.png');
-                }
+                width: 100%;
+                padding: 0.1em 0.6em;
+
+                vertical-align: bottom;
+                background: rgba(255,255,255,0);
+                transition: 0.3s background 0.1s, 0.3s color;
             }
+
             a {
                 font-family: 'oswaldbold';
                 font-size: 6vw;
                 font-weight: normal;
 
                 position: absolute;
-
-                display: table-cell;
                 z-index: 5;
-
                 top: 0;
                 left: 0;
                 right: 0;
                 bottom: 0;
+                display: block;
                 transition: .2s color;
-                text-align: center;
-                vertical-align: middle;
                 text-transform: uppercase;
-
+                background: $steel-blue;
+                background: $tile-background-color;
+                transition: .4s background-color;
                 color: #fff;
 
                 @include respond-to(tablet) {
@@ -167,6 +164,14 @@ nav.main-nav {
                 .no-cssvminunit & {
                     font-size: 3.5vmin;
                 }
+                .no-rgba & {
+                    background: transparent url('../images/fallback/ie-fix.png');
+                    zoom: 1;
+                   /* For IE 5.5 - 7*/
+                    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{ie-hex-str($tile-background-color)}, endColorstr=#{ie-hex-str($tile-background-color)});
+                    /* For IE 8*/
+                    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#{ie-hex-str($tile-background-color)}, endColorstr=#{ie-hex-str($tile-background-color)})"; 
+                }
                 &:before {
                     display: inline-block;
 
@@ -174,51 +179,53 @@ nav.main-nav {
                     height: 100%;
 
                     content: '';
-                    vertical-align: middle;
+                    vertical-align: bottom;
                 }
-            }
-            span.title {
-                display: inline-block;
+                .no-touch &:hover {
+                    background: $tile-hover-background-color;
 
-                width: 95%;
-                z-index: 3;
-                position: relative;
-                vertical-align: middle;
+                    span.title {
+                        background: $tile-hover-title-background;
+                        color: $steel-blue;
+                    }
+                }
+                .no-touch.no-rgba &:hover {
+                    /* For IE 5.5 - 7*/
+                    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{ie-hex-str($tile-hover-background-color)}, endColorstr=#{ie-hex-str($tile-hover-background-color)});
+                    /* For IE 8*/
+                    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#{ie-hex-str($tile-hover-background-color)}, endColorstr=#{ie-hex-str($tile-hover-background-color)})"; 
+
+                    span.title {
+                        /* For IE 5.5 - 7*/
+                        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{ie-hex-str($tile-hover-title-background)}, endColorstr=#{ie-hex-str($tile-hover-title-background)});
+                        /* For IE 8*/
+                        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#{ie-hex-str($tile-hover-title-background)}, endColorstr=#{ie-hex-str($tile-hover-title-background)})"; 
+                    }
+                }
             }
             .bg-video {
                 position: absolute;
                 z-index: 0;
                 top: 0;
                 left: 0;
+
                 display: none;
 
-                height: 100%;
                 width: auto;
                 min-width: 100%;
+                height: 100%;
                 min-height: 100%;
 
                 transition: .4s opacity;
 
-                .no-video & {
-                    display: none;
-                }
-
                 @include respond-to(tablet) {
                     display: block;
                 }
-            }
-            .no-touch &:hover {
-                &:before {
-                    background-color: #fff;
-                    opacity: 0.5;
-                }
-
-                a {
-                    color: $steel-blue;
+                .no-video & {
+                    display: none;
                 }
             }
             &.the-team {
-
                 .no-video & {
                     background: url('../images/tiles/the_team.jpg');
                 }
@@ -228,25 +235,34 @@ nav.main-nav {
 }
 
 @keyframes popIn {
-  0%   { opacity: 0; transform: scale3d($block-scale-start, $block-scale-start, $block-scale-start); }
-  100% { opacity: 1; transform: scale3d(1, 1, 1); }
+    0% {
+        transform: scale3d($block-scale-start, $block-scale-start, $block-scale-start); 
+
+        opacity: 0;
+    }
+    100% {
+        transform: scale3d(1, 1, 1); 
+
+        opacity: 1;
+    }
 }
 
 .main.loaded {
-    
     &:after {
         display: none;
     }
-
     nav.main-nav {
         ul li,
         &:before,
         &:after {
-            opacity: 1;
             transform: scale3d(1, 1, 1);
+
+            opacity: 1;
+
             @include respond-to(tablet) {
                 animation-name: popIn;
                 animation-duration: $block-transition-duration;
+
                 animation-fill-mode: backwards;
             }
         }
@@ -259,7 +275,9 @@ nav.main-nav {
 
 footer {
     line-height: $footer-height;
+
     overflow: hidden;
+
     width: 100%;
     height: $footer-height;
 
@@ -307,8 +325,8 @@ footer {
             line-height: $footer-height;
 
             display: inline-block;
-            height: 100%;
 
+            height: 100%;
             margin: 0;
             margin-right: 5%;
             padding: 0;

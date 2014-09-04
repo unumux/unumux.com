@@ -15,11 +15,11 @@ uxteam.config ($routeProvider) ->
       templateUrl: (params) ->
         "views/#{params.partial}.html"
 
-    .otherwise    
+    .otherwise
       redirectTo: '/'
 
 
-uxteam.run ($rootScope, $templateCache) ->
+uxteam.run ->
   # setup fastclick library
 
   if Modernizr.touch

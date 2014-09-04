@@ -24,7 +24,7 @@ img {
 }
 
 .expanding-section {
-    font-size: 3em;
+    font-size: 14px;
 
     position: fixed;
     z-index: 9999;
@@ -42,6 +42,15 @@ img {
     background-size: cover;
 
     transition: $block-transition-duration transform, $block-transition-duration opacity;
+
+    @media (max-width: $tablet - 1) {
+        font-size: 16px;
+    }
+
+    @media (max-width: $mobile - 1) {
+        padding-top: 5em;
+        font-size: 18px;
+    }
 
     .no-backgroundsize & {
         background-image: none;
@@ -89,15 +98,6 @@ img {
 
         margin: .3em 0;
     }
-
-    @include respond-to(tablet) {
-        font-size: 1.8em;
-    }
-
-    @include respond-to(desktop) {
-        padding: 5em;
-        font-size: 1.3em;
-    }
 }
 
 .scrollable {
@@ -111,17 +111,24 @@ img {
     z-index: 1;
     top: 50px;
     right: 50px;
-    width: 3.5em;
-    height: 3.5em;
+    width: 50px;
+    height: 50px;
 
     cursor: pointer;
     text-decoration: none;
     transition: 0.2s color;
 
+    @media (max-width: $mobile - 1) {
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: 15px;
+    }
+
     &:before {
         content: "\2000";
         font-family: 'unum-ux-team';
-        font-size: 3.5em;
+        font-size: 50px;
         color: #fff;
     }
     &:hover {
@@ -142,7 +149,7 @@ img {
 
     h3 {
         font-family: 'ff-dax-wide-web-pro',sans-serif;
-        font-size: 1.5em;
+        font-size: 1.6em;
         font-weight: 400;
         margin: 1.2em 0 0 0;
 
@@ -154,6 +161,7 @@ img {
     }
     p {
         margin: 0.7em 0 0 0;
+        font-size: 1.2em;
     }
     .grid-item {
         margin-top: -1px;
