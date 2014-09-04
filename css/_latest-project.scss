@@ -9,6 +9,12 @@
 	overflow: auto;
 	-webkit-overflow-scrolling: touch;
 
+	font-size: 18px;
+
+	@media (max-width: $mobile - 1) {
+		font-size: 20px;
+	}
+
 
 	.close-btn {		
 		&:before {
@@ -34,7 +40,7 @@
 			top: 50%;
 			border-top: $arrow-height solid transparent;
 			border-bottom: $arrow-height solid transparent;
-			font-size: 1vw;
+			font-size: 1em;
 			color: transparent;
 			z-index: 9999;
 
@@ -84,6 +90,14 @@
 
 	.project {
 		padding: 85px 130px;
+
+		@media (max-width: $tablet - 1) {
+			padding: 85px 50px;
+		}
+
+		@media (max-width: $mobile - 1) {
+			padding: 85px 15px;
+		}
 	}
 
 	.content {
@@ -94,6 +108,7 @@
 		position: relative;
 		z-index: 1;
 
+
 		h2.project-title {
 			text-align: center;
 			color: #8C8C8C;
@@ -103,6 +118,10 @@
 		p {
 			padding: 2em 4.2em 0;
 			text-align: center;
+
+			@media (max-width: $tablet - 1) {
+				padding: 2em 1em 0;
+			}
 		}
 
 		.view-project {

@@ -62,6 +62,7 @@ gulp.task "coffee", ->
   rimraf.sync './.tmp/js'
   coffeeCompile = gulp.src('js/**/*.coffee')
     .pipe(plugins.coffee(onError: browserSync.notify))
+    .pipe(plugins.ngAnnotate())
     .pipe(browserSync.reload(stream: true))
     .pipe(gulp.dest('.tmp/js'))
 
@@ -137,7 +138,7 @@ gulp.task 'build', ['clean-build', 'setup-tmp'], ->
     .pipe plugins.usemin
       css: [plugins.minifyCss(), 'concat'],
       html: [],
-      js: [plugins.ngAnnotate()]
+      js: [plugins.ngAnnotate(), plugins.uglify()]
     .pipe(gulp.dest('build/'))
 
   merge(staticStream, indexStream)
