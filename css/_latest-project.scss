@@ -16,7 +16,10 @@
 	}
 
 
-	.close-btn {		
+	.close-btn {
+		@media (max-width: $mobile - 1) {
+	        background: rgba(#fff, 0.9);
+	    }		
 		&:before {
 			color: #5E5E5E;
 		}

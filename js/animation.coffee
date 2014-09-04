@@ -3,7 +3,8 @@ uxteam = angular.module 'uxteam'
 removeTransition = ->
   setTimeout =>
     $(this).css('transition', 'none')
-  , 500
+    $(this).css('transform', 'none')
+  , 100
 
 uxteam.animation ".page-animation", ($animate, $window) ->
 
@@ -92,7 +93,6 @@ uxteam.animation ".page-animation", ($animate, $window) ->
 
       if Modernizr.csstransitions
         animatedElement.one $.support.transition.end, ->
-          removeTransition.apply(this)
           done()
       else
         done()
@@ -118,8 +118,9 @@ uxteam.animation ".page-animation", ($animate, $window) ->
         transform: 'translate3d(0, 100%, 0)'
 
 
-      animatedElement.one $.support.transition.end, ->
-        removeTransition.apply(this)
-
-      setTimeout done, 400
+      if Modernizr.csstransitions
+        animatedElement.one $.support.transition.end, ->
+          done()
+      else
+        done()
     return

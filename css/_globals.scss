@@ -49,11 +49,14 @@ img {
 
     @media (max-width: $mobile - 1) {
         padding-top: 5em;
-        font-size: 18px;
     }
 
     .no-backgroundsize & {
         background-image: none;
+    }
+
+    @media (max-width: $mobile - 1) {
+        background-image: none !important;
     }
 
     &:before {
@@ -74,6 +77,11 @@ img {
 
         text-align: center;
         text-transform: uppercase;
+
+        @media (max-width: $mobile - 1) {
+            font-size: 2em;
+            margin-bottom: 0.5em;
+        }
     }
     .content {
         display: inline-block;
@@ -107,7 +115,7 @@ img {
 }
 
 .close-btn {
-    position: absolute;
+    position: fixed;
     z-index: 1;
     top: 50px;
     right: 50px;
@@ -122,13 +130,23 @@ img {
         left: 0;
         right: 0;
         margin: auto;
-        top: 15px;
+        top: 0;
+        padding: 5px 0;
+        width: 100%;
+        height: auto;
+        background: rgba($steel-blue, 0.9);
+        text-align: center;
     }
 
     &:before {
         content: "\2000";
         font-family: 'unum-ux-team';
         font-size: 50px;
+
+        @media (max-width: $mobile - 1) {
+            font-size: 40px;
+            line-height: 50px;
+        }
         color: #fff;
     }
     &:hover {
