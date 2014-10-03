@@ -1,0 +1,26 @@
+{
+	"projects": [
+		{
+			"title": "Colonial Life Public Site",
+			"featured_image": "images/project-images/coloniallife.com/colonial_life_home_land.jpg",
+			"content": [
+				{
+					"type": "text",
+					"content": "Last year, a small, cross-functional team set out on a journey to re-envision the Colonial Life public site. Although it was clear we needed a new approach, we had to determine what that would be. We started with where we are versus where we want to be. Simply put, our public site should be one of our strongest marketing tools – but it’s built in a way that we’re dependent on our friends in IT to make changes, even simple updates like content changes, which has limited our ability to use it effectively. When considering how we would approach the site, we wanted to take into consideration not only who currently uses the site but how they are using it.  We also knew we needed a site that would allow us to change content and images quickly and efficiently; a site that is not only user-friendly in terms of navigation, but with content that is easily understood and resonates with each visitor, regardless of their relationship with us."
+				},
+				{
+					"type": "image",
+					"url": "images/project-images/coloniallife.com/colonial_life_presentation.jpg"
+				},
+				{
+					"type": "text",
+					"content": "The site was rebuilt using a user-centric design approach that included various engagement strategies with major stockholders both internal and external. The sitecore content management system was implemented as the base framework in order for internal business partners to contribute as content authors. Additionally, an extensive feature set was envisioned to ensure a superior site was delivered to our customers.\n<ul>\n<li>Mobile optimized using a responsive design approach</li>\n<li>Audience segmentation with specific navigation</li>\n<li>Emphasis on support and customer service</li>\n</ul>\n<h3>Feature set:</h3><ul>\n<li>Audience-specific calls to action</li>\n<li>Related content items to engage users</li>\n<li>Integration with email and marketing software</li>\n<li>Google search for users</li>\n<li>Social media integration</li>\n<li>Lead generation & routing</li>\n<li>Quick deployment of landing pages</li>\n</ul>"
+				},
+				{
+					"type": "image",
+					"url": "images/project-images/coloniallife.com/colonial_life_views.jpg"
+				}
+			]
+		}
+	]
+}

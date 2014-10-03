@@ -1,3 +1,44 @@
 #the-team {
-	background-image: url('../images/section-bgs/design_process.jpg');
+	.backgroundsize & {
+		background-image: url('../images/section-bgs/the_team.jpg');
+	}
+
+	h2 {
+		text-align: left;
+		margin: 0;
+		font-size: 4em;
+		max-width: 1100px;
+		margin-left: auto;
+		margin-right: auto;
+
+		@media (max-width: $mobile - 1) {
+			font-size: 3em;
+		}
+
+		&:before {
+		    content: "\2006";
+		    display: block;
+    		font-family: 'unum-ux-team';
+    		text-indent: 0;
+    		font-size: 1em;
+    		color: #d88800;
+
+
+		}
+	}
+
+	.content > h3 {
+        font-family: 'ff-dax-wide-web-pro',sans-serif;
+		font-size: 2em;
+		font-weight: 400;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 0.1em;
+		max-width: 1100px;
+		display: block;
+
+		@media (max-width: $mobile - 1) {
+			font-size: 1.5em;
+		}
+	}
 }

@@ -1,5 +1,11 @@
 uxteam = angular.module 'uxteam'
 
+removeTransition = ->
+  setTimeout =>
+    $(this).css('transition', 'none')
+    $(this).css('transform', 'none')
+  , 100
+
 uxteam.animation ".page-animation", ($animate, $window) ->
 
   enter: (element, done) ->
@@ -7,6 +13,11 @@ uxteam.animation ".page-animation", ($animate, $window) ->
     windowEl = angular.element($window)
     if animatedElement.hasClass('expanding-section')
       menuElement = angular.element(document.querySelectorAll("li.#{animatedElement.attr('id')}"))
+      # clonedMenuElement = $(menuElement).clone().appendTo('.main-nav ul')
+
+      # clonedMenuElement.one $.support.transition.end, ->
+      #   clonedMenuElement.remove()
+        
       originLeft = menuElement.offset().left / (windowEl.width() - menuElement.width()) * 100
       originRight = menuElement.offset().top / (windowEl.height() - menuElement.height()) * 100
       animatedElement.css
@@ -14,30 +25,39 @@ uxteam.animation ".page-animation", ($animate, $window) ->
         transform: "scale3d(#{menuElement.width() / windowEl.width()}, #{menuElement.height() / windowEl.height()}, 1)"
         opacity: 0
         transformOrigin: "#{originLeft}% #{originRight}%"
+        zIndex: 9999
 
-      menuElement.css
-        transform: "scale3d(1, 1, 1)"
-        transformOrigin: "#{originLeft}% #{originRight}%"
-        transition: 'none'
+      # clonedMenuElement.css
+      #   transform: "scale3d(1, 1, 1)"
+      #   transformOrigin: "#{originLeft}% #{originRight}%"
+      #   transition: 'none'
+      #   zIndex: 9999
+
+      animatedElement.one $.support.transition.end, ->
+        removeTransition.apply(this)
+        done();
 
       setTimeout ->
         animatedElement.css
           transition: '0.4s all, 0.3s opacity'
           transform: "scale3d(1, 1, 1)"
           opacity: 1
+          zIndex: 9999
 
-        menuElement.css
-          transform: "scale3d(#{windowEl.width() / menuElement.width()}, #{windowEl.height() / menuElement.height()}, 1)"
-          transition: '0.4s all, 0.3s opacity'
-          opacity: 0
-          
+        # clonedMenuElement.css
+        #   transform: "scale3d(#{windowEl.width() / menuElement.width()}, #{windowEl.height() / menuElement.height()}, 1)"
+        #   transition: '0.4s all, 0.3s opacity'
+        #   opacity: 0
+        #   zIndex: 9999
 
-        done()
       , 10
     else if animatedElement.hasClass('slide-up')
       animatedElement.css
         transition: 'none'
         transform: 'translate3d(0, 100%, 0)'
+
+      animatedElement.one $.support.transition.end, ->
+        removeTransition.apply(this)
 
       setTimeout ->
         animatedElement.css
@@ -62,33 +82,45 @@ uxteam.animation ".page-animation", ($animate, $window) ->
         transform: "scale3d(1, 1, 1)"
         opacity: 1
         transformOrigin: "#{originLeft}% #{originRight}%"
+        zIndex: 9999
 
-      menuElement.css
-        transform: "scale3d(#{windowEl.width() / menuElement.width()}, #{windowEl.height() / menuElement.height()}, 1)"
-        transformOrigin: "#{originLeft}% #{originRight}%"
-        transition: 'none'
-        opacity: 0
+      # menuElement.css
+      #   transform: "scale3d(#{windowEl.width() / menuElement.width()}, #{windowEl.height() / menuElement.height()}, 1)"
+      #   transformOrigin: "#{originLeft}% #{originRight}%"
+      #   transition: 'none'
+      #   opacity: 0
+      #   zIndex: 9999
+
+      if Modernizr.csstransitions
+        animatedElement.one $.support.transition.end, ->
+          done()
+      else
+        done()
 
       setTimeout ->
         animatedElement.css
           transition: '0.4s all'
           transform: "scale3d(#{menuElement.width() / windowEl.width()}, #{menuElement.height() / windowEl.height()}, 1)"
           opacity: 0
+          zIndex: 9999
 
-        menuElement.css
-          transform: "scale3d(1, 1, 1)"
-          transition: '0.4s all'
-          opacity: 1
+        # menuElement.css
+        #   transform: "scale3d(1, 1, 1)"
+        #   transition: '0.4s all'
+        #   opacity: 1
+        #   zIndex: 5
           
 
-        done()
       , 1
     else if animatedElement.hasClass('slide-up')
       animatedElement.css
         transition: '0.4s all'
         transform: 'translate3d(0, 100%, 0)'
 
-      setTimeout done, 400
-    else
-      setTimeout done, 9999999
+
+      if Modernizr.csstransitions
+        animatedElement.one $.support.transition.end, ->
+          done()
+      else
+        done()
     return
