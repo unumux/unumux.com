@@ -28,6 +28,7 @@
     "gulp-if": "^1.2.4",
     "gulp-include": "^0.2.3",
     "gulp-inject": "^1.0.1",
+    "gulp-load-plugins": "^0.5.3",
     "gulp-minify-css": "^0.3.7",
     "gulp-minify-html": "^0.1.4",
     "gulp-plumber": "^0.6.4",
@@ -37,6 +38,7 @@
     "gulp-usemin": "^0.3.7",
     "gulp-watch": "^0.6.9",
     "lazypipe": "^0.2.2",
+    "merge-stream": "^0.1.5",
     "rimraf": "^2.2.8",
     "run-sequence": "^0.3.6",
     "wiredep": "^1.8.2"

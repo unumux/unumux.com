@@ -1,0 +1,5 @@
+c:\ch\unumux\bin\HTML5 Boiler Plate v4.3.dll
+c:\ch\unumux\bin\HTML5 Boiler Plate v4.3.pdb
+c:\ch\unumux\obj\Debug\unumux.csprojResolveAssemblyReference.cache
+c:\ch\unumux\obj\Debug\HTML5 Boiler Plate v4.3.dll
+c:\ch\unumux\obj\Debug\HTML5 Boiler Plate v4.3.pdb
