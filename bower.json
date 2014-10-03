@@ -28,7 +28,7 @@
     "selectivizr": "~1.0.2",
     "normalize.css": "~3.0.1",
     "vminpoly": "*",
-    "bootstrap-sass-official": "~3.2.0+1",
+    "bootstrap-sass-official": "~3.2.0",
     "waitForImages": "~1.4.2"
   },
   "overrides": {
@@ -49,5 +49,8 @@
     "waitForImages": {
       "main": "src/jquery.waitforimages.js"
     }
+  },
+  "resolutions": {
+    "angular": "~1.2.23"
   }
 }
