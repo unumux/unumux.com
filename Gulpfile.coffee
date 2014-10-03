@@ -20,7 +20,6 @@ gulp.task "browser-sync", ->
       baseDir: ['.tmp', '.']
     port: process.env.PORT || 3000
     host: '0.0.0.0'
-    open: false
 
 gulp.task "inject-sass", ->
   gulp.src('./css/app.scss')
@@ -117,3 +116,5 @@ gulp.task "default", [
   "browser-sync"
   "watch"
 ]
+
+module.exports = gulp;
