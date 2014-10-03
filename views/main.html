@@ -1,17 +1,30 @@
-<nav class="main-nav">
-	<a class="page-title" href="#">
-		<h1>UX: Enterprise User Experience</h1>
-		<logo></logo>
-	</a>
-	<ul>
-		<li class="design-process"><a href="#/design-process"><span class="title">Design Process</span></a></li>
-		<li class="the-team"><a href="#/the-team">
-			<span class="title">The Team <span>(Video)</span></span>
-			<video class="bg-video" src="video/vid.mp4" autoplay loop></video>
-		</a></li>
-		<li class="tools"><a href="#/tools"><span class="title">Tools</span></a></li>
-		<li class="partners"><a href="#/partners"><span class="title">Partners</span></a></li>
-		<li class="ux-principles"><a href="#/ux-principles"><span class="title">UX Principles</span></a></li>
-		<li class="latest-project"><a href="#/projects"><span class="title">Latest Project</span></a></li>
-	</ul>
-</nav>
+<div class="main scrollable" ng-controller="MainController as main" ng-class="{'loaded': main.ready }">
+	<nav class="main-nav">
+		<a class="page-title" href="#">
+			<h1>UX: Enterprise User Experience</h1>
+			<logo animate="main.ready"></logo>
+		</a>
+		<ul>
+			<li class="design-process"><a href="#/design-process"><span class="title">Design Process</span></a></li>
+			<li class="the-team">
+				<a href="#/the-team"><span class="title">The Team</span></a>
+				<video class="bg-video" autoplay loop>
+					<source src="video/ux-video.webm" type='video/webm'>
+					<source src="video/ux-video.mp4" type='video/mp4'>
+				</video>
+			</li>
+			<li class="tools"><a href="#/tools"><span class="title">Tools</span></a></li>
+			<li class="partners"><a href="#/partners"><span class="title">Partners</span></a></li>
+			<li class="ux-principles"><a href="#/ux-principles"><span class="title">Principles</span></a></li>
+			<li class="latest-project"><a href="#/projects"><span class="title">Latest Project</span></a></li>
+		</ul>
+	</nav>
+
+	<footer ng-show="main.ready ">
+		<div class="copyright">&copy; 2014 Unum Group. All rights reserved. </div>
+		<div class="logos">
+			<h3>Colonial Life</h3>
+			<h3>Unum</h3>
+		</div>
+	</footer>
+</div>

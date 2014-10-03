@@ -3,30 +3,53 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Website</title>
+        <title>Enterprise User Experience</title>
+
+        <script src="js/Modernizr.js"></script>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scaling=no"/> 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="images/icons/favicon.ico" />
         <!-- For MS Windows 8 pinned site icon --> 
-        <meta name="msapplication-TileImage" content="msapplication-TileImage.png" />
-        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta name="msapplication-TileImage" content="images/icons/Icon-72@2x.png" />
+        <meta name="msapplication-TileColor" content="#265b80" />
         <!-- For third-generation iPad with high-resolution Retina display: -->
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/icons/Icon-72@2x.png">
         <!-- For iPhone with high-resolution Retina display: -->
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/icons/Icon@2x.png">
         <!-- For first- and second-generation iPad: -->
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/icons/Icon-72.png">
         <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-        <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-
-        <!-- build:css css/app.min.css -->
+        <link rel="apple-touch-icon-precomposed" href="images/icons/Icon.png">
+        <link rel="apple-touch-icon" href="images/icons/Icon.png">
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Oswald:700' rel='stylesheet' type='text/css'>
+        <!-- build:css({.tmp,./}) css/app.min.css -->
+        <link rel="stylesheet" href="components/normalize.css/normalize.css" />
         <!-- bower:css -->
+        <link rel="stylesheet" href="components/angular-carousel/dist/angular-carousel.css" />
         <!-- endbower -->
 
         <link rel="stylesheet" href="css/app.css">
+        <!-- endbuild -->
+
+        <!-- build:js(./) js/ie8.min.js -->
+        <!--[if lte IE 8]>
+            <script src="components/html5shiv/dist/html5shiv.js"></script>
+            <script src="components/selectivizr/selectivizr.js"></script>
+            <script src="components/respond/dest/respond.src.js"></script>
+            <script src="js/ie8.js"></script>
+            <script src="components/vminpoly/tokenizer.js"></script>
+            <script src="components/vminpoly/parser.js"></script>
+            <script src="components/vminpoly/vminpoly.js"></script>
+        <![endif]-->
+        <!-- endbuild -->
+
+        <!-- build:js(./) js/ie9.min.js -->
+        <!--[if lte IE 9]>
+            <script src="components/vminpoly/tokenizer.js"></script>
+            <script src="components/vminpoly/parser.js"></script>
+            <script src="components/vminpoly/vminpoly.js"></script>
+        <![endif]-->
         <!-- endbuild -->
 
     </head>
@@ -34,30 +57,36 @@
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
-        
-        <!-- <ng-include src="'views/main.html'" ng-controller="MainController as main" ng-cloak></ng-include> -->
-        <ng-view class="page-animation"></ng-view>
+        <div ng-include="'views/main.html'"></div>
+        <div class="page-animation" ng-view></div>
 
         <!-- build:js(./) js/vendor.min.js -->
         <!-- bower:js -->
-        <script src="bower_components/jquery/dist/jquery.js"></script>
-        <script src="bower_components/angular/angular.js"></script>
-        <script src="bower_components/angular-animate/angular-animate.js"></script>
-        <script src="bower_components/angular-route/angular-route.js"></script>
-        <script src="bower_components/greensock/src/uncompressed/TweenMax.js"></script>
+        <script src="components/jquery/dist/jquery.js"></script>
+        <script src="components/angular/angular.js"></script>
+        <script src="components/angular-animate/angular-animate.js"></script>
+        <script src="components/angular-sanitize/angular-sanitize.js"></script>
+        <script src="components/angular-route/angular-route.js"></script>
+        <script src="components/fastclick/lib/fastclick.js"></script>
+        <script src="components/bouncefix.js/dist/bouncefix.js"></script>
+        <script src="components/angular-touch/angular-touch.js"></script>
+        <script src="components/angular-carousel/dist/angular-carousel.js"></script>
+        <script src="components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
+        <script src="components/waitForImages/src/jquery.waitforimages.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
-        <!-- build:js js/app.min.js -->
+        <!-- build:js(.tmp) js/app.min.js -->
+        <script src="/js/templates.js"></script>
         <!-- inject:js -->
-        <script src="/.tmp/js/app.js"></script>
-        <script src="/.tmp/js/animation.js"></script>
-        <script src="/.tmp/js/controllers/ProjectsController.js"></script>
-        <script src="/.tmp/js/controllers/mainCtrl.js"></script>
-        <script src="/.tmp/js/directives/logo.js"></script>
-        <script src="/.tmp/js/services/menuButtonSize.js"></script>
+        <script src="/js/app.js"></script>
+        <script src="/js/animation.js"></script>
+        <script src="/js/templates.js"></script>
+        <script src="/js/controllers/ProjectsController.js"></script>
+        <script src="/js/controllers/mainCtrl.js"></script>
+        <script src="/js/directives/logo.js"></script>
+        <script src="/js/services/menuButtonSize.js"></script>
         <!-- endinject -->
         <!-- endbuild -->
-
     </body>
 </html>

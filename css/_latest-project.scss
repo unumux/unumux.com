@@ -1,24 +1,105 @@
 #latest-project {
 	background: #fff;
-	width: 100%;
-	min-height: 100%;
-	position: fixed;
-	top: 0;
 	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	position: fixed;
 	z-index: 9999;
-	padding: 85px 130px;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+
+	font-size: 18px;
+
+	@media (max-width: $mobile - 1) {
+		font-size: 20px;
+	}
 
 
 	.close-btn {
+		@media (max-width: $mobile - 1) {
+	        background: rgba(#fff, 0.9);
+	    }		
+		&:before {
+			color: #5E5E5E;
+		}
+		
+		&:hover:before {
+			color: #D88800;
+		}
+	}
 
-		&:before, &:after {
-			background-color: #5E5E5E;
+	nav {
+		$arrow-height: 5em;
+		$arrow-width: 5em;
+		$arrow-stroke-width: 0.4em;
+		$border-color: #5E5E5E;
+
+		a {
+			position: fixed;
+			display: block;
+			height: 100px;
+			width: 100px;
+			top: 50%;
+			border-top: $arrow-height solid transparent;
+			border-bottom: $arrow-height solid transparent;
+			font-size: 1em;
+			color: transparent;
+			z-index: 9999;
+
+			&:after {
+				content: '';
+				display: block;
+				position: absolute;
+				width: 0;
+				height: 0;
+				top: 0;
+				bottom: 0;
+				margin: auto 0;
+				z-index: 9999;
+				border-top: $arrow-height - $arrow-stroke-width solid transparent;
+				border-bottom: $arrow-height - $arrow-stroke-width solid transparent;
+			}
 		}
 
-		&:hover {
-			&:before, &:after {
-				background-color: darken(#5E5E5E, 15%);
+		a:first-child {
+			left: 2vw;
+			border-right: $arrow-width solid $border-color;
+
+			&:hover {
+				border-right-color: #D88800; 
 			}
+
+			&:after {
+				right: -$arrow-width;
+				border-right: $arrow-height - $arrow-stroke-width solid #fff;
+			}
+		}
+
+		a:last-child {
+			right: 2vw;
+			border-left: $arrow-width solid $border-color;
+
+			&:hover {
+				border-left-color: #D88800; 
+			}
+
+			&:after {
+				left: -$arrow-width;
+				border-left: $arrow-height - $arrow-stroke-width solid #fff;
+			}
+		}
+	}
+
+	.project {
+		padding: 85px 130px;
+
+		@media (max-width: $tablet - 1) {
+			padding: 85px 50px;
+		}
+
+		@media (max-width: $mobile - 1) {
+			padding: 85px 15px;
 		}
 	}
 
@@ -26,10 +107,53 @@
 		width: 100%;
 		max-width: 960px;
 		margin: 0 auto;
+		text-align: center;
+		position: relative;
+		z-index: 1;
+
 
 		h2.project-title {
 			text-align: center;
 			color: #8C8C8C;
+			margin-bottom: 1em;
 		}
+
+		p {
+			padding: 2em 4.2em 0;
+			text-align: center;
+
+			@media (max-width: $tablet - 1) {
+				padding: 2em 1em 0;
+			}
+		}
+
+		.view-project {
+			text-align: center;
+			display: block;
+			margin-bottom: 2em;
+		}
+
+		ul {
+			list-style: none;
+			padding: 1.5em 0;
+		}
+
+		h3 {
+			margin: 0;
+			margin-bottom: -1em;
+		}
+
+		.content-row {
+			margin: 2em 0;
+
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+
+		.featured {
+			margin-bottom: 0;
+		}
+
 	}
 }

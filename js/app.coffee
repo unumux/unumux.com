@@ -1,19 +1,30 @@
 uxteam = angular.module 'uxteam', [
   'ngAnimate',
-  'ngRoute'
+  'ngRoute',
+  'ngSanitize',
+  'angular-carousel',
+  'templates'
 ]
 
 uxteam.config ($routeProvider) ->
   $routeProvider
-    .when '/',
-      templateUrl: 'views/main.html'
-      controller: 'MainController'
     .when '/projects',
       templateUrl: 'views/latest-project.html'
       controller: 'ProjectsController as projects'
     .when '/:partial',
       templateUrl: (params) ->
-        "/views/#{params.partial}.html"
-      controller: 'MainController'
-    .otherwise    
+        "views/#{params.partial}.html"
+
+    .otherwise
       redirectTo: '/'
+
+
+uxteam.run ->
+  # setup fastclick library
+
+  if Modernizr.touch
+    FastClick.attach(document.body)
+    bouncefix.add('scrollable')
+
+
+

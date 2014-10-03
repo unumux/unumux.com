@@ -1,134 +1,356 @@
+$border-size: .2em;
+$footer-height: 60px;
+$tile-mobile-width: 100%;
+$tile-mobile-height: 40em;
+$tile-background-color: rgba($steel-blue, 0.5);
+$tile-hover-background-color: rgba($steel-blue, 0);
+$tile-hover-title-background: rgba(255,255,255,0.85);
+
+.main {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    overflow: auto;
+
+    width: 100%;
+    height: 100%;
+    margin: auto;
+
+    -webkit-overflow-scrolling: touch;
+    @include respond-to(tablet) {
+        max-width: ($base-width / $base-height) * 100vh;
+        max-height: ($base-height / $base-width) * 100vw;
+    }
+    .no-cssvwunit & {
+        max-width: ($base-width / $base-height) * 100vh;
+        max-height: ($base-height / $base-width) * 100vw;
+    }
+    &:after {
+        position: fixed;
+        z-index: 99999;
+        top: 0;
+        left: 0;
+
+        display: block;
+
+        width: 100%;
+        height: 100%;
+
+        content: '';
+
+        background: $steel-blue;
+    }
+}
+
 nav.main-nav {
-	max-width: ($base-width / $base-height) * 100vh;
-	width: 100%;
-	max-height: ($base-height / $base-width) * 100vw;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;	
-	right: 0;
-	margin: 0 auto;
+    display: block;
 
-	&:before, &:after {
-		content: '';
-		display: block;
-		position: absolute;
-		opacity: 1;
-		z-index: 9997;
-		transition: $block-transition-duration all;
-		opacity: 1;
-		transform: scale3d(1, 1, 1);
-	}
+    @include respond-to(tablet) {
+        position: absolute;
+        top: $border-size;
+        right: $border-size;
+        bottom: $footer-height;
+        left: $border-size;
+        &:before,
+        &:after {
+            position: absolute;
+            z-index: 4;
 
-	&:before {
-		top: vOffset(791);
-		bottom: vOffset(0);
-		left: hOffset(610);
-		right: hOffset(581);
-		background: #D88800;
-		@include pos-helper(791, 581, 0, 610, 5);
-	}
+            display: block;
 
-	&:after {
-		@include pos-helper(449, 370, 428, 864, 2);
-		background: #81B245;
-	}
+            content: '';
 
-	ul {
-		list-style: none;
-		padding: 0;
+            opacity: 1;
+            border: $border-size solid $steel-blue;
+        }
+        &:before {
+            background: #d88800;
 
-		li {
-			display: block;
-			text-decoration: none;
-			color: #fff;
-			position: absolute;
-			transition: $block-transition-duration all;
-			opacity: 1;
-			transform: scale3d(1, 1, 1);
-			overflow: hidden;
-			@include menu-child(1, 134, 1031, 530, 0, url('../images/tiles/process.jpg'), 3);
-			@include menu-child(2, 0, 370, 560, 414, transparent, 6);
-			@include menu-child(3, 479, 1031, 28, 0, url('../images/tiles/tools.jpg'), 1);
-			@include menu-child(4, 449, 581, 218, 414, url('../images/tiles/partners.jpg'), 7);
-			@include menu-child(5, 0, 0, 428, 1074, url('../images/tiles/ux_principles.jpg'), 0);
-			@include menu-child(6, 581, 0, 0, 863, url('../images/tiles/latest_project.jpg'), 4);
-			
+            @include pos-helper(17%, 22%, 78%, 42%, 5);
+        }
+        &:after {
+            background: #81b245;
 
-			&:before {
-				content: '';
-				display: block;
-				width: 100%;
-				height: 100%;
-				position: absolute;
-				background-size: cover !important;
-				transition: 0.4s opacity;
-				opacity: $block-opacity;
-			}
+            @include pos-helper(15%, 14%, 44%, 59%, 2);
+        }
+        ul li,
+        &:after,
+        &:before {
+            transform: scale3d($block-scale-start, $block-scale-start, $block-scale-start);
 
-			a {
-				color: #fff;
-				text-transform: uppercase;
-				font-size: 3vmin;
-				display: table-cell;
-				vertical-align: middle;
-				text-align: center;
-				position: absolute;
-				width: 100%;
-				height: 100%;
+            opacity: 0;
+        }
+    }
+    ul {
+        margin: 0;
+        padding: 0;
 
-				&:before {
-					content: '';
-					width: 0;
-					height: 100%;
-					display: inline-block;
-					vertical-align: middle;
-				}
-			}
+        list-style: none;
+        li {
+            position: relative;
 
-			span.title {
-				display: inline-block;
-				vertical-align: middle;
-				width: 95%;
-			}
+            display: block;
+            overflow: hidden;
 
-			.bg-video {
-				position: absolute;
-				top: 0;
-				left: 0;
-				height: 100%;
-				z-index: -1;
-				opacity: $block-opacity;
-				transition: 0.4s opacity;
-			}
+            width: $tile-mobile-width;
+            height: $tile-mobile-height;
 
-			&:hover:before, &:hover .bg-video {
-				opacity: 1;
-			}
+            transform: scale3d($block-scale-start, $block-scale-start, $block-scale-start);
+            text-decoration: none;
 
-			.content {
-				opacity: 0;
-				visibility: hidden;
-			}
+            opacity: 0;
+            color: #fff;
+            border: $border-size solid $steel-blue;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-size: cover;
 
-		}
-	}
+            @include menu-child('.design-process', $tile-mobile-width, $tile-mobile-height, auto, auto,    url('../images/tiles/process.jpg'), 3, 50%, 0);
+            @include menu-child('.the-team', $tile-mobile-width, $tile-mobile-height, auto, auto,  url('../images/tiles/the_team.jpg'), 6);
+            @include menu-child('.tools', $tile-mobile-width, $tile-mobile-height, auto, auto,    url('../images/tiles/tools.jpg'), 1, 50%, 20%);
+            @include menu-child('.partners', $tile-mobile-width, $tile-mobile-height, auto, auto,  url('../images/tiles/partners.jpg'), 7);
+            @include menu-child('.ux-principles', $tile-mobile-width, $tile-mobile-height, auto, auto,  url('../images/tiles/ux_principles.jpg'), 0);
+            @include menu-child('.latest-project', $tile-mobile-width, $tile-mobile-height, auto, auto,  url('../images/tiles/latest_project.jpg'), 4, 50%, 0);
+            @include respond-to(tablet) {
+                position: absolute;
+
+                @include menu-child('.design-process', 28%, 34%, 13%, 0,    url('../images/tiles/process.jpg'), 3);
+                @include menu-child('.the-team', 46%, 44%, 0,   28%,  url('../images/tiles/the_team.jpg'), 6);
+                @include menu-child('.tools', 28%, 49%, 47%, 0,    url('../images/tiles/tools.jpg'), 1);
+                @include menu-child('.partners', 31%, 34%, 44%, 28%,  url('../images/tiles/partners.jpg'), 7);
+                @include menu-child('.ux-principles', 26%, 58%, 0,   74%,  url('../images/tiles/ux_principles.jpg'), 0);
+                @include menu-child('.latest-project', 41%, 42%, 58%, 59%,  url('../images/tiles/latest_project.jpg'), 4);
+            }
+
+            span.title {
+                position: relative;
+                z-index: 3;
+
+                display: inline-block;
+
+                width: 100%;
+                padding: 0.1em 0.6em;
+
+                vertical-align: bottom;
+                background: rgba(255,255,255,0);
+                transition: 0.3s background 0.1s, 0.3s color;
+            }
+
+            a {
+                font-family: 'oswaldbold';
+                font-size: 6vw;
+                font-weight: normal;
+
+                position: absolute;
+                z-index: 5;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                display: block;
+                transition: .2s color;
+                text-transform: uppercase;
+                background: $steel-blue;
+                background: $tile-background-color;
+                transition: .4s background-color;
+                color: #fff;
+
+                @include respond-to(tablet) {
+                    font-size: 3.5vmin;
+                }
+                .no-cssvminunit & {
+                    font-size: 3.5vmin;
+                }
+                .no-rgba & {
+                    background: transparent url('../images/fallback/ie-fix.png');
+                    zoom: 1;
+                   /* For IE 5.5 - 7*/
+                    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{ie-hex-str($tile-background-color)}, endColorstr=#{ie-hex-str($tile-background-color)});
+                    /* For IE 8*/
+                    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#{ie-hex-str($tile-background-color)}, endColorstr=#{ie-hex-str($tile-background-color)})"; 
+                }
+                &:before {
+                    display: inline-block;
+
+                    width: 0;
+                    height: 100%;
+
+                    content: '';
+                    vertical-align: bottom;
+                }
+                .no-touch &:hover {
+                    background: $tile-hover-background-color;
+
+                    span.title {
+                        background: $tile-hover-title-background;
+                        color: $steel-blue;
+                    }
+                }
+                .no-touch.no-rgba &:hover {
+                    /* For IE 5.5 - 7*/
+                    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{ie-hex-str($tile-hover-background-color)}, endColorstr=#{ie-hex-str($tile-hover-background-color)});
+                    /* For IE 8*/
+                    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#{ie-hex-str($tile-hover-background-color)}, endColorstr=#{ie-hex-str($tile-hover-background-color)})"; 
+
+                    span.title {
+                        /* For IE 5.5 - 7*/
+                        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{ie-hex-str($tile-hover-title-background)}, endColorstr=#{ie-hex-str($tile-hover-title-background)});
+                        /* For IE 8*/
+                        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#{ie-hex-str($tile-hover-title-background)}, endColorstr=#{ie-hex-str($tile-hover-title-background)})"; 
+                    }
+                }
+            }
+            .bg-video {
+                position: absolute;
+                z-index: 0;
+                top: 0;
+                left: 0;
+
+                display: none;
+
+                width: auto;
+                min-width: 100%;
+                height: 100%;
+                min-height: 100%;
+
+                transition: .4s opacity;
+
+                @include respond-to(tablet) {
+                    display: block;
+                }
+                .no-video & {
+                    display: none;
+                }
+            }
+            &.the-team {
+                .no-video & {
+                    background: url('../images/tiles/the_team.jpg');
+                }
+            }
+        }
+    }
 }
 
-.ng-enter nav.main-nav {
-	ul li, &:before, &:after {
-		transform: scale3d($block-scale-start, $block-scale-start, $block-scale-start);
-		opacity: 0;
-	}
+@keyframes popIn {
+    0% {
+        transform: scale3d($block-scale-start, $block-scale-start, $block-scale-start); 
+
+        opacity: 0;
+    }
+    100% {
+        transform: scale3d(1, 1, 1); 
+
+        opacity: 1;
+    }
 }
 
-@keyframes popin {
-	0% {
-		opacity: 0;
-		transform: scale3d($block-scale-start, $block-scale-start, $block-scale-start);
-	}
-	100% {
-		opacity: 1;
-		transform: scale3d(1, 1, 1);
-	}
+.main.loaded {
+    &:after {
+        display: none;
+    }
+    nav.main-nav {
+        ul li,
+        &:before,
+        &:after {
+            transform: scale3d(1, 1, 1);
+
+            opacity: 1;
+
+            @include respond-to(tablet) {
+                animation-name: popIn;
+                animation-duration: $block-transition-duration;
+
+                animation-fill-mode: backwards;
+            }
+        }
+    }
+}
+
+.load-ms-behavior {
+    -ms-behavior: url(/backgroundsize.min.htc);
+}
+
+footer {
+    line-height: $footer-height;
+
+    overflow: hidden;
+
+    width: 100%;
+    height: $footer-height;
+
+    color: #fff;
+
+    @include respond-to(tablet) {
+        position: absolute;
+        bottom: 0;
+    }
+    .copyright {
+        font-family: 'source_sans_proregular';
+        font-size: 13px;
+
+        width: 100%;
+
+        text-align: center;
+
+        @include respond-to(tablet) {
+            line-height: $footer-height;
+
+            float: left;
+
+            width: 50%;
+            padding-left: 3%;
+
+            text-align: left;
+        }
+    }
+    .logos {
+        width: 100%;
+        height: 100%;
+
+        text-align: center;
+
+        @include respond-to(tablet) {
+            float: right;
+
+            width: 50%;
+            padding-right: 3%;
+
+            text-align: right;
+        }
+        h3 {
+            font-size: 0;
+            line-height: $footer-height;
+
+            display: inline-block;
+
+            height: 100%;
+            margin: 0;
+            margin-right: 5%;
+            padding: 0;
+
+            color: transparent;
+            &:first-child {
+                width: 25%;
+                height: 100%;
+
+                background: url('../images/coloniallife_logo.svg') no-repeat 50% 50%;
+                background-size: contain;
+
+                -ms-behavior: url(/backgroundsize.min.htc);
+            }
+            &:last-child {
+                width: 21%;
+                height: 100%;
+                margin-right: 0;
+
+                background: url('../images/unum_logo.svg') no-repeat 50% 50%;
+                background-size: contain;
+
+                -ms-behavior: url(/backgroundsize.min.htc);
+            }
+        }
+    }
 }
