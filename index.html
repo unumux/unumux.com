@@ -7,10 +7,10 @@
 
         <script src="js/Modernizr.js"></script>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scaling=no"/> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scaling=no"/>
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <link rel="icon" type="image/x-icon" href="images/icons/favicon.ico" />
-        <!-- For MS Windows 8 pinned site icon --> 
+        <!-- For MS Windows 8 pinned site icon -->
         <meta name="msapplication-TileImage" content="images/icons/Icon-72@2x.png" />
         <meta name="msapplication-TileColor" content="#265b80" />
         <!-- For third-generation iPad with high-resolution Retina display: -->
@@ -24,10 +24,9 @@
         <link rel="apple-touch-icon" href="images/icons/Icon.png">
         <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Oswald:700' rel='stylesheet' type='text/css'>
         <!-- build:css({.tmp,./}) css/app.min.css -->
-        <link rel="stylesheet" href="components/normalize.css/normalize.css" />
+        <link rel="stylesheet" href="bower_components/normalize.css/normalize.css" />
         <!-- bower:css -->
         <link rel="stylesheet" href="bower_components/angular-carousel/dist/angular-carousel.css" />
-        <link rel="stylesheet" href="bower_components/normalize.css/normalize.css" />
         <!-- endbower -->
 
         <link rel="stylesheet" href="css/app.css">
@@ -35,21 +34,21 @@
 
         <!-- build:js(./) js/ie8.min.js -->
         <!--[if lte IE 8]>
-            <script src="components/html5shiv/dist/html5shiv.js"></script>
-            <script src="components/selectivizr/selectivizr.js"></script>
-            <script src="components/respond/dest/respond.src.js"></script>
+            <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+            <script src="bower_components/selectivizr/selectivizr.js"></script>
+            <script src="bower_components/respond/dest/respond.src.js"></script>
             <script src="js/ie8.js"></script>
-            <script src="components/vminpoly/tokenizer.js"></script>
-            <script src="components/vminpoly/parser.js"></script>
-            <script src="components/vminpoly/vminpoly.js"></script>
+            <script src="bower_components/vminpoly/tokenizer.js"></script>
+            <script src="bower_components/vminpoly/parser.js"></script>
+            <script src="bower_components/vminpoly/vminpoly.js"></script>
         <![endif]-->
         <!-- endbuild -->
 
         <!-- build:js(./) js/ie9.min.js -->
         <!--[if lte IE 9]>
-            <script src="components/vminpoly/tokenizer.js"></script>
-            <script src="components/vminpoly/parser.js"></script>
-            <script src="components/vminpoly/vminpoly.js"></script>
+            <script src="bower_components/vminpoly/tokenizer.js"></script>
+            <script src="bower_components/vminpoly/parser.js"></script>
+            <script src="bower_components/vminpoly/vminpoly.js"></script>
         <![endif]-->
         <!-- endbuild -->
 
@@ -72,10 +71,6 @@
         <script src="bower_components/bouncefix.js/dist/bouncefix.js"></script>
         <script src="bower_components/angular-touch/angular-touch.js"></script>
         <script src="bower_components/angular-carousel/dist/angular-carousel.js"></script>
-        <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
-        <script src="bower_components/respond/dest/respond.src.js"></script>
-        <script src="bower_components/selectivizr/selectivizr.js"></script>
-        <script src="bower_components/vminpoly/vminpoly.js"></script>
         <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
         <script src="bower_components/waitForImages/src/jquery.waitforimages.js"></script>
         <!-- endbower -->
@@ -89,8 +84,8 @@
         <script src="/js/templates.js"></script>
         <script src="/js/controllers/ProjectsController.js"></script>
         <script src="/js/controllers/mainCtrl.js"></script>
-        <script src="/js/services/menuButtonSize.js"></script>
         <script src="/js/directives/logo.js"></script>
+        <script src="/js/services/menuButtonSize.js"></script>
         <!-- endinject -->
         <!-- endbuild -->
     </body>

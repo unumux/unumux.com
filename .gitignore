@@ -4,3 +4,4 @@ node_modules/
 art/
 build/
 bower_components/
+credentials.json
