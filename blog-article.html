@@ -12,20 +12,32 @@
     <div class="wrapper">
 
         <!--HEADER NAV-->
-        <div class="logo">
-            <img class="logo__image" src="../../../images/uxenterprise.svg" alt="User Experience logo"/>
-        </div>        
         <header class="header" role="banner">
-            <nav class="nav" role="navigation">
+            <div class="branding">
+                <a class="logo-link">
+                    <img class="logo-link__image" src="../../../images/uxenterprise.svg" alt="User Experience logo"/>
+                </a>
+            </div>
+            <nav class="nav--desktop" role="navigation">
                 <ul class="nav__list">
                     <h1 class="nav__heading">Primary navigation</h1>
-                    <li class="nav__item"><a href="#" class="nav__link">About us</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link--active">Journal</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">Team</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">UI Resources</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link--desktop">about us</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link--desktop">journal</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link--desktop">team</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link--desktop">ui resources</a></li>
                 </ul>
             </nav>
         </header>
+        <!--END HEADER-->
+        <nav class="nav" role="navigation">
+            <ul class="nav__list">
+                <h1 class="nav__heading">Primary navigation</h1>
+                <li class="nav__item"><a href="#" class="nav__link">about us</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">journal</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">team</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">ui resources</a></li>
+            </ul>
+        </nav>
         <!--END HEADER-->
 
         <!--MAIN ARTICLE CONTENT-->
