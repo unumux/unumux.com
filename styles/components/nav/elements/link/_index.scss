@@ -1,0 +1,10 @@
+@import 'base';
+
+&__link {
+    @include base;
+
+    &--active {
+        @include base;
+        color: $golden-yellow;
+    }
+}

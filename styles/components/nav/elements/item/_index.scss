@@ -1,0 +1,9 @@
+@import 'base';
+
+&__item {
+    @include base;
+}
+
+&__item + &__item {
+    padding-left: 20px
+}

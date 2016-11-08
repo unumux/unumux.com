@@ -1,0 +1,10 @@
+@import 'base';
+
+.nav {
+    @include base();
+
+    @import 'elements/heading/index';
+    @import 'elements/item/index';
+    @import 'elements/link/index';
+    @import 'elements/list/index';
+}

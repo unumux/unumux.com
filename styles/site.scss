@@ -1,0 +1,49 @@
+// articles page and header/footer
+@import 'colonial-branding/lite';
+@import './components/mixins';
+@import './components/variables';
+@import './components/logo/index';
+@import './components/header/index';
+@import './components/nav/index';
+@import './components/carousel/index';
+@import './components/filter/index';
+@import './components/search/index';
+@import './components/article-list/index';
+@import './components/branding/blah';
+@import './components/home/blah';
+@import './components/featured-article/blah';
+@import './components/footer/index';
+
+// individual article page
+@import './components/blog-article-page/_article-content';
+@import './components/blog-article-page/_article-bio';
+
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    color: #111;
+    height: 100%;
+    // font-family: $headings-font-family-alt;
+}
+
+.wrapper {
+    height: 100%;
+    background-color: $deep-navy-blue;
+
+}
+
+.container { // home.html
+    width: 100%;
+    padding: 0;
+    background-image: url('../../../images/rectangle-1@2x.png');
+    background-repeat: no-repeat;
+    height: 858px;
+    background-position: center;
+}

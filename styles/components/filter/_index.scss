@@ -1,0 +1,8 @@
+@import 'base';
+
+.filter {
+    @include base();
+    @import 'heading';
+    @import 'item';
+    @import 'categories';
+}

@@ -1,0 +1,9 @@
+&__item {
+    display: inline-block;
+    padding-left: 10px;
+    color: $white;
+
+    @media screen and (min-width: 500px) {
+        padding-left: 20px;
+    }
+}

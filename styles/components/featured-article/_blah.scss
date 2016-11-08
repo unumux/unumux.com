@@ -1,0 +1,113 @@
+.featured-article {
+    width: 100%;
+    box-shadow: inset 0 6px 15px 0 rgba(0, 0, 0, 0.22);
+
+    background-color: $deep-navy-blue;
+
+    @include full-width(20px, 20px);
+
+    @media screen and (min-width: 768px) {
+        @include full-width(100px, 100px);
+    }
+
+    @media screen and (min-width: 1700px) {
+        @include full-width(500px, 500px);
+    }
+    
+    &__heading {
+        margin-top: 0;
+        padding-top: 40px;
+        color: $white;
+        font-size: 24px;
+        font-variant: small-caps;
+        // &:after {
+        //     content: '';
+        //     height: 1px;
+        //     width: 50%;
+        //     background-color: #f4f4f4;
+        //     opacity: 0.15;
+        //     display: inline-block;
+        //     margin-bottom: 5px;
+        //     margin-left: 10px;
+
+        //     @media screen and (min-width: 1000px) {
+        //         width: 80%;
+        //     }
+        // }
+    }
+
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        flex: 1 1 100%;
+        padding: 10px 10px 10px 0;
+        max-width: 100%;
+
+        @media screen and (min-width: 600px) {
+            flex: 1 1 50%;
+            max-width: 50%;
+        }
+
+        @media screen and (min-width: 900px) {
+            flex: 1 1 33.3333%;
+            max-width: 33.3333%;
+        }
+    }
+
+    &__item + &__item {
+        @media screen and (min-width: 600px) {
+            padding-left: 20px;
+        }
+    }
+
+    &__title {
+        color: $white;
+        font-weight: bold;
+        font-size: 24px;
+        margin-top: 0;
+    }
+
+    &__date {
+        color: $golden-yellow;
+    }
+
+    &__continue {
+        margin-top: 10px;
+        color: $ocean;
+        font-size: 15px;
+        font-variant: small-caps;
+    }
+
+    &__preview {
+        margin-top: 10px;
+        color: $white;
+        font-family: $headings-font-family-alt;
+        font-size: 18px;
+    }
+
+    &__actions {
+        padding: 40px;
+    }
+
+    &__more {
+        border: none;
+        background-color: $white;
+        width: 183px;
+        height: 33px;
+        border-radius: 100px;
+        box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+        font-size: 18px;
+        font-weight: 600;
+        color: #1f3340;
+        margin: 0 auto;
+        display: block;
+        background-image: url('../../../images/combined-shape.svg');
+        background-repeat: no-repeat;
+        background-position: top 50% right 5%;
+        text-align: left;
+        padding-left: 15px;
+    }
+}

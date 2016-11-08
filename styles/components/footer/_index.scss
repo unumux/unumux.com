@@ -1,0 +1,6 @@
+@import 'base';
+
+.footer {
+    @include base();
+    @import './elements/index';
+}

@@ -1,0 +1,9 @@
+@mixin base() {
+    color: $white;
+    background-color: $deep-navy-blue;
+    @include full-width(20px, 20px);
+
+    @media screen and (min-width: 768px) {
+        @include full-width(100px, 100px);
+    }
+}

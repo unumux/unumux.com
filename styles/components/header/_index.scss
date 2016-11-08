@@ -1,0 +1,11 @@
+@import 'base';
+
+.header {
+    @include base;
+
+    &--alt {
+        @include base;
+
+        text-align: center;
+    }
+}

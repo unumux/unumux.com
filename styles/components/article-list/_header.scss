@@ -1,0 +1,13 @@
+&__header {
+    @include full-width(20px, 20px);
+    font-size: 28px;
+    color: $white;
+    font-family: $headings-font-family-alt;
+    margin-bottom: 20px;
+    background-color: $deep-navy-blue;
+
+    @media screen and (min-width: 768px) {
+        @include full-width(100px, 100px);
+        padding-bottom: 20px;
+    }
+}

@@ -1,0 +1,7 @@
+@import 'base';
+
+.logo {
+    @include base;
+
+    @import 'elements/image/index';
+}
