@@ -1,4 +1,4 @@
-.featured-article {
+.summary {
     width: 100%;
     box-shadow: inset 0 6px 15px 0 rgba(0, 0, 0, 0.22);
 
@@ -13,7 +13,7 @@
     @media screen and (min-width: 1700px) {
         @include full-width(500px, 500px);
     }
-    
+
     &__heading {
         margin-top: 0;
         padding-top: 40px;
@@ -37,35 +37,57 @@
              }
           }
         }
-
     }
 
-    &__container {
-        display: flex;
-        flex-wrap: wrap;
+    &__actions {
+        padding: 40px;
+    }
+    
+    &__more {
+        border: none;
+        background-color: $white;
+        width: 183px;
+        height: 33px;
+        border-radius: 100px;
+        box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+        font-size: 18px;
+        font-weight: 600;
+        color: #1f3340;
+        margin: 0 auto;
+        display: block;
+        background-image: url('../../../images/combined-shape.svg');
+        background-repeat: no-repeat;
+        background-position: top 50% right 5%;
+        padding-left: 15px;
+        padding-top: 3px;
+    }
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.article {
+    flex: 1 1 100%;
+    padding: 10px 10px 10px 0;
+    max-width: 100%;
+
+    @media screen and (min-width: 600px) {
+        flex: 1 1 50%;
+        max-width: 50%;
     }
 
-    &__item {
-        flex: 1 1 100%;
-        padding: 10px 10px 10px 0;
-        max-width: 100%;
-
-        @media screen and (min-width: 600px) {
-            flex: 1 1 50%;
-            max-width: 50%;
-        }
-
-        @media screen and (min-width: 900px) {
-            flex: 1 1 33.3333%;
-            max-width: 33.3333%;
-        }
+    @media screen and (min-width: 900px) {
+        flex: 1 1 33.3333%;
+        max-width: 33.3333%;
     }
 
-    &__item + &__item {
-        @media screen and (min-width: 600px) {
-            padding-left: 20px;
-        }
-    }
+    // @media screen and (min-width: 1650px) {
+        // include this only in the longer lists of articles, --extended or something 
+    //     flex: 1 1 25%;
+    //     max-width: 25%;
+    // }
 
     &__title {
         color: $white;
@@ -92,26 +114,22 @@
         font-size: 18px;
     }
 
-    &__actions {
-        padding: 40px;
-    }
-
-    &__more {
-        border: none;
-        background-color: $white;
-        width: 183px;
-        height: 33px;
-        border-radius: 100px;
-        box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.5);
-        font-size: 18px;
-        font-weight: 600;
-        color: #1f3340;
-        margin: 0 auto;
-        display: block;
-        background-image: url('../../../images/combined-shape.svg');
-        background-repeat: no-repeat;
-        background-position: top 50% right 5%;
-        text-align: left;
-        padding-left: 15px;
-    }
+    // &__more {
+    //     border: none;
+    //     background-color: $white;
+    //     width: 183px;
+    //     height: 33px;
+    //     border-radius: 100px;
+    //     box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+    //     font-size: 18px;
+    //     font-weight: 600;
+    //     color: #1f3340;
+    //     margin: 0 auto;
+    //     display: block;
+    //     background-image: url('../../../images/combined-shape.svg');
+    //     background-repeat: no-repeat;
+    //     background-position: top 50% right 5%;
+    //     text-align: left;
+    //     padding-left: 15px;
+    // }
 }

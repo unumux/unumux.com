@@ -10,9 +10,9 @@
 @import './components/article-list/index';
 @import './components/branding/blah';
 @import './components/logo-link/blah';
-@import './components/home/blah';
+@import './components/banner/index';
 @import './components/featured-article/blah';
-@import './components/footer/index';
+@import './components/page-footer/index';
 
 // individual article page
 @import './components/blog-article-page/_article-content';
@@ -33,6 +33,7 @@ body {
     background-image: url('../../../images/rectangle-1@2x.png');
     background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
     // position: relative;
     // margin-top: 200px;
 }
