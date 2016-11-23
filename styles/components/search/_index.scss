@@ -2,5 +2,5 @@
 
 .search {
     @include base();
-    @import 'input';
+    @import 'elements/input/index';
 }

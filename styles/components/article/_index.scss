@@ -1,0 +1,18 @@
+@import 'base';
+
+.article {
+    @include base;
+
+    &--extend {
+        @include base;
+        @media screen and (min-width: 1650px) {
+            flex: 1 1 25%;
+            max-width: 25%;
+      }
+    }
+
+    @import 'elements/continue/index';
+    @import 'elements/date/index';
+    @import 'elements/preview/index';
+    @import 'elements/title/index';
+}

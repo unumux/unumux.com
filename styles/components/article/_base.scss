@@ -1,0 +1,21 @@
+@mixin base {
+    flex: 1 1 100%;
+    padding: 10px 10px 10px 0;
+    max-width: 100%;
+
+    @media screen and (min-width: 600px) {
+        flex: 1 1 50%;
+        max-width: 50%;
+    }
+
+    @media screen and (min-width: 900px) {
+        flex: 1 1 33.3333%;
+        max-width: 33.3333%;
+    }
+}
+
+    // @media screen and (min-width: 1650px) {
+        // include this only in the longer lists of articles, --extended or something 
+    //     flex: 1 1 25%;
+    //     max-width: 25%;
+    // }

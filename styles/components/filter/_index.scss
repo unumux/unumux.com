@@ -1,8 +1,11 @@
 @import 'base';
 
-.filter {
-    @include base();
-    @import 'heading';
-    @import 'item';
-    @import 'categories';
+.search { // changed to search to see lines -- will refactor 
+    @include base;
+    @import 'elements/heading/index';
+    @import 'elements/item/index';
+    @import 'elements/arch/index';
+    @import 'elements/design/index';
+    @import 'elements/dev/index';
+    @import 'elements/motion/index';
 }

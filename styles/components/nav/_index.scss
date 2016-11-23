@@ -7,19 +7,4 @@
     @import 'elements/item/index';
     @import 'elements/link/index';
     @import 'elements/list/index';
-
-    &--desktop {
-        @include base;
-        display: none;
-        text-align: right;
-
-        @media screen and (min-width: 768px) {
-            display: inline-block;
-            flex: 0 1 auto;
-        }
-    }
-
-    @media screen and (min-width: 768px) {
-        display: none;
-    }
 }

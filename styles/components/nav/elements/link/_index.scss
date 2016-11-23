@@ -5,13 +5,6 @@
 
     &--active {
         @include base;
-        color: $golden-yellow;
-    }
-
-    &--desktop {
-        @include base;
-        color: #333;
-        font-size: 22px;
-        
+        color: $accent-blue;
     }
 }

@@ -1,4 +1,3 @@
-// articles page and header/footer
 @import 'colonial-branding/lite';
 @import './components/mixins';
 @import './components/variables';
@@ -7,16 +6,16 @@
 @import './components/carousel/index';
 @import './components/filter/index';
 @import './components/search/index';
-@import './components/article-list/index';
-@import './components/branding/blah';
-@import './components/logo-link/blah';
+@import './components/search/new';
+@import './components/branding/index';
+@import './components/logo-link/index';
 @import './components/banner/index';
-@import './components/featured-article/blah';
+@import './components/summary/index';
+@import './components/grid/index';
+@import './components/article/index';
 @import './components/page-footer/index';
 
-// individual article page
-@import './components/blog-article-page/_article-content';
-@import './components/blog-article-page/_article-bio';
+@import './components/article-container/index';
 
 
 * {
@@ -34,21 +33,11 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    // position: relative;
-    // margin-top: 200px;
+    font-family: $font-family-main;
 }
 
 .wrapper {
     height: 100%;
     background-color: $deep-navy-blue;
-
+    width: 100%;
 }
-
-// .container { // home.html
-//     width: 100%;
-//     padding: 0;
-//     background-image: url('../../../images/rectangle-1@2x.png');
-//     background-repeat: no-repeat;
-//     height: 858px;
-//     background-position: center;
-// }

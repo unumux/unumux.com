@@ -4,7 +4,7 @@
     width: 33px;
     border: 1px solid $color;
     transition: width 1s;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 @mixin visually-hidden() {
@@ -14,4 +14,11 @@
     width: 1px;
     height: 1px;
     overflow: hidden;
+}
+
+@mixin full-width($padding-right: 0px, $padding-left: 0px) {
+  margin: 0 calc(0px - (100vw - 100%) / 2);
+
+  padding-left: calc((100vw - 100%) / 2 + #{$padding-left});
+  padding-right: calc((100vw - 100%) / 2 + #{$padding-right});
 }

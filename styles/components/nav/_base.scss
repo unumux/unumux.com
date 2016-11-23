@@ -1,10 +1,18 @@
 @mixin base() {
+    background-color: $deep-navy-blue;
+    border-bottom: solid 1px $white;
+    position: fixed; // refactor, only header should be fixed and you wont have to unposition the nav
+    right: 0;
+    left: 0;
     text-align: center;
     padding: 10px 20px;
-    border-bottom: solid 1px $white;
-    background-color: $deep-navy-blue;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-    // position: fixed;
-    // width: 100%;
-    // margin-bottom: 100px;
+
+    @media screen and (min-width: 768px) {
+        background-color: #fff;
+        position: static;
+        border-bottom: none;
+        text-align: left;
+        box-shadow: none;
+    }
 }

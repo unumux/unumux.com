@@ -3,12 +3,13 @@
     color: white;
     background-color: $white;
     padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
 
     @media screen and (min-width: 768px) {
         @include full-width(100px, 100px);
         display: flex;
-        // position: fixed;
-        // width: 100%;
-        // top: 0;
     }
 }

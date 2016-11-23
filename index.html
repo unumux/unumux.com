@@ -16,29 +16,18 @@
                     <img class="logo-link__image" src="../../../images/uxenterprise.svg" alt="User Experience logo"/>
                 </a>
             </div>
-            <nav class="nav--desktop" role="navigation">
+            <nav class="nav" role="navigation">
                 <ul class="nav__list">
                     <h1 class="nav__heading">Primary navigation</h1>
-                    <li class="nav__item"><a href="#" class="nav__link--desktop">about us</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link--desktop">journal</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link--desktop">team</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link--desktop">ui resources</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">about us</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link--active">journal</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">team</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">ui resources</a></li>
                 </ul>
             </nav>
         </header>
-        <!--END HEADER-->
-        <nav class="nav" role="navigation">
-            <ul class="nav__list">
-                <h1 class="nav__heading">Primary navigation</h1>
-                <li class="nav__item"><a href="#" class="nav__link">about us</a></li>
-                <li class="nav__item"><a href="#" class="nav__link">journal</a></li>
-                <li class="nav__item"><a href="#" class="nav__link">team</a></li>
-                <li class="nav__item"><a href="#" class="nav__link">ui resources</a></li>
-            </ul>
-        </nav>
-        <!--END HEADER-->
 
-        <!--BANNER ARTICLE-->
+        <!--BANNER ARTICLE rename classes to banner-->
         <section class="carousel" id="test">
             <h1 class="carousel__heading">article carousel</h1>
             <div class="carousel__content">
@@ -52,122 +41,113 @@
         </section>
         <!--END BANNER ARTICLE-->
 
-        <!--FILTER-->
-        <ul class="filter">
-            <li class="filter__heading filter__options">filter by:</li>
-            <li class="filter__item filter__all">all</li>
-            <li class="filter__item filter__design">design</li>
-            <li class="filter__item filter__arch">information architecture</li>
-            <li class="filter__item filter__dev">front end development</li>
-            <li class="filter__item filter__motion">motion</li>
-        </ul>
-        <!--END FILTER-->
-
-    <!-- BEGIN SEARCH -->
+        <!--FILTER change to search component, include search-->
         <section class="search">
-            <input type="search" class="search__input"/>
+            <ul class="search__group">
+                <li class="search__item">filter by:</li>
+                <li class="search__item search__all">all</li>
+                <li class="search__item search__design">design</li>
+                <li class="search__item search__arch">information architecture</li>
+                <li class="search__item search__dev">front end development</li>
+                <li class="search__item search__motion">motion</li>
+                <li class="search__item"><input type="search" class="search__input"/></li>
+            </ul>
         </section>
-        <!-- END SEARCH -->
             
 
         <!--MAIN ARTICLES CONTENT-->
-        <section class="article-list">
-            <article class="article-list__item">
-                <p class="article-list__date">June 2</p>
-                <h1 class="article-list__title filter__arch">Key Perfomance Indicators</h1>
-                <div class="article-list__preview">
-                    Catnipsum dolor sit amet boots cheshire twitchy ears ack-ack sleep on the sofa catnip thai. Gizmo tonkinese mreeewww sox oliver. Catnip feed me persian rawwww cat got your tounge.
-                </div>
-                <a href="#" class="article-list__continue">continue reading</a>
-            </article>
+        <section class="summary">
+            <h1 class="summary__heading--hidden">articles</h1>
+            <div class="grid">
+                <article class="article">
+                    <p class="article__date">June 2</p>
+                    <h1 class="article__title search__arch">Organizing User Feedback</h1>
+                    <div class="article__preview">
+                        Leave dead animals as gifts shake treat bag. Attack feet attack feet, burrow under covers sun bathe so use lap as chair. Play time hate dog so leave hair everywhere. Chew foot stand in front of the computer screen missing until dinner time so missing until dinner time.
+                    </div>
+                    <a href="#" class="article__continue">continue reading</a>
+                </article>
 
-            <article class="article-list__item">
-                <p class="article-list__date">June 2</p>
-                <h1 class="article-list__title filter__design">The ROI of Information Architecture</h1>
-                <div class="article-list__preview">
-                    Chase mice mark territory or intently stare at the same spot. Give attitude hunt anything that moves so inspect anything brought into the house climb leg. Give attitude nap all day. Missing until dinner time run in circles yet rub face on everything yet climb leg make muffins or inspect anything brought into the house. Nap all day flop over burrow under covers. All of a sudden go crazy lick butt. Sun bathe. 
-                </div>
-                <a href="#" class="article-list__continue">continue reading</a>
-            </article>
+                <article class="article">
+                    <p class="article__date">June 2</p>
+                    <h1 class="article__title search__arch">Wireframing Do's and Dont's: A General Guide</h1>
+                    <div class="article__preview">
+                        ur pillow or hopped up on goofballs. Burrow under covers. Swat at dog sweet beast give attitude find something else more interesting leave hair everywhere. Destroy couch run in circles. Claw drapes leave hair everywhere swat at dog climb leg why must they do that.
+                    </div>
+                    <a href="#" class="article__continue">continue reading</a>
+                </article>
 
-            <article class="article-list__item">
-                <p class="article-list__date">June 2</p>
-                <h1 class="article-list__title filter__arch">The Process of a UX Designer</h1>
-                <div class="article-list__preview">
-                    Sweet beast sun bathe or chase mice rub face on everything or leave dead animals as gifts for mark territory play time. Find something else more interesting give attitude. Throwup on your pillow need to chase tail mark territory, but flop over for chase imaginary bugs or flop over. Stretch destroy couch leave dead animals as gifts. Flop over hopped up on goofballs.
-                </div>
-                <a href="#" class="article-list__continue">continue reading</a>
-            </article>
+                <article class="article">
+                    <p class="article__date">June 2</p>
+                    <h1 class="article__title search__dev">Key Perfomance Indicators</h1>
+                    <div class="article__preview">
+                        All of a sudden go crazy lick butt. Sun bathe. Sweet beast sun bathe or chase mice rub face on everything or leave dead animals as gifts for mark territory play time. Find something else more interesting give attitude. Throwup on your pillow need to chase tail mark territory, but flop over for chase imaginary bugs or flop over. Stretch destroy couch leave dead animals as gifts.
+                    </div>
+                    <a href="#" class="article__continue">continue reading</a>
+                </article>
 
-            <article class="article-list__item">
-                <p class="article-list__date">June 2</p>
-                <h1 class="article-list__title filter__arch">Above or Below the Fold: The Great Debate!</h1>
-                <div class="article-list__preview">
-                    Burrow under covers leave hair everywhere stare at ceiling or stretch chew foot rub face on everything use lap as chair. Shake treat bag. Hunt anything that moves swat at dog but leave dead animals as gifts need to chase tail chew iPad power cord and lick butt.
-                </div>
-                <a href="#" class="article-list__continue">continue reading</a>
-            </article>
+                <article class="article">
+                    <p class="article__date">June 2</p>
+                    <h1 class="article__title search__dev">Key Perfomance Indicators</h1>
+                    <div class="article__preview">
+                        All of a sudden go crazy lick butt. Sun bathe. Sweet beast sun bathe or chase mice rub face on everything or leave dead animals as gifts for mark territory play time. Find something else more interesting give attitude. Throwup on your pillow need to chase tail mark territory, but flop over for chase imaginary bugs or flop over. Stretch destroy couch leave dead animals as gifts.
+                    </div>
+                    <a href="#" class="article__continue">continue reading</a>
+                </article>
 
-            <article class="article-list__item">
-                <p class="article-list__date">June 2</p>
-                <h1 class="article-list__title filter__arch">Organizing User Feedback</h1>
-                <div class="article-list__preview">
-                    Leave dead animals as gifts shake treat bag. Attack feet attack feet, burrow under covers sun bathe so use lap as chair. Play time hate dog so leave hair everywhere. Chew foot stand in front of the computer screen missing until dinner time so missing until dinner time.
-                </div>
-                <a href="#" class="article-list__continue">continue reading</a>
-            </article>
+                <article class="article">
+                    <p class="article__date">June 2</p>
+                    <h1 class="article__title search__dev">Key Perfomance Indicators</h1>
+                    <div class="article__preview">
+                        All of a sudden go crazy lick butt. Sun bathe. Sweet beast sun bathe or chase mice rub face on everything or leave dead animals as gifts for mark territory play time. Find something else more interesting give attitude. Throwup on your pillow need to chase tail mark territory, but flop over for chase imaginary bugs or flop over. Stretch destroy couch leave dead animals as gifts.
+                    </div>
+                    <a href="#" class="article__continue">continue reading</a>
+                </article>
 
-            <article class="article-list__item">
-                <p class="article-list__date">June 2</p>
-                <h1 class="article-list__title filter__arch">Wireframing Do's and Dont's: A General Guide</h1>
-                <div class="article-list__preview">
-                    ur pillow or hopped up on goofballs. Burrow under covers. Swat at dog sweet beast give attitude find something else more interesting leave hair everywhere. Destroy couch run in circles. Claw drapes leave hair everywhere swat at dog climb leg why must they do that.
-                </div>
-                <a href="#" class="article-list__continue">continue reading</a>
-            </article>
+                <article class="article">
+                    <p class="article__date">June 2</p>
+                    <h1 class="article__title search__dev">Key Perfomance Indicators</h1>
+                    <div class="article__preview">
+                        All of a sudden go crazy lick butt. Sun bathe. Sweet beast sun bathe or chase mice rub face on everything or leave dead animals as gifts for mark territory play time. Find something else more interesting give attitude. Throwup on your pillow need to chase tail mark territory, but flop over for chase imaginary bugs or flop over. Stretch destroy couch leave dead animals as gifts.
+                    </div>
+                    <a href="#" class="article__continue">continue reading</a>
+                </article>
 
-            <article class="article-list__item">
-                <p class="article-list__date">June 2</p>
-                <h1 class="article-list__title filter__dev">Key Perfomance Indicators</h1>
-                <div class="article-list__preview">
-                    All of a sudden go crazy lick butt. Sun bathe. Sweet beast sun bathe or chase mice rub face on everything or leave dead animals as gifts for mark territory play time. Find something else more interesting give attitude. Throwup on your pillow need to chase tail mark territory, but flop over for chase imaginary bugs or flop over. Stretch destroy couch leave dead animals as gifts.
-                </div>
-                <a href="#" class="article-list__continue">continue reading</a>
-            </article>
+                <article class="article">
+                    <p class="article__date">June 2</p>
+                    <h1 class="article__title search__dev">Key Perfomance Indicators</h1>
+                    <div class="article__preview">
+                        All of a sudden go crazy lick butt. Sun bathe. Sweet beast sun bathe or chase mice rub face on everything or leave dead animals as gifts for mark territory play time. Find something else more interesting give attitude. Throwup on your pillow need to chase tail mark territory, but flop over for chase imaginary bugs or flop over. Stretch destroy couch leave dead animals as gifts.
+                    </div>
+                    <a href="#" class="article__continue">continue reading</a>
+                </article>
 
-            <article class="article-list__item">
-                <p class="article-list__date">June 2</p>
-                <h1 class="article-list__title filter__design">The ROI of Information Architecture</h1>
-                <div class="article-list__preview">
-                    Hunt anything that moves swat at dog but leave dead animals as gifts need to chase tail chew iPad power cord and lick butt. 
-                </div>
-                <a href="#" class="article-list__continue">continue reading</a>
-            </article>
+                <article class="article">
+                    <p class="article__date">June 2</p>
+                    <h1 class="article__title search__dev">Key Perfomance Indicators</h1>
+                    <div class="article__preview">
+                        All of a sudden go crazy lick butt. Sun bathe. Sweet beast sun bathe or chase mice rub face on everything or leave dead animals as gifts for mark territory play time. Find something else more interesting give attitude. Throwup on your pillow need to chase tail mark territory, but flop over for chase imaginary bugs or flop over. Stretch destroy couch leave dead animals as gifts.
+                    </div>
+                    <a href="#" class="article__continue">continue reading</a>
+                </article>
 
-            <article class="article-list__item">
-                <p class="article-list__date">June 2</p>
-                <h1 class="article-list__title filter__arch">The Process of a UX Designer</h1>
-                <div class="article-list__preview">
-                    Throwup on your pillow need to chase tail mark territory, but flop over for chase imaginary bugs or flop over. Stretch destroy couch leave dead animals as gifts. Flop over hopped up on goofballs, yet swat at dog. 
-                </div>
-                <a href="#" class="article-list__continue">continue reading</a>
-            </article>
+                <article class="article">
+                    <p class="article__date">June 2</p>
+                    <h1 class="article__title search__dev">Key Perfomance Indicators</h1>
+                    <div class="article__preview">
+                        All of a sudden go crazy lick butt. Sun bathe. Sweet beast sun bathe or chase mice rub face on everything or leave dead animals as gifts for mark territory play time. Find something else more interesting give attitude. Throwup on your pillow need to chase tail mark territory, but flop over for chase imaginary bugs or flop over. Stretch destroy couch leave dead animals as gifts.
+                    </div>
+                    <a href="#" class="article__continue">continue reading</a>
+                </article>
+            </div>
 
-            <article class="article-list__item">
-                <p class="article-list__date">June 23</p>
-                <h1 class="article-list__title filter__motion">Motion</h1>
-                <div class="article-list__preview">
-                    Chase mice mark territory or intently stare at the same spot. Give attitude hunt anything that moves so inspect anything brought into the house climb leg. Give attitude nap all day. Missing until dinner time run in circles yet rub face on everything yet climb leg make muffins or inspect anything brought into the house.
-                </div>
-                <a href="#" class="article-list__continue">continue reading</a>
-            </article>
         </section>
         <!--END MAIN ARTICLES CONTENT-->
 
         <!-- BEGIN FOOTER -->
-        <footer class="footer" role="contentinfo">
-            <p class="footer__content">2016 Colonial Life & Accident Insurance Company Colonial Life & Accident Insurance</p>
-            <p class="footer__content">Company is a subsidary of Unum Group.</p>
+        <footer class="page-footer">
+            <p class="page-footer__content">2016 Colonial Life & Accident Insurance Company Colonial Life & Accident Insurance</p>
+            <p class="page-footer__content">Company is a subsidary of Unum Group.</p>
         </footer>
         <!-- END FOOTER -->
 

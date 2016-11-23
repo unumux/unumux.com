@@ -1,0 +1,9 @@
+@import 'base';
+
+&__heading {
+    @include base;
+
+    &--hidden {
+        @include visually-hidden;
+    }
+}
