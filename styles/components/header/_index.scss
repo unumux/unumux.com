@@ -1,7 +1,10 @@
 @import 'base';
 
+
 .header {
     @include base;
+
+    @import 'elements/heading/index';
 
     &--alt {
         @include base;

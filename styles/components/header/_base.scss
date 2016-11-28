@@ -1,4 +1,5 @@
 @mixin base() {
+    display: block;
     color: white;
     background-color: $white;
     padding-left: 0;
