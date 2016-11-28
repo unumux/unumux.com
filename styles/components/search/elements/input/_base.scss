@@ -1,9 +1,15 @@
 @mixin base {
-    height: 27px;
-    width: 162px;
-    border-radius: 100px;
-    background-color: $white;
-    background-image: url('../../../images/1010.svg');
-    background-repeat: no-repeat;
-    background-position: top 50% right 5%;
+    display: none;
+
+    @media screen and (min-width: 768px) {
+        display: inline-block;
+        height: 27px;
+        width: 162px;
+        border-radius: 100px;
+        background-color: $white;
+        background-image: url('../../../images/1010.svg');
+        background-repeat: no-repeat;
+        background-position: top 50% right 5%;
+
+    }
 }

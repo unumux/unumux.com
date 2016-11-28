@@ -3,6 +3,7 @@
 @import './components/variables';
 @import './components/header/index';
 @import './components/nav/index';
+@import './components/page-content/index';
 @import './components/carousel/index';
 @import './components/filter/index';
 @import './components/search/index';
@@ -29,15 +30,10 @@ html {
 body {
     color: #111;
     height: 100%;
-    background-image: url('../../../images/rectangle-1@2x.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    // these background image styles are now on page-content
+    // background-image: url('../../../images/rectangle-1@2x.png');
+    // background-repeat: no-repeat;
+    // background-position: center;
+    // background-size: cover;
     font-family: $font-family-main;
-}
-
-.wrapper {
-    height: 100%;
-    background-color: $deep-navy-blue;
-    width: 100%;
 }

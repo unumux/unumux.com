@@ -2,11 +2,10 @@
     color: $white;
     background-color: $deep-navy-blue;
     @include full-width(20px, 20px);
-    margin-top: 90px; // is this an okay solution?? why wont margin on the header work???
-    padding-top: 10px;
+    margin-top: 90px;
+    padding-top: 12px;
 
     @media screen and (min-width: 768px) {
         @include full-width(100px, 100px);
-        margin-top: 84px;
     }
 }

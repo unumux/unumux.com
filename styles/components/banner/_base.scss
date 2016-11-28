@@ -1,5 +1,7 @@
 @mixin base {
     padding: 50px;
+    margin-top: 80px; 
+    padding-bottom: 0;
 
     @include full-width(20px, 20px);
 
