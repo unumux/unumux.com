@@ -2,6 +2,5 @@
   "private": true,
   "name": "unumux",
   "dependencies": {
-    "colonial-branding": "unumux/colonial-branding#^3.1.0"
   }
 }

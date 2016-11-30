@@ -12,15 +12,15 @@
     <header class="header" role="banner">
         <h1 class="header__heading">Main header</h1>
         <div class="branding">
-            <a class="logo-link">
+            <a class="logo-link" href="./home.html">
                 <img class="logo-link__image" src="../../../images/uxenterprise.svg" alt="User Experience logo"/>
             </a>
         </div>
         <nav class="nav" role="navigation">
             <h1 class="nav__heading">Primary navigation</h1>
             <ul class="nav__list">
-                <li class="nav__item"><a href="#" class="nav__link">about us</a></li>
-                <li class="nav__item"><a href="#" class="nav__link--active">journal</a></li>
+                <li class="nav__item"><a href="./about.html" class="nav__link">about us</a></li>
+                <li class="nav__item"><a href="./index.html" class="nav__link--active">journal</a></li>
                 <li class="nav__item"><a href="#" class="nav__link">team</a></li>
                 <li class="nav__item"><a href="#" class="nav__link">ui resources</a></li>
             </ul>
@@ -43,7 +43,7 @@
         <!--END BANNER ARTICLE-->
 
         <!--FILTER change to search component, include search-->
-        <section class="search">
+        <!--<section class="search">
             <h1 class="search__heading">filter or search</h1>
             <ul class="search__group">
                 <li class="search__item">filter by:</li>
@@ -54,6 +54,18 @@
                 <li class="search__item search__motion">motion</li>
                 <li class="search__item"><input type="search" class="search__input"/></li>
             </ul>
+        </section>-->
+
+        <section class="search">
+            <h1 class="search__heading">filter by:</h1>
+            <select class="search__select" name="select">
+                <option class="search__option" value="all">All</option>
+                <option class="search__option" value="design">Design</option>
+                <option class="search__option" value="information architecture">Information Architecture</option>
+                <option class="search__option" value="front end development">Front End Development</option>
+                <option class="search__option" value="motion">Motion</option>
+            </select>
+            <input class="search__input" type="search" placeholder="search"/>
         </section>
             
 

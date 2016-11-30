@@ -1,0 +1,14 @@
+@mixin base {
+    width: 204px;
+    height: 28px;
+    background-color: #0e2230;
+    color: $dark-white;
+    border: none;
+    border-radius: 100px;
+    font-family: $font-family-main;
+    font-size: 16px;
+
+    @media screen and (min-width: 768px) {
+        display: none;
+    }
+}

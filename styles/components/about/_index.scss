@@ -1,0 +1,8 @@
+@import 'base';
+
+.about {
+    @include base;
+
+    @import 'elements/heading/index';
+    @import 'elements/para/index';
+}

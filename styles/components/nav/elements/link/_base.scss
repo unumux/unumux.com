@@ -2,19 +2,10 @@
     color: #fff;
     font-size: 18px;
     font-variant: small-caps;
-    font-weight: 600;
+    font-weight: 400;
     text-decoration: none;
-
-    &:hover {
-        text-decoration: none;
-        color: unset;
-    }
 
     @media screen and (min-width: 768px) {
         color: #333;
-
-        &:hover {
-            color: initial;
-        }
     }
 }

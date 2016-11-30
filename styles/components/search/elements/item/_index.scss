@@ -1,0 +1,14 @@
+@import 'base';
+
+&__item {
+    @include base;
+}
+
+&__item + &__item {
+    padding-left: 10px;
+
+
+    @media screen and (min-width: 500px) {
+        padding-left: 15px;
+    }
+}

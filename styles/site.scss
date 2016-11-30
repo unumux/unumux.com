@@ -1,4 +1,4 @@
-@import 'colonial-branding/lite';
+// @import 'colonial-branding/lite';
 @import './components/mixins';
 @import './components/variables';
 @import './components/header/index';
@@ -7,20 +7,24 @@
 @import './components/carousel/index';
 @import './components/filter/index';
 @import './components/search/index';
-@import './components/search/new';
 @import './components/branding/index';
 @import './components/logo-link/index';
 @import './components/banner/index';
 @import './components/summary/index';
 @import './components/grid/index';
 @import './components/article/index';
+@import './components/about/index'; // perm
+@import './components/about/blah'; // temp
 @import './components/page-footer/index';
 
-@import './components/article-container/index';
+@import './components/post/index';
+@import './components/resources/index';
 
 
 * {
     box-sizing: border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
 }
 
 html {
@@ -30,10 +34,7 @@ html {
 body {
     color: #111;
     height: 100%;
-    // these background image styles are now on page-content
-    // background-image: url('../../../images/rectangle-1@2x.png');
-    // background-repeat: no-repeat;
-    // background-position: center;
-    // background-size: cover;
+    margin: 0;
+    padding: 0;
     font-family: $font-family-main;
 }

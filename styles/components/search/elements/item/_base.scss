@@ -1,0 +1,13 @@
+@mixin base {
+    display: inline-block;
+    color: $white;
+    padding: 0;
+
+    &:first-child {
+        color: #8394a1;
+    }
+
+    &:last-child {
+        padding-left: 50px;
+    }
+}

@@ -1,0 +1,8 @@
+@import 'base';
+
+.resources {
+    @include base;
+
+    @import 'elements/item/index';
+    @import 'elements/link/index';
+}

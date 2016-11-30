@@ -1,15 +1,19 @@
 @mixin base {
-    display: none;
-
-    @media screen and (min-width: 768px) {
-        display: inline-block;
-        height: 27px;
-        width: 162px;
-        border-radius: 100px;
-        background-color: $white;
-        background-image: url('../../../images/1010.svg');
-        background-repeat: no-repeat;
-        background-position: top 50% right 5%;
-
-    }
+    display: inline-block;
+    margin-left: 15px;
+    // padding-left: 10px; // no padding is perfect is safari, ugly on chrome and firefox :( why browsers why???
+    font-size: 15px;
+    color: #8394a1;
+    border: none;
+    height: 28px;
+    width: 91px;
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -webkit-appearance: textfield;
+    background-color: $white;
+    background-image: url('../../../images/1010.svg');
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    background-position: top 50% right 8%;
+    cursor: pointer;
 }

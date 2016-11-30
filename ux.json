@@ -11,7 +11,8 @@
     "watch": [
         "index.html",
         "blog-article.html",
-        "home.html"
+        "home.html",
+        "about.html"
     ],
     "server": true,
     "compileJs": true,

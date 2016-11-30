@@ -1,0 +1,10 @@
+@import 'base';
+
+.post {
+    @include base;
+
+    @import 'elements/header/index';
+    @import 'elements/image/index';
+    @import 'elements/para/index';
+    @import 'elements/list/index';
+}

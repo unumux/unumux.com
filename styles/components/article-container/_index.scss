@@ -1,9 +1,0 @@
-@import 'base';
-
-.article-container {
-    @include base;
-
-    @import 'elements/header/index';
-    @import 'elements/image/index';
-    @import 'elements/para/index';
-}

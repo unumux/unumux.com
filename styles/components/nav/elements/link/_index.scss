@@ -5,6 +5,6 @@
 
     &--active {
         @include base;
-        color: $accent-blue !important; 
+        color: $accent-blue; 
     }
 }
