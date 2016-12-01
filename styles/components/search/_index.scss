@@ -8,20 +8,4 @@ $font-family-main: "Source Sans Pro";
     @import 'elements/heading/index';
     @import 'elements/input/index';
     @import 'elements/item/index';
-    @import 'elements/select/index';
-    @import 'elements/option/index';
-
-    &__select {
-        -webkit-appearance: none; // safari weird gloss
-        -moz-appearance: none;
-        padding-left: 10px;
-        background-image: url('../../../option-arrow.svg'); // why doesn't this work? 
-        cursor: pointer;
-        margin-left: 0;
-        
-    }
-
-    &__option {
-            background-color: #0e2230;
-    }
 }
