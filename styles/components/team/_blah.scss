@@ -71,7 +71,9 @@
 
         &:hover {
             filter: none;
-            transition: filter 0.3s;
+            // transition: filter 0.3s; makes outline overly janky
+            outline: 1000vw solid hsla(0, 0%, 0%, 0.5);
+            // z-index: 1;
         } 
 
         @media screen and (min-width: 1600px) {
@@ -82,7 +84,7 @@
     @media screen and (min-width: 900px) {
         &__image:hover ~ &__content {
             opacity: 1;
-            transition: opacity 0.3s;
+            // transition: opacity 0.3s;
             z-index: 1;
         }
     }
