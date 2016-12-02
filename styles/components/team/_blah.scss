@@ -3,6 +3,7 @@
 
     padding-top: 12px;
     color: $dark-white;
+    max-width: 1200px;
 
     @media screen and (min-width: 768px) {
         @include full-width(100px, 100px);
@@ -39,9 +40,8 @@
         flex: 1 1 100%;
         padding: 0 50px;
         position: relative;
-        max-width: 1300px;
 
-        @media screen and (min-width: 600px) {
+        @media screen and (min-width: 500px) {
             flex: 1 1 50%;
             max-width: 50%;
             padding: 0;
@@ -56,11 +56,6 @@
             flex: 1 1 25%;
             max-width: 25%;
         }
-
-        // @media screen and (min-width: 1600px) {
-        //     flex: 1 1 20%;
-        //     max-width: 20%;
-        // }
 
         &:last-child {
             padding-bottom: 40px; 
@@ -80,15 +75,15 @@
         } 
 
         @media screen and (min-width: 1600px) {
-            margin-bottom: 60px;
+            margin-bottom: 20px;
         }
-
     }
 
     @media screen and (min-width: 900px) {
         &__image:hover ~ &__content {
             opacity: 1;
             transition: opacity 0.3s;
+            z-index: 1;
         }
     }
 
@@ -97,21 +92,24 @@
         position: absolute;
         left: 230px;
         top: 0;
-        z-index: 1;
         opacity: 0;
-        max-height: 138px;
+        max-height: 286px;
+        width: 500px;
+        // or width: 100% ?
     }
 
     &__name {
         font-size: 28px;
         margin-bottom: 0;
         font-weight: 400;
+        padding-left: 20px;
     }
 
     &__bio {
         font-size: 18px;
         display: inline-block;
         margin-top: 8px;
+        margin-left: 20px;
 
         &::before {
             content: '';
@@ -120,6 +118,7 @@
             height: 2px;
             background-color: $white;
             margin-bottom: 8px;
+            margin-left: -20px;
         }
     }
 }
