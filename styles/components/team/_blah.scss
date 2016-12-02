@@ -1,0 +1,125 @@
+.team {
+    @include full-width(20px, 20px);
+
+    padding-top: 12px;
+    color: $dark-white;
+
+    @media screen and (min-width: 768px) {
+        @include full-width(100px, 100px);
+    }
+
+    &__heading {
+        font-variant: small-caps;
+        font-weight: 600;
+        font-size: 45px;
+        margin-bottom: 0;
+        line-height: 1;
+        text-align: center;
+
+        @media screen and (min-width: 768px) {
+            font-size: 73px;
+            text-align: left;
+        }
+    }
+
+    &__para {
+        font-size: 20px;
+        padding-top: 5px;
+        margin-top: 0;
+        text-align: center;
+
+        @media screen and (min-width: 768px) {
+            font-size: 22px;
+            padding-bottom: 40px; 
+            text-align: left;
+        }
+    }
+
+    &__member {
+        flex: 1 1 100%;
+        padding: 0 50px;
+        position: relative;
+        max-width: 1300px;
+
+        @media screen and (min-width: 600px) {
+            flex: 1 1 50%;
+            max-width: 50%;
+            padding: 0;
+        }
+
+        @media screen and (min-width: 900px) {
+            flex: 1 1 33.3333%;
+            max-width: 33.3333%;
+        }
+
+        @media screen and (min-width: 1200px) {
+            flex: 1 1 25%;
+            max-width: 25%;
+        }
+
+        // @media screen and (min-width: 1600px) {
+        //     flex: 1 1 20%;
+        //     max-width: 20%;
+        // }
+
+        &:last-child {
+            padding-bottom: 40px; 
+        }
+    }
+
+
+    &__image {
+        height: 286px;
+        width: 224px;
+        margin-bottom: 20px;
+        filter: grayscale(100%);
+
+        &:hover {
+            filter: none;
+            transition: filter 0.3s;
+        } 
+
+        @media screen and (min-width: 1600px) {
+            margin-bottom: 60px;
+        }
+
+    }
+
+    @media screen and (min-width: 900px) {
+        &__image:hover ~ &__content {
+            opacity: 1;
+            transition: opacity 0.3s;
+        }
+    }
+
+
+    &__content {
+        position: absolute;
+        left: 230px;
+        top: 0;
+        z-index: 1;
+        opacity: 0;
+        max-height: 138px;
+    }
+
+    &__name {
+        font-size: 28px;
+        margin-bottom: 0;
+        font-weight: 400;
+    }
+
+    &__bio {
+        font-size: 18px;
+        display: inline-block;
+        margin-top: 8px;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: $white;
+            margin-bottom: 8px;
+        }
+    }
+}

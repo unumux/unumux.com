@@ -12,7 +12,8 @@
         "index.html",
         "blog-article.html",
         "home.html",
-        "about.html"
+        "about.html",
+        "team.html"
     ],
     "server": true,
     "compileJs": true,
