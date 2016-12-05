@@ -67,12 +67,24 @@
         height: 286px;
         width: 224px;
         margin-bottom: 20px;
-        filter: grayscale(100%);
+        position: relative;
+        // filter: grayscale(100%);
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: red;
+        }
 
         &:hover {
             filter: none;
             // transition: filter 0.3s; makes outline overly janky
-            outline: 1000vw solid hsla(0, 0%, 0%, 0.5);
+            // outline: 1000vw solid hsla(0, 0%, 0%, 0.5);
             // z-index: 1;
         } 
 
