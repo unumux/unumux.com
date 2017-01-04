@@ -1,0 +1,8 @@
+@mixin base {
+    color: #8394a1;
+    display: inline-block;
+}
+
+&__heading {
+    @include base;
+}

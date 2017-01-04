@@ -1,0 +1,14 @@
+@mixin base {
+    @include underline($leaf);
+}
+
+&__design:after {
+    @include base;
+}
+
+&__design:hover:after {
+    @include base;
+    
+    width: 100%;
+    transition: width 0.3s;
+}

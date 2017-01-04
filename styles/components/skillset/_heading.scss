@@ -1,0 +1,11 @@
+@mixin base {
+    color: $white;
+    font-variant: small-caps;
+    margin-bottom: 0;
+    font-size: 32px;
+    display: inline-block;
+}
+
+&__heading {
+    @include base;
+}

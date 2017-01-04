@@ -1,0 +1,7 @@
+@mixin base {
+    color: $golden-yellow;
+}
+
+&__date {
+    @include base;
+}

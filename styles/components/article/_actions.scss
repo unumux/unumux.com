@@ -1,0 +1,7 @@
+@mixin base {
+    padding-top: 10px;
+}
+
+&__actions {
+    @include base;
+}

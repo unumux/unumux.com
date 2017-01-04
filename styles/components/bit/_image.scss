@@ -1,0 +1,13 @@
+@mixin base {
+    display: none;
+
+    @media screen and (min-width: 768px) {
+        display: inline-block;
+        width: 100%;
+        height: auto; // now they get huge at full-screen...
+    }
+}
+
+&__image {
+    @include base;
+}

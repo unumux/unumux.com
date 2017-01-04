@@ -1,8 +1,26 @@
-@import 'base';
+@mixin base {
+    padding: 50px;
+    margin-top: 80px; 
+    padding-bottom: 0;
+
+    @include full-width(20px, 20px);
+
+    @media screen and (min-width: 768px) {
+        @include full-width(100px, 100px);
+    }
+
+    @media screen and (min-width: 1000px) {
+        padding: 150px;
+    }
+
+    @media screen and (min-width: 1700px) {
+        @include full-width(500px, 500px);
+    }
+}
 
 .banner {
     @include base;
 
-    @import './elements/heading/index';
-    @import './elements/para/index';
+    @import 'heading';
+    @import 'para';
 }

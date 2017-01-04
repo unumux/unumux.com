@@ -1,0 +1,11 @@
+@mixin base() {
+    display: inline-block;
+}
+
+&__item {
+    @include base;
+}
+
+&__item + &__item {
+    padding-left: 20px
+}

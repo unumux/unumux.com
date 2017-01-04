@@ -1,6 +1,12 @@
-@import 'base';
+@mixin base() {
+    background-color: #0e2230;
+    box-shadow: inset 0 6px 15px 0 rgba(0, 0, 0, 0.5);
+    text-align: center;
+    padding: 53px 0 53px 0;
+}
 
 .page-footer {
-    @include base();
-    @import 'elements/content/index';
+    @include base;
+    
+    @import 'content';
 }

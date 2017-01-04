@@ -1,0 +1,7 @@
+@mixin base {
+    color: $dark-white;
+}
+
+&__detail {
+    @include base;
+}

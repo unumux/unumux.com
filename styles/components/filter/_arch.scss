@@ -1,0 +1,14 @@
+@mixin base {
+    @include underline($ocean);
+}
+
+&__arch:after {
+    @include base;
+}
+
+&__arch:hover:after {
+    @include base;
+    
+    width: 100%;
+    transition: width 0.3s;
+}

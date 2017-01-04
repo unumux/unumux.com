@@ -1,0 +1,12 @@
+@mixin base {
+    color: $white;
+    font-weight: bold;
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+&__title {
+    @include base;
+}

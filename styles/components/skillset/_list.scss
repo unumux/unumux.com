@@ -3,9 +3,6 @@
     padding: 0;
 }
 
-.resources {
+&__list {
     @include base;
-
-    @import 'item';
-    @import 'link';
 }

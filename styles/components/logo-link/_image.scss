@@ -1,12 +1,10 @@
 @mixin base {
-    padding: 10px;
-    padding-left: 20px;
 
     @media screen and (min-width: 768px) {
-        flex: 1 1 0;
+        margin: unset;
     }
 }
 
-.branding {
+&__image {
     @include base;
 }

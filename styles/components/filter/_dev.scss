@@ -1,0 +1,13 @@
+@mixin base {
+    @include underline($dark-red);
+}
+
+&__dev:after {
+    @include base;
+}
+
+&__dev:hover:after {
+    @include base;
+    width: 100%;
+    transition: width 0.3s;
+}

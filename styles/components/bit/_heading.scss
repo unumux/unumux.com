@@ -1,0 +1,15 @@
+@mixin base {
+    color: $white;
+    font-variant: small-caps;
+    font-size: 36px;
+    margin: 0;
+    padding: 0;
+
+    @media screen and (min-width: 1700px) {
+        font-size: 73px;
+    }
+}
+
+&__heading {
+    @include base;
+}

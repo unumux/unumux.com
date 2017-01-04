@@ -1,0 +1,11 @@
+@mixin base {
+    font-size: 18px;
+
+    @media screen and (min-width: 1700px) {
+        font-size: 26px;
+    }
+}
+
+&__para {
+    @include base;
+}

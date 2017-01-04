@@ -1,0 +1,17 @@
+@mixin base {
+    list-style-type: none;
+    padding: 0;
+
+    @media screen and (min-width: 1700px) {
+        font-size: 26px;
+    }
+}
+
+&__list {
+    list-style-type: none;
+    padding: 0;
+
+    @media screen and (min-width: 1700px) {
+        font-size: 26px;
+    }
+}

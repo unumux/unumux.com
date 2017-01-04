@@ -1,11 +1,23 @@
-@import 'base';
+@mixin base {
+    @include full-width(20px, 20px);
+    padding-top: 25px;
+    margin-bottom: 100px;
+    position: relative;
+    color: $white;
+    background-color: $deep-navy-blue;
+
+    @media screen and (min-width: 768px) {
+        @include full-width(100px, 100px);
+        padding-bottom: 50px;
+    }
+}
 
 .post {
     @include base;
 
-    @import 'elements/header/index';
-    @import 'elements/image/index';
-    @import 'elements/para/index';
-    @import 'elements/detail/index';
-    @import 'elements/list/index';
+    @import 'header';
+    @import 'image';
+    @import 'para';
+    @import 'detail';
+    @import 'list';
 }

@@ -1,15 +1,12 @@
 @mixin base {
+    // grid component applies flex: 
     flex: 1 1 100%;
-    padding: 20px;
+    padding: 10px 10px 50px 0;
     max-width: 100%;
 
     @media screen and (min-width: 600px) {
         flex: 1 1 50%;
         max-width: 50%;
-    }
-
-    @media screen and (min-width: 768px) {
-        padding: 40px;
     }
 
     @media screen and (min-width: 900px) {
@@ -18,12 +15,10 @@
     }
 }
 
-.article {
+.skillset {
     @include base;
 
-    @import 'actions';
-    @import 'action';
-    @import 'date';
-    @import 'preview';
-    @import 'title';
+    @import 'heading';
+    @import 'list';
+    @import 'item';
 }
