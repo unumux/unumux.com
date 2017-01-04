@@ -3,10 +3,14 @@
 
     padding-top: 12px;
     color: $dark-white;
-    max-width: 1200px;
+    // max-width: 1200px;
 
     @media screen and (min-width: 768px) {
         @include full-width(100px, 100px);
+    }
+
+    &__grid {
+        @include grid;
     }
 
     &__heading {
@@ -37,25 +41,26 @@
     }
 
     &__member {
-        flex: 1 1 100%;
-        padding: 0 50px;
+        // flex: 1 1 100%;
+        // padding: 0 50px;
         position: relative;
+        @include gridItem;
 
-        @media screen and (min-width: 500px) {
-            flex: 1 1 50%;
-            max-width: 50%;
-            padding: 0;
-        }
+        // @media screen and (min-width: 500px) {
+        //     flex: 1 1 50%;
+        //     max-width: 50%;
+        //     padding: 0;
+        // }
 
-        @media screen and (min-width: 900px) {
-            flex: 1 1 33.3333%;
-            max-width: 33.3333%;
-        }
+        // @media screen and (min-width: 900px) {
+        //     flex: 1 1 33.3333%;
+        //     max-width: 33.3333%;
+        // }
 
-        @media screen and (min-width: 1200px) {
-            flex: 1 1 25%;
-            max-width: 25%;
-        }
+        // @media screen and (min-width: 1200px) {
+        //     flex: 1 1 25%;
+        //     max-width: 25%;
+        // }
 
         &:last-child {
             padding-bottom: 40px; 
@@ -68,6 +73,11 @@
         width: 224px;
         margin-bottom: 20px;
         position: relative;
+
+        @media screen and (min-width: 1200px) {
+            height: 400px;
+            width: auto;
+        }
         // filter: grayscale(100%);
 
         &:after {
@@ -83,6 +93,7 @@
 
         &:hover {
             filter: none;
+            // cursor: pointer;
             // transition: filter 0.3s; makes outline overly janky
             // outline: 1000vw solid hsla(0, 0%, 0%, 0.5);
             // z-index: 1;
@@ -94,9 +105,9 @@
     }
 
     @media screen and (min-width: 900px) {
+
         &__image:hover ~ &__content {
             opacity: 1;
-            // transition: opacity 0.3s;
             z-index: 1;
         }
     }
