@@ -1,11 +1,19 @@
-@import 'base';
+@mixin base {
+    max-width: 100%;
+    padding: 30px 0 30px 0;
 
-$font-family-main: "Source Sans Pro";
+    @include full-width(20px, 20px);
+
+    @media screen and (min-width: 768px) {
+        @include full-width(100px, 100px);
+    }
+}
 
 .search {
-    @include base();
-    @import 'elements/group/index';
-    @import 'elements/heading/index';
-    @import 'elements/input/index';
-    @import 'elements/item/index';
+    @include base;
+    
+    @import 'group';
+    @import 'heading';
+    @import 'input';
+    @import 'item';
 }

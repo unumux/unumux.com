@@ -17,3 +17,7 @@
     background-position: top 50% right 8%;
     cursor: pointer;
 }
+
+&__input {
+    @include base;
+}

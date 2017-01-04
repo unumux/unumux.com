@@ -21,3 +21,7 @@
         margin: 0 auto;
     }
 }
+
+&__action {
+    @include base;
+}

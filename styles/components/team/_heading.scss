@@ -1,0 +1,17 @@
+@mixin base {
+    font-variant: small-caps;
+    font-weight: 600;
+    font-size: 45px;
+    margin-bottom: 0;
+    line-height: 1;
+    text-align: center;
+
+    @media screen and (min-width: 768px) {
+        font-size: 73px;
+        text-align: left;
+    }
+}
+
+&__heading {
+    @include base;
+}

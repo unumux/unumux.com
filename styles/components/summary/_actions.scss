@@ -5,3 +5,7 @@
         padding: 40px;
     }
 }
+
+&__actions {
+    @include base;
+}

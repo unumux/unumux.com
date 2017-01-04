@@ -1,0 +1,16 @@
+@mixin base {
+    font-size: 20px;
+    padding-top: 5px;
+    margin-top: 0;
+    text-align: center;
+
+    @media screen and (min-width: 768px) {
+        font-size: 22px;
+        padding-bottom: 40px; 
+        text-align: left;
+    }
+}
+
+&__para {
+    @include base;
+}

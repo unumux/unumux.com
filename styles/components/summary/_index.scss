@@ -1,19 +1,30 @@
-@import 'base';
+@mixin base {
+    width: 100%;
+    padding-bottom: 40px;
+    background-color: $deep-navy-blue;
+
+    // @include full-width(20px, 20px);
+
+    @media screen and (min-width: 768px) {
+        @include full-width(60px, 60px);
+    }
+}
 
 .summary {
     @include base;
 
-    @import 'elements/actions/index';
-    @import 'elements/heading/index';
-    @import 'elements/action/index';
+    @import 'actions';
+    @import 'heading';
+    @import 'action';
 
     &--alt {
         @include base;
-
-        @import 'elements/actions/index';
-        @import 'elements/heading/index';
-        @import 'elements/action/index';
         
         box-shadow: inset 0 6px 15px 0 rgba(0, 0, 0, 0.22);
+
+        @import 'actions';
+        @import 'heading';
+        @import 'action';
+        
     }
 }
