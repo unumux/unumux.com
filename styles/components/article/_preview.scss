@@ -1,8 +1,9 @@
 @mixin base {
-
+    cursor: pointer;
+    color: $white;
+    font-size: 18px;
 }
 
 &__preview {
-    color: $white;
-    font-size: 18px;
+    @include base;
 }

@@ -23,8 +23,6 @@
   padding-right: calc((100vw - 100%) / 2 + #{$padding-right});
 }
 
-// kyle's mixins 
-
 @mixin grid() {
   @media (min-width: 600px) {
     align-items: stretch;
