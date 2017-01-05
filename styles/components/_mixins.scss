@@ -43,14 +43,14 @@
       margin-right: 0;
     }
   }
-  @media (min-width: 600px) and (max-width: 799px) {
+  @media (min-width: 600px) and (max-width: 999px) {
     @include flexWidths(2);
   }
-  @media (min-width: 800px) and (max-width: 1199px) {
+  @media (min-width: 1000px) and (max-width: 1199px) { // changed 800 to 1000 because it looks better
     @include flexWidths(3);
   }
   @media (min-width: 1200px) {
-    @include flexWidths(3); // changed from four because this particular layout never has more than three on a line except for team which i now have to figure out
+    @include flexWidths(3); // changed from 4 because this particular layout never has more than three on a line except for team which i now have to figure out
   }
 }
 
