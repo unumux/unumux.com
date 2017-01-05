@@ -50,7 +50,7 @@
     @include flexWidths(3);
   }
   @media (min-width: 1200px) {
-    @include flexWidths(4);
+    @include flexWidths(3); // changed from four because this particular layout never has more than three on a line except for team which i now have to figure out
   }
 }
 
