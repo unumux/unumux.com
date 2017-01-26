@@ -1,11 +1,5 @@
 @mixin base {
-    position: absolute;
-    left: 230px;
-    top: 0;
-    opacity: 0;
-    max-height: 286px;
-    width: 500px;
-    // or width: 100% ?
+    @include teamBio;
 }
 
 &__content {

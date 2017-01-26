@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unum UX</title>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <link rel="stylesheet" href="styles/site.min.css">
 </head>
@@ -30,15 +32,22 @@
     <!--BANNER ARTICLE rename classes to banner-->
     <main class="page-content">
         <section class="carousel" id="test">
-            <h1 class="carousel__heading">article carousel</h1>
-            <div class="carousel__content">
+            <!--<h1 class="carousel__heading">article carousel</h1>-->
+            <article class="carousel__item">
                 <h1 class="carousel__title">book review: how to make sense of any mess</h1>
-                <p class="carousel__descrip">This article is a review of the book How to Make Sense of Any Mess by Abby Covert, written from two points of view.</p>
+                <p class="carousel__preview">This article is a review of the book How to Make Sense of Any Mess by Abby Covert, written from two points of view.</p>
                 <a href="#" class="carousel__continue">continue reading</a>
-            </div>
-            <input type="radio" class="carousel__option--active"/>
-            <input type="radio" class="carousel__option"/>
-            <input type="radio" class="carousel__option"/>
+            </article>
+            <article class="carousel__item">
+                <h1 class="carousel__title">book review: how to make sense of any mess</h1>
+                <p class="carousel__preview">This article is a review of the book How to Make Sense of Any Mess by Abby Covert, written from two points of view.</p>
+                <a href="#" class="carousel__continue">continue reading</a>
+            </article>
+            <article class="carousel__item">
+                <h1 class="carousel__title">book review: how to make sense of any mess</h1>
+                <p class="carousel__preview">This article is a review of the book How to Make Sense of Any Mess by Abby Covert, written from two points of view.</p>
+                <a href="#" class="carousel__continue">continue reading</a>
+            </article>
         </section>
         <!--END BANNER ARTICLE-->
 
@@ -180,7 +189,12 @@
     </footer>
     <!-- END FOOTER -->
 
-
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="//dcc4iyjchzom0.cloudfront.net/widget/loader.js" async></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!--<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
     <script src="scripts/site.min.js"></script>
 </body>
 </html>
