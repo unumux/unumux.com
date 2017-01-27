@@ -1,16 +1,23 @@
 @mixin base() {
     color: $white;
-    background-color: rgb(31, 51, 64);
+    background-color: $charcoal;
     @include full-width(20px, 20px);
     border: 3px solid $medium-blue;
     border-radius: 8px;
     box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.5);
-    // padding: 2rem;
     margin: 20px;
+    // min-height: 300px;
+    padding-bottom: 50px;
+    padding-top: 20px;
 
     @media screen and (min-width: 768px) {
-        @include full-width(100px, 100px);
+        margin: 20px 100px;
     }
+
+    @media screen and (min-width: 1364px) {
+        padding-top: 40px;        
+    }
+
 }
 
 .carousel {
@@ -19,5 +26,20 @@
     @import 'title';
     @import 'content';
     @import 'preview';
-    @import 'continue';
+    @import 'actions';
+    @import 'action';
+}
+
+// .slick-dots {
+//     top: 220px;
+// }
+
+.slick-dots li button:before {
+    background: none;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.slick-dots li.slick-active button:before {
+    color: #fff;
 }
