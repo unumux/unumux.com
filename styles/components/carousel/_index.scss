@@ -1,7 +1,7 @@
 @mixin base() {
     color: $white;
     background-color: $charcoal;
-    @include full-width(20px, 20px);
+    @include full-width(40px, 40px);
     border: 3px solid $medium-blue;
     border-radius: 8px;
     box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.5);
@@ -30,13 +30,13 @@
     @import 'action';
 }
 
-// .slick-dots {
-//     top: 220px;
-// }
+.slick-dotted.slick-slider {
+    margin-bottom: 0;
+}
 
 .slick-dots li button:before {
     background: none;
-    font-size: 20px;
+    font-size: 18px;
     color: rgba(255, 255, 255, 0.7);
 }
 
