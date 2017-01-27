@@ -1,6 +1,11 @@
 @mixin base {
     background-color: $deep-navy-blue;
     margin-top: 80px;
+    padding-top: 45px;
+
+    @media screen and (min-width: 768px) {
+        padding-top: 80px;
+    }
 }
 .page-content {
     @include base;

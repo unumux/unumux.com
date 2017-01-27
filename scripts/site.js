@@ -3,11 +3,12 @@
 // var $ = require("jquery");
 
 
-$('.carousel').slick({
-    autoplay: true,
+$('.carousel-container').slick({
+    // autoplay: true,
     autoplaySpeed: 4000,
     arrows: false,
     dots: true,
+    // appendDots: $('.carousel'),
     mobileFirst: true,
     swipeToSlide: true
 });
