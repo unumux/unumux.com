@@ -1,10 +1,16 @@
 {
   "private": true,
   "devDependencies": {
-    "@unumux/ux-build-tools": "^3.1.2"
+    "@unumux/ux-build-tools": "^3.1.2",
+    "metalsmith": "^2.3.0",
+    "metalsmith-collections": "^0.9.0",
+    "metalsmith-layouts": "^1.8.0",
+    "metalsmith-markdown": "^0.2.1",
+    "metalsmith-permalinks": "^0.5.0"
   },
   "scripts": {
-    "start": "gulp --gulpfile=node_modules/@unumux/ux-build-tools/index.js --cwd=."
+    "start": "gulp --gulpfile=node_modules/@unumux/ux-build-tools/index.js --cwd=.",
+    "build": "node index.js"
   },
   "dependencies": {
     "jquery": "^3.1.1"
