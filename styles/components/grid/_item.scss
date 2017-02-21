@@ -1,14 +1,12 @@
 @mixin base {
-
+    @include gridItem;
 }
 
 &__item {
-    @include gridItem;
+    @include base;
 
     &--extended {
         @include base;
-
-        @include gridItem;
 
         @media (min-width: 1900px) {
             @include flexWidths(4);
