@@ -9,8 +9,16 @@
         font-size: 28px;
         text-align: center;
     }
+
+    @media screen and (min-width: 1600px) {
+        font-size: 38px;   
+    }
+
+    @media screen and (min-width: 1700px) {
+        font-size: 45px;
+    }
 }
 
-&__para {
+&__content {
     @include base;
 }

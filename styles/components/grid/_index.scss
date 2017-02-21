@@ -1,9 +1,21 @@
 @mixin base {
-    
+    @include grid;
 }
 
 .grid {
-    @include grid;
+    @include base;
 
     @import 'item';
+
+    &--extended {
+        @include base;
+
+        @import 'item';
+
+        @media (min-width: 1900px) {
+            @include flexWidths(4);
+        }
+    }
 }
+
+// why isnt this working?????

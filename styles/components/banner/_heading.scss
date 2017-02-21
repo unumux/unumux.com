@@ -9,6 +9,14 @@
         font-size: 73px;
         text-align: center;
     }
+
+    @media screen and (min-width: 1600px) {
+        font-size: 85px;
+    }
+
+    @media screen and (min-width: 1700px) {
+        font-size: 95px;
+    }
 }
 
 &__heading {

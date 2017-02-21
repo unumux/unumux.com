@@ -14,6 +14,14 @@
     }
 
     @media screen and (min-width: 1700px) {
+        @include full-width(300px, 300px);
+    }
+
+    @media screen and (min-width: 1900px) {
+        @include full-width(400px, 400px);
+    }
+
+    @media screen and (min-width: 2200px) {
         @include full-width(500px, 500px);
     }
 }
@@ -22,5 +30,5 @@
     @include base;
 
     @import 'heading';
-    @import 'para';
+    @import 'content';
 }
