@@ -1,7 +1,0 @@
-@mixin base {
-    padding-bottom: 5px;
-}
-
-&__item {
-    @include base;
-}

@@ -1,7 +1,0 @@
-@mixin base {
-    color: $accent-blue;
-}
-
-&__link {
-    @include base;
-}

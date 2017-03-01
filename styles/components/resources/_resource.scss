@@ -1,0 +1,10 @@
+@mixin base {
+    background-color: $light-navy-blue;
+    padding: 20px;
+    margin-bottom: 15px;
+    color: $white;
+}
+
+&__resource {
+    @include base;
+}
