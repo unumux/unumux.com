@@ -6,6 +6,10 @@
     display: inline-block;
     vertical-align: sub;
 
+    &:hover {
+        color: $accent-blue;
+    }
+
 
     @media screen and (min-width: 1700px) {
         font-size: 50px;
