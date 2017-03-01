@@ -5,7 +5,7 @@
 
     @media screen and (min-width: 768px) {
         @include full-width(100px, 100px);
-        padding-bottom: 150px;
+        padding-bottom: 364px;
     }
 }
 
@@ -13,6 +13,7 @@
     @include base;
 
     @import 'resource';
+    @import 'image';
     @import 'heading';
     @import 'descrip';
 }
