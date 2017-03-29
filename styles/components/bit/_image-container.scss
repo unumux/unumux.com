@@ -1,12 +1,49 @@
 @mixin base {
-    max-width: 55%;
+    display: none;
     flex: 1 1 55%;
     margin: 0;
     padding: 0;
     font-size: 0;
     height: 100%;
+    min-height: 600px;
+    background-size: cover;
+
+    &:nth-child(odd) {
+        margin-left: calc(0px - (100vw - 100%) / 2);
+        padding-left: calc((100vw - 100%) / 2);
+    }
+
+    &:nth-child(even) {
+        margin-right: calc(0px - (100vw - 100%) / 2);
+        padding-right: calc((100vw - 100%) / 2);
+
+    }
+
+    @media screen and (min-width: 768px) {
+        display: inline-block;
+        width: 100%;
+        height: auto;
+    }
 }
 
 &__image-container {
     @include base;
+
+    &--1 {
+        @include base;
+
+        background-image: url('../../../images/about-pic-1.png');
+    }
+
+    &--2 {
+        @include base;
+        
+        background-image: url('../../../images/about-pic-2.png');
+    }
+
+    &--3 {
+        @include base;
+
+        background-image: url('../../../images/about-pic-3.png');
+    }
 }

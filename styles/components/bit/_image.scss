@@ -4,7 +4,8 @@
     @media screen and (min-width: 768px) {
         display: inline-block;
         width: 100%;
-        height: auto; // now they get huge at full-screen...
+        height: auto;
+        // @include containContent;
     }
 }
 

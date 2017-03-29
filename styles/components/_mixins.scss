@@ -17,7 +17,7 @@
 }
 
 @mixin full-width($padding-right: 0px, $padding-left: 0px) {
-  margin: 0 calc(0px - (100vw - 100%) / 2);
+  // margin: 0 calc(0px - (100vw - 100%) / 2);
 
   padding-left: calc((100vw - 100%) / 2 + #{$padding-left});
   padding-right: calc((100vw - 100%) / 2 + #{$padding-right});
@@ -80,3 +80,9 @@
   }
 }
 
+@mixin containContent {
+    margin-left: calc(0px - (100vw - 100%) / 2);
+    margin-right: calc(0px - (100vw - 100%) / 2);
+    padding-left: calc((100vw - 100%) / 2);
+    padding-right: calc((100vw - 100%) / 2);
+}

@@ -1,13 +1,14 @@
 @mixin base {
-    width: 100%;
     padding-bottom: 40px;
     background-color: $deep-navy-blue;
 
+    @include containContent;
+
     // @include full-width(20px, 20px);
 
-    @media screen and (min-width: 768px) {
-        @include full-width(80px, 80px);
-    }
+    // @media screen and (min-width: 768px) {
+    //     @include full-width(80px, 80px);
+    // }
 }
 
 .summary {

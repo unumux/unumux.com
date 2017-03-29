@@ -7,9 +7,5 @@
 
     &--extended {
         @include base;
-
-        @media (min-width: 1900px) {
-            @include flexWidths(4);
-        }
     }
 }
