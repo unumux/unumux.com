@@ -20,16 +20,12 @@
             &:after {
                 content: '';
                 height: 1px;
-                width: 75%;
+                width: calc(100% - 150px);
                 background-color: #f4f4f4;
                 opacity: 0.15;
                 display: inline-block;
                 margin-bottom: 5px;
                 margin-left: 10px;
-
-                @media screen and (min-width: 1000px) {
-                    width: 90%;
-                }
             }
         }
     }
