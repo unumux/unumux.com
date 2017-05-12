@@ -3,7 +3,7 @@
     color: white;
     display: block;
     margin-bottom: 0;
-    // max-width: 1400px;
+    max-width: 1400px;
     position: fixed;
     top: 0;
     left: 0;
@@ -20,7 +20,7 @@
         padding-bottom: 15px;
         width: 100%;
 
-        @include containContent;
+        // @include containContent;
         // margin: 0 auto;
 
     }
