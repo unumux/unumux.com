@@ -3,6 +3,10 @@
     padding: 20px;
     margin-bottom: 15px;
     color: $white;
+
+    &:hover >> .resources__heading {
+        color: $accent-blue;
+    }
 }
 
 &__resource {
