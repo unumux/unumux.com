@@ -5,6 +5,7 @@
     box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.5);
     color: $white;
     margin: 20px;
+    margin-top: 170px;
     padding-bottom: 50px;
     padding-top: 20px;
     padding-left: 20px;
@@ -16,6 +17,7 @@
 
     @media screen and (min-width: 1444px) {
         margin: 0 auto;
+        margin-top: 170px;
     }
 
     @media screen and (min-width: 1500px) {
