@@ -1,5 +1,5 @@
 @mixin base {
-    background-color: $deep-navy-blue;
+    // background-color: $deep-navy-blue;
     margin-top: 90px;
     padding-top: 45px;
     
@@ -12,6 +12,8 @@
     &--alt {
         background-image: url('../../../images/rectangle-1@2x.png');
         background-repeat: no-repeat;
+        // height: 100%;
+        // width: 100%;
         background-position: 90%;
         background-size: cover;
         margin-top: 80px;
