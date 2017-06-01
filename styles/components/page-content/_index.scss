@@ -10,11 +10,11 @@
     @include base;
 
     &--alt {
-        margin-top: 80px;
         background-image: url('../../../images/rectangle-1@2x.png');
         background-repeat: no-repeat;
-        background-position: center;
+        background-position: 90%;
         background-size: cover;
+        margin-top: 80px;
 
         @include containContent;
     }

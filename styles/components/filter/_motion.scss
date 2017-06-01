@@ -7,6 +7,6 @@
 }
 
 &__motion:hover:after {
-    width: 100%;
     transition: width 0.3s;
+    width: 100%;
 }

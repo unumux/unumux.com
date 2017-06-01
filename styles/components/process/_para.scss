@@ -1,7 +1,7 @@
 @mixin base {
+    color: $dark-white;
     font-size: 22px;
     margin-top: 0;
-    color: $dark-white;
 }
 
 &__para {

@@ -4,7 +4,6 @@
     text-align: center;
     width: 100%;
     padding: 10px;
-    // max-width: 1400px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
     
 
@@ -12,7 +11,10 @@
         background-color: #fff;
         border-bottom: none;
         box-shadow: none;
-        flex: 1 1 0;
+        // flex: 1 1 0;
+        flex-basis: 0;
+        flex-grow: 1;
+        flex-shrink: 1;
         text-align: right;
         padding-right: 40px;
     }

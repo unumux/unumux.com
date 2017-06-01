@@ -8,6 +8,7 @@
 
 &__dev:hover:after {
     @include base;
-    width: 100%;
+    
     transition: width 0.3s;
+    width: 100%;
 }

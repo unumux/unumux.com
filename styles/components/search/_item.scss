@@ -1,9 +1,9 @@
 @mixin base {
+    color: $white;
+    cursor: pointer;
     display: table; // is this bad for semantics? 
     width: auto;
-    color: $white;
     padding: 0;
-    cursor: pointer;
 
     @media screen and (min-width: 600px) {
         display: inline-block;

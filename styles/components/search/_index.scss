@@ -1,12 +1,6 @@
 @mixin base {
     display: block;
     padding: 30px 0;
-
-    // @include full-width(20px, 20px);
-
-    // @media screen and (min-width: 768px) {
-    //     @include full-width(100px, 100px);
-    // }
 }
 
 .search {

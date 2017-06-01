@@ -1,9 +1,9 @@
 @mixin base {
     color: $dark-white;
     font-size: 20px;
+    font-weight: 400;
     margin-top: 40px;
     padding-bottom: 70px;
-    font-weight: 400;
 
     @media screen and (min-width: 768px) {
         font-size: 28px;

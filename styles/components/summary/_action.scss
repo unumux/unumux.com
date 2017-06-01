@@ -1,20 +1,20 @@
 @mixin base {
-    border: none;
     background-color: $white;
-    width: 183px;
-    height: 33px;
-    border-radius: 100px;
-    box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.5);
-    font-size: 18px;
-    font-weight: 400;
-    color: #1f3340;
-    display: block;
     background-image: url('../../../images/combined-shape.svg');
     background-repeat: no-repeat;
     background-position: top 50% right 5%;
-    -webkit-background-position: top 50% right 5%;
+    border: none;
+    border-radius: 100px;
+    box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+    color: #1f3340;
+    display: block;
+    font-size: 18px;
+    font-weight: 400;
+    height: 33px;
     padding-left: 15px;
     padding-top: 5px;
+    -webkit-background-position: top 50% right 5%;
+    width: 183px;
     text-decoration: none;
     margin-left: 20px;
 

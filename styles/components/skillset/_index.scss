@@ -1,16 +1,21 @@
 @mixin base {
     // grid component applies flex: 
-    flex: 1 1 100%;
+    // flex: 1 1 100%;
+    flex-basis: 100%;
+    flex-grow: 1;
+    flex-shrink: 1;
     padding: 10px 10px 50px 0;
     max-width: 100%;
 
     @media screen and (min-width: 600px) {
-        flex: 1 1 50%;
+        // flex: 1 1 50%;
+        flex-basis: 50%;
         max-width: 50%;
     }
 
     @media screen and (min-width: 900px) {
-        flex: 1 1 33.3333%;
+        // flex: 1 1 33.3333%;
+        flex-basis: 33.3333%;
         max-width: 33.3333%;
     }
 }

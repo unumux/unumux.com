@@ -1,23 +1,5 @@
 @mixin base {
-    // flex: 1 1 100%;
-    // padding: 0 50px;
     position: relative;
-    
-    // @media screen and (min-width: 500px) {
-    //     flex: 1 1 50%;
-    //     max-width: 50%;
-    //     padding: 0;
-    // }
-
-    // @media screen and (min-width: 900px) {
-    //     flex: 1 1 33.3333%;
-    //     max-width: 33.3333%;
-    // }
-
-    // @media screen and (min-width: 1200px) {
-    //     flex: 1 1 25%;
-    //     max-width: 25%;
-    // }
 
     &:last-child {
         padding-bottom: 40px; 

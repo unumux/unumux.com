@@ -1,20 +1,20 @@
 @mixin base {
-    display: inline-block;
-    margin-left: 15px;
-    font-size: 15px;
-    color: #8394a1;
-    border: none;
-    height: 28px;
-    width: 91px;
-    border-radius: 100px;
-    -webkit-border-radius: 100px;
-    -webkit-appearance: textfield;
     background-color: $white;
     background-image: url('../../../images/1010.svg');
     background-size: 16px 16px;
     background-repeat: no-repeat;
     background-position: top 50% right 8%;
+    border: none;
+    border-radius: 100px;
+    color: #8394a1;
     cursor: pointer;
+    display: inline-block;
+    font-size: 15px;
+    height: 28px;
+    margin-left: 15px;
+    -webkit-border-radius: 100px;
+    -webkit-appearance: textfield;
+    width: 91px;
 }
 
 &__input {

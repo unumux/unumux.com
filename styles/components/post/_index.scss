@@ -1,13 +1,11 @@
 @mixin base {
-    // @include full-width(20px, 20px);
-    padding-top: 25px;
-    margin-bottom: 100px;
-    position: relative;
-    color: $white;
     background-color: $deep-navy-blue;
+    color: $white;
+    padding-top: 25px;
+    position: relative;
+    margin-bottom: 100px;
 
     @media screen and (min-width: 768px) {
-        // @include full-width(100px, 100px);
         padding-bottom: 50px;
     }
 }

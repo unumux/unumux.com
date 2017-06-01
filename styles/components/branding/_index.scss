@@ -1,9 +1,11 @@
 @mixin base {
     padding: 10px;
-    // max-width: 1400px;
 
     @media screen and (min-width: 768px) {
-        flex: 1 1 0;
+        // flex: 1 1 0;
+        flex-basis: 0;
+        flex-grow: 1;
+        flex-shrink: 1;
         padding-left: 40px;
     }
 }

@@ -1,9 +1,9 @@
 @mixin base {
-    font-variant: small-caps;
-    font-weight: 600;
     font-size: 45px;
-    margin-bottom: 0;
+    font-weight: 600;
+    font-variant: small-caps;
     line-height: 1;
+    margin-bottom: 0;
     text-align: center;
 
     @media screen and (min-width: 768px) {

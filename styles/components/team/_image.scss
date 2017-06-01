@@ -1,8 +1,8 @@
 @mixin base {
     height: 286px;
-    width: 224px;
     margin-bottom: 20px;
     position: relative;
+    width: 224px;
 
     @media screen and (min-width: 1200px) {
         height: 400px;
@@ -11,22 +11,18 @@
     // filter: grayscale(100%);
 
     &:after {
+        background-color: red;
         content: '';
         display: block;
+        height: 100%;
+        left: 0;
         position: absolute;
         top: 0;
-        left: 0;
-        height: 100%;
         width: 100%;
-        background-color: red;
     }
 
     &:hover {
         filter: none;
-        // cursor: pointer;
-        // transition: filter 0.3s; makes outline overly janky
-        // outline: 1000vw solid hsla(0, 0%, 0%, 0.5);
-        // z-index: 1;
     } 
 
     @media screen and (min-width: 1600px) {
