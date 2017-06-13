@@ -2,6 +2,7 @@
     // background-color: $deep-navy-blue;
     // margin-top: 90px;
     // padding-top: 45px;
+    overflow-x: hidden;
     
 
     @include containContent;
@@ -14,6 +15,7 @@
         background-repeat: no-repeat;
         background-position: 90%;
         background-size: cover;
+        display: block;
         margin-top: 80px;
 
         @include containContent;
