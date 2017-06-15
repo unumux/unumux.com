@@ -8,7 +8,6 @@
         height: 400px;
         width: auto;
     }
-    // filter: grayscale(100%);
 
     &:after {
         background-color: red;
@@ -30,13 +29,17 @@
     }
 }
 
-@media screen and (min-width: 900px) {
-
-    &__image:hover ~ &__content {
-        opacity: 1;
-        z-index: 1;
-    }
+[data-active="true"] .team__image {
+  opacity: 0.2;
 }
+
+// @media screen and (min-width: 900px) {
+
+//     &__image:hover ~ &__content {
+//         opacity: 1;
+//         z-index: 1;
+//     }
+// }
 
 &__image {
     @include base;

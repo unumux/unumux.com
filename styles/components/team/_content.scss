@@ -1,4 +1,6 @@
 @mixin base {
+    opacity: 0;
+
     @include teamBio;
 }
 
