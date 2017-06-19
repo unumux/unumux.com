@@ -24,20 +24,23 @@
 }
 
 @mixin grid() {
-  @media (min-width: 600px) {
+  display: flex;
+  flex-wrap: wrap;
+  // justify-content: center;
+  @media (min-width: 683px) { // i think this was originally 600?? crap, you can't edit this without messing up other stuff you used this on
     align-items: stretch;
-    display: flex;
-    flex-wrap: wrap;
     justify-content: flex-start;
   }
 }
 
 @mixin gridItem() {
-  margin-bottom: 1rem;
-  @media (min-width: 600px) {
+  margin-bottom: 2rem; // this was originally 1rem
+  // flex-basis: 100%;
+  @media (min-width: 600px) { // need this stuf all the time
     flex-shrink: 0;
     flex-grow: 0;
-    display: flex;
+    // display: flex;
+    flex-basis: 50%;
     margin-right: 1rem;
     &:last-child {
       margin-right: 0;

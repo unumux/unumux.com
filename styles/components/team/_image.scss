@@ -1,37 +1,36 @@
 @mixin base {
-    height: 286px;
-    margin-bottom: 20px;
+    height: 200px;
+    // margin-bottom: 20px;
     position: relative;
-    width: 224px;
+    // width: 224px;
+
+    @media screen and (min-width: 768px) {
+        height: 400px;
+    }
 
     @media screen and (min-width: 1200px) {
-        height: 400px;
-        width: auto;
+        // height: 400px;
+        // width: auto;
     }
-
-    &:after {
-        background-color: red;
-        content: '';
-        display: block;
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
-    }
-
-    &:hover {
-        filter: none;
-    } 
 
     @media screen and (min-width: 1600px) {
-        margin-bottom: 20px;
+        // margin-bottom: 20px;
     }
 }
 
-[data-active="true"] .team__image {
-  opacity: 0.2;
-  transition: opacity 0.2s;
+
+@media screen and (min-width: 830px) {
+    [data-active="false"] .team__image {
+    opacity: 0.1;
+    transition: opacity 0.2s;
+    }
+}
+
+@media screen and (min-width: 830px) {
+    [data-active="true"] .team__content {
+        opacity: 1;
+        transition: opacity 0.2s;
+    }
 }
 
 &__image {

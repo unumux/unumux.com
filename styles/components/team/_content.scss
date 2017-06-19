@@ -2,6 +2,10 @@
     opacity: 0;
 
     @include teamBio;
+
+    // &:nth-child(even) {
+    //     @include teamBio(left);
+    // }
 }
 
 &__content {

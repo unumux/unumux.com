@@ -1,9 +1,9 @@
 @mixin base {
     position: relative;
 
-    &:last-child {
-        padding-bottom: 40px; 
-    }
+    // &:last-child {
+    //     padding-bottom: 40px; 
+    // }
 }
 
 &__member {
