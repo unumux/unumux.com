@@ -3,6 +3,8 @@
     font-size: 18px;
     margin-top: 8px;
     margin-left: 20px;
+    z-index: -1;
+
 
     &::before {
         background-color: $white;
@@ -12,7 +14,6 @@
         margin-bottom: 8px;
         margin-left: -20px;
         width: 100%;
-        z-index: -1;
     }
 }
 

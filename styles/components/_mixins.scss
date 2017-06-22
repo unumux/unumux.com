@@ -68,17 +68,20 @@
   }
 }
 
-@mixin teamBio ($direction: right) {
+@mixin teamBio ($direction: left) {
   position: absolute;
   top: 0;
-  max-height: 286px;
+  height: 286px;
   width: 500px;
 
   @if $direction == "right" {
     left: 320px;
   } @else if $direction == "left" {
-    right: 320px;
+    right: 430px;
     text-align: right;
+      & > .team__bio::before {
+        margin-left: 20px;
+      }
   }
 }
 

@@ -1,11 +1,12 @@
 @mixin base {
     opacity: 0;
+    z-index: -1;
 
     @include teamBio;
 
-    // &:nth-child(even) {
-    //     @include teamBio(left);
-    // }
+    &:nth-child(2n) {
+        @include teamBio(left);
+    }
 }
 
 &__content {
