@@ -1,0 +1,16 @@
+@mixin base {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    grid-gap: 20px;
+
+    @media screen and (min-width: 768px) {
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-items: start;
+    }
+}
+
+&__grid {
+    @include base;
+}
