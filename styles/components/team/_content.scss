@@ -1,11 +1,43 @@
 @mixin base {
-    opacity: 0;
     z-index: -1;
+    position: fixed;
+    background-color: $deep-navy-blue;
+    max-width: 350px;
+    max-height: 700px;
+    margin: 0 auto;
 
-    @include teamBio;
+    @media screen and (min-width: 768px) {
+        background-color: transparent;
+        opacity: 0;
+
+        @include teamBio;
+    }
 
     &:nth-child(2n) {
-        @include teamBio(left);
+        @media screen and (min-width: 768px) {
+            @include teamBio(left);
+        }
+    }
+
+    &[data-active="false"] {
+        top: 100vh;
+
+        @media screen and (min-width: 768px) {
+           top: 0;
+        }
+    }
+
+    &[data-active="true"] {
+        top: 35%;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        transition: top 0.5s;
+
+        @media screen and (min-width: 768px) {
+            transition: none;
+            top: 0;
+        }
     }
 }
 

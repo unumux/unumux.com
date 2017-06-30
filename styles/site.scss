@@ -44,9 +44,24 @@ body {
     font-family: $font-family-main;
     overflow-x: hidden;
     background-color: #142e44;
+    position: relative;
 }
 
 abbr {
     text-decoration: none;
+}
+
+.overlay {
+    &::after {
+        content: '';
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 9;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
 }
 
