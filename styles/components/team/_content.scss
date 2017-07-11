@@ -1,43 +1,29 @@
 @mixin base {
-    z-index: -1;
-    position: fixed;
     background-color: $deep-navy-blue;
-    max-width: 350px;
-    max-height: 700px;
+    max-width: 320px;
+    padding: 20px;
+    position: fixed;
+    top: 100vh;
+    left: 0;
+    right: 0;
     margin: 0 auto;
+    // @include teamBio(left);
+
+    @media screen and (min-width: 550px) {
+        max-width: 420px;
+    }
 
     @media screen and (min-width: 768px) {
         background-color: transparent;
         opacity: 0;
 
-        @include teamBio;
-    }
+        // &:nth-child(2n) {
+        //     @media screen and (min-width: 768px) {
+        //         @include teamBio(left);
+        //     }
+        // }
 
-    &:nth-child(2n) {
-        @media screen and (min-width: 768px) {
-            @include teamBio(left);
-        }
-    }
-
-    &[data-active="false"] {
-        top: 100vh;
-
-        @media screen and (min-width: 768px) {
-           top: 0;
-        }
-    }
-
-    &[data-active="true"] {
-        top: 35%;
-        left: 0;
-        right: 0;
-        z-index: 10;
-        transition: top 0.5s;
-
-        @media screen and (min-width: 768px) {
-            transition: none;
-            top: 0;
-        }
+        // @include teamBio;
     }
 }
 
