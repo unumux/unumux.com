@@ -2,7 +2,7 @@
 // Include scripts using Browserify by doing:
 // var $ = require("jquery");
 
-
+// CAROUSEL ======================================
 $('.carousel-container').slick({
     // autoplay: true,
     autoplaySpeed: 4000,
@@ -13,6 +13,7 @@ $('.carousel-container').slick({
     swipeToSlide: true
 });
 
+// TEAM PAGE =======================================
 
 const teamMembers = document.querySelectorAll('.team__member');
 const images = document.querySelectorAll('.team__image');
@@ -40,8 +41,6 @@ imageEl.addEventListener('mouseenter', applyOverlay);
 imageEl.addEventListener('mouseleave', removeOverlay);
 });
 
-
-// TEAM PAGE CODE
 
 const contents = document.querySelectorAll('.team__content');
 const images2 = document.querySelectorAll('.team__image');
@@ -71,9 +70,11 @@ function controlModal(e) {
 
 function killEverything(e) {
     modals.forEach(modal => {
-        if(modal.dataset.active === 'true') {
-            console.log("kill everything!!");
-            modal.setAttribute('data-active', 'false');
+        if(e.target !== modal) {
+            if(modal.dataset.active === 'true') {
+                console.log("kill everything!!");
+                modal.setAttribute('data-active', 'false');
+            }
         }
     });
 }
@@ -82,5 +83,5 @@ function killEverything(e) {
 modals.forEach(modal => modal.addEventListener('click', killEverything));
 images2.forEach(image => image.addEventListener('click', controlModal));
 const buttons = document.querySelectorAll('.button');
-buttons.forEach(button => button.addEventListener('click', killEverything), false);
-// document.body.addEventListener('click', killEverything);
+buttons.forEach(button => button.addEventListener('click', killEverything));
+// this still doesn't quite work, click anywhere and it goes away now. why. and also click on the modal itself and it goes away
