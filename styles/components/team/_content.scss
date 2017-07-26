@@ -1,4 +1,5 @@
 @mixin base {
+    // controlling the look of the "modal" on mobile
     background-color: $deep-navy-blue;
     max-width: 320px;
     padding: 20px;
@@ -7,23 +8,14 @@
     left: 0;
     right: 0;
     margin: 0 auto;
-    // @include teamBio(left);
 
     @media screen and (min-width: 550px) {
         max-width: 420px;
     }
 
+    // removes the background color on desktop
     @media screen and (min-width: 768px) {
         background-color: transparent;
-        opacity: 0;
-
-        // &:nth-child(2n) {
-        //     @media screen and (min-width: 768px) {
-        //         @include teamBio(left);
-        //     }
-        // }
-
-        // @include teamBio;
     }
 }
 

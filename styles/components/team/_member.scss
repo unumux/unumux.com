@@ -1,11 +1,24 @@
 @mixin base {
     position: relative;
-
-    // &:last-child {
-    //     padding-bottom: 40px; 
-    // }
 }
 
 &__member {
     @include base;
+}
+
+@media screen and (min-width: 768px) {
+    // this controls the opacity on hover on desktop
+    [data-active="false"] .team__image {
+        opacity: 0.1;
+        transition: opacity 0.2s;
+    }
+
+    // this is controlling the position of the content on desktop! and targeting __content is correct, because __modal is just the background overlay
+    [data-active="true"] .team__content {
+        opacity: 1;
+        top: 50px;
+        transition: opacity 0.2s;
+    //     // @include teamBio;
+    // }
+    }
 }

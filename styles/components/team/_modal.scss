@@ -1,5 +1,6 @@
 @mixin base {
 
+    // this is turning "on" the overlay 
     &[data-active="true"] {
         position: fixed;
         top: 0;
@@ -9,26 +10,28 @@
         z-index: 10;
         background-color: rgba(0, 0, 0, 0.5);
 
+        // this is bringing the "content" up from the bottom with a transition
         & .team__content {
             top: 35%;
-            z-index: 10;
-            transition: top 0.5s;
+            transition: top 0.3s;
 
+            // this takes the transition off on desktop because you'll be using a different behavior
             @media screen and (min-width: 768px) {
                 transition: none;
-                top: 0;
+                // top: 0; 
             }
         }
     }
 
+    // this removes the background colour modal effect when data-active is false on modal
     &[data-active="false"] {
         background-color: transparent;
-        opacity: 0;
 
-        & .team__content {
-            top: 100vh;
-            z-index: 1;
-        }
+        // not sure what this was doing, seems unnecessary
+        // & .team__content {
+        //     top: 100vh;
+        //     z-index: 1;
+        // }
     }
 }
 
