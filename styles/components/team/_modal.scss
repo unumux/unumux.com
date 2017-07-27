@@ -25,7 +25,7 @@
 
     // this removes the background colour modal effect when data-active is false on modal
     &[data-active="false"] {
-        background-color: transparent;
+        // background-color: transparent; // dont actually need this, works without it
 
         // not sure what this was doing, seems unnecessary
         // & .team__content {
