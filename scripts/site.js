@@ -24,10 +24,10 @@ const imageArray = Array.from(images);
 
 
 function applyOverlay(e) {
-teamArray.forEach(function(teamEl) {
-    teamEl.setAttribute('data-active', 'false');
-});
-e.target.parentNode.setAttribute('data-active', 'true');
+    teamArray.forEach(function(teamEl) {
+        teamEl.dataset.active = false;
+    });
+    e.target.dataset.active = true;
 }
 
 function removeOverlay(e) {
@@ -36,9 +36,9 @@ function removeOverlay(e) {
     });
 }
 
-images.forEach(function(imageEl) {
-imageEl.addEventListener('mouseenter', applyOverlay);
-imageEl.addEventListener('mouseleave', removeOverlay);
+teamArray.forEach(function(teamEl) {
+    teamEl.addEventListener('mouseenter', applyOverlay);
+    teamEl.addEventListener('mouseleave', removeOverlay);
 });
 
 
@@ -81,7 +81,7 @@ images2.forEach(image => image.addEventListener('click', controlModal));
 
 // console.log(imageArray[1].x);
 
-const value = imageArray[5].x;
+// const value = imageArray[5].x;
 // you could, save all the values minus their offsets, and apply those values to the __content 
 
 console.log(value);
