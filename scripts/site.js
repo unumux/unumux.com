@@ -24,10 +24,10 @@ const imageArray = Array.from(images);
 
 
 function applyOverlay(e) {
-teamArray.forEach(function(teamEl) {
-    teamEl.setAttribute('data-active', 'false');
-});
-e.target.parentNode.setAttribute('data-active', 'true');
+    teamArray.forEach(function(teamEl) {
+        teamEl.dataset.active = false;
+    });
+    e.target.dataset.active = true;
 }
 
 function removeOverlay(e) {
@@ -36,9 +36,9 @@ function removeOverlay(e) {
     });
 }
 
-images.forEach(function(imageEl) {
-imageEl.addEventListener('mouseenter', applyOverlay);
-imageEl.addEventListener('mouseleave', removeOverlay);
+teamArray.forEach(function(teamEl) {
+    teamEl.addEventListener('mouseenter', applyOverlay);
+    teamEl.addEventListener('mouseleave', removeOverlay);
 });
 
 
