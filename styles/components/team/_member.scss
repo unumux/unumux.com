@@ -1,5 +1,19 @@
 @mixin base {
     position: relative;
+
+    &[data-active="true"] {
+        opacity: 1;
+        transition: opacity 0.2s;
+
+        .team__content {
+            transform: translateX(100%);
+        }
+    }
+
+    &[data-active="false"] {
+        opacity: 0.05;
+        transition: opacity 0.2s;
+    }
 }
 
 &__member {
@@ -7,24 +21,5 @@
 }
 
 @media screen and (min-width: 768px) {
-    // this controls the opacity on hover on desktop
-    [data-active="false"] .team__image {
-        opacity: 0.1;
-        transition: opacity 0.2s;
-    }
 
-    // this is controlling the position of the content on desktop! and targeting __content is correct, because __modal is just the background overlay
-    [data-active="true"] .team__content {
-        opacity: 1;
-        z-index: 10;
-    //     top: 0;
-    //     transition: opacity 0.2s;
-    //     left: 200px;
-    //     // @include teamBio;
-    }
-
-    // [data-active="false"] .team__content {
-    //     z-index: 10;
-    //     opacity: 1;
-    // }
 }
