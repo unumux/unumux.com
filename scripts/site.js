@@ -24,16 +24,20 @@ const imageArray = Array.from(images);
 
 
 function applyOverlay(e) {
-    teamArray.forEach(function(teamEl) {
-        teamEl.dataset.active = false;
-    });
-    e.target.dataset.active = true;
+    if(window.innerWidth >= 768) {
+        teamArray.forEach(function(teamEl) {
+            teamEl.dataset.active = false;
+        });
+        e.target.dataset.active = true;
+    }
 }
 
 function removeOverlay(e) {
-    teamArray.forEach(function(teamEl) {
-        teamEl.removeAttribute('data-active');
-    });
+    if(window.innerWidth >= 768) {
+        teamArray.forEach(function(teamEl) {
+            teamEl.removeAttribute('data-active');
+        });
+    }
 }
 
 teamArray.forEach(function(teamEl) {
@@ -75,19 +79,3 @@ function killEverything(e) {
 
 modals.forEach(modal => modal.addEventListener('click', killEverything));
 images2.forEach(image => image.addEventListener('click', controlModal));
-
-
-// Practice finding positions of elements
-
-// console.log(imageArray[1].x);
-
-// const value = imageArray[5].x;
-// you could, save all the values minus their offsets, and apply those values to the __content 
-
-// console.log(value);
-
-// const bio = document.querySelectorAll('team__content');
-
-// bio.style.top = value + 'px';
-
-// imageArray[1].style.top = value + 'px';
