@@ -16,9 +16,15 @@
     // this is controlling the position of the content on desktop! and targeting __content is correct, because __modal is just the background overlay
     [data-active="true"] .team__content {
         opacity: 1;
-        top: 50px;
-        transition: opacity 0.2s;
+        z-index: 10;
+    //     top: 0;
+    //     transition: opacity 0.2s;
+    //     left: 200px;
     //     // @include teamBio;
-    // }
     }
+
+    // [data-active="false"] .team__content {
+    //     z-index: 10;
+    //     opacity: 1;
+    // }
 }

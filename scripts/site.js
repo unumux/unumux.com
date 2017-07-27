@@ -41,6 +41,9 @@ imageEl.addEventListener('mouseenter', applyOverlay);
 imageEl.addEventListener('mouseleave', removeOverlay);
 });
 
+
+
+
 // MOBILE BEHAVIOR
 const contents = document.querySelectorAll('.team__content');
 const images2 = document.querySelectorAll('.team__image');
@@ -72,3 +75,19 @@ function killEverything(e) {
 
 modals.forEach(modal => modal.addEventListener('click', killEverything));
 images2.forEach(image => image.addEventListener('click', controlModal));
+
+
+// Practice finding positions of elements
+
+// console.log(imageArray[1].x);
+
+const value = imageArray[5].x;
+// you could, save all the values minus their offsets, and apply those values to the __content 
+
+console.log(value);
+
+const bio = document.querySelectorAll('team__content');
+
+bio.style.top = value + 'px';
+
+// imageArray[1].style.top = value + 'px';
