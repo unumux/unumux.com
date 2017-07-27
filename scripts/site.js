@@ -81,13 +81,13 @@ images2.forEach(image => image.addEventListener('click', controlModal));
 
 // console.log(imageArray[1].x);
 
-const value = imageArray[5].x;
+// const value = imageArray[5].x;
 // you could, save all the values minus their offsets, and apply those values to the __content 
 
-console.log(value);
+// console.log(value);
 
-const bio = document.querySelectorAll('team__content');
+// const bio = document.querySelectorAll('team__content');
 
-bio.style.top = value + 'px';
+// bio.style.top = value + 'px';
 
 // imageArray[1].style.top = value + 'px';
