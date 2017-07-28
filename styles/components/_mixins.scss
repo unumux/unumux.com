@@ -66,16 +66,13 @@
 }
 
 @mixin teamBio ($direction: left) {
-  position: absolute;
-  top: 0;
-  height: 286px;
-  width: 500px;
+  transform: translateX(100%);
 
   @if $direction == "right" {
-    left: 320px;
+  transform: translateX(-100%);
+  text-align: left;
   } @else if $direction == "left" {
-    right: 430px;
-    text-align: right;
+    transform: translateX(100%);
       & > .team__bio::before {
         margin-left: 20px;
       }

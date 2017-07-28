@@ -6,11 +6,13 @@
         transition: opacity 0.2s;
 
         .team__content {
-            transform: translateX(60%);
+            transform: translateX(100%);
             opacity: 1;
             z-index: 1;
-            top: -40px;
-            width: 300px;
+            top: 0px;
+
+            @include teamBio(right);
+            // width: 300px;
         }
     }
 
