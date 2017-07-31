@@ -18,20 +18,8 @@
             // this takes the transition off on desktop because you'll be using a different behavior
             @media screen and (min-width: 768px) {
                 transition: none;
-                // top: 0; 
             }
         }
-    }
-
-    // this removes the background colour modal effect when data-active is false on modal
-    &[data-active="false"] {
-        // background-color: transparent; // dont actually need this, works without it
-
-        // not sure what this was doing, seems unnecessary
-        // & .team__content {
-        //     top: 100vh;
-        //     z-index: 1;
-        // }
     }
 }
 

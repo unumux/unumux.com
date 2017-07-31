@@ -2,9 +2,6 @@
     display: inline-block;
     font-size: 18px;
     margin-top: 8px;
-    margin-left: 20px;
-    // z-index: -1;
-
 
     &::before {
         background-color: $white;
@@ -12,7 +9,6 @@
         display: block;
         height: 2px;
         margin-bottom: 8px;
-        margin-left: -20px;
         width: 100%;
     }
 }

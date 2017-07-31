@@ -6,13 +6,15 @@
         transition: opacity 0.2s;
 
         .team__content {
-            transform: translateX(100%);
             opacity: 1;
             z-index: 1;
             top: 0px;
 
             @include teamBio(right);
-            // width: 300px;
+        }
+
+        .team__content:nth-child(3n+3) {
+            @include teamBio(left);
         }
     }
 
@@ -24,8 +26,4 @@
 
 &__member {
     @include base;
-}
-
-@media screen and (min-width: 768px) {
-
 }

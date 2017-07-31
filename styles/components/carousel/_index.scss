@@ -33,6 +33,7 @@
 
 .carousel {
     @include base();
+    
     @import 'heading';
     @import 'title';
     @import 'content';
