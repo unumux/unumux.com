@@ -27,4 +27,12 @@
 
 &__content {
     @include base;
+
+    .team__item:not(:nth-child(3n)) [data-active="true"] & {
+        @include teamBio(right);
+    }
+
+    .team__item:nth-child(3n) [data-active="true"] & {
+        @include teamBio(left);
+    }
 }
