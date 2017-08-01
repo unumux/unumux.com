@@ -1,6 +1,6 @@
 @mixin base {
 
-    // this is turning "on" the overlay 
+    // this is turning "on" the overlay on mobile. The JS that adds this attribute, checks for small screen size only
     &[data-active="true"] {
         position: fixed;
         top: 0;

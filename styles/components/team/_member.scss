@@ -1,6 +1,7 @@
 @mixin base {
     position: relative;
 
+    // this changes the opacity of the team member on desktop sizes, this data attribute is being added and removed with the "mouseenter" "mouseleave" events. 
     &[data-active="true"] {
         opacity: 1;
         transition: opacity 0.2s;

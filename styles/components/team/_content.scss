@@ -28,6 +28,7 @@
 &__content {
     @include base;
 
+    // all this positions the biographies on the team page, at larger sizes. Edit the nth-child selector to work with your grid once you get smaller pictures. 
     .team__item:not(:nth-child(3n)) [data-active="true"] & {
         @include teamBio(right);
     }
