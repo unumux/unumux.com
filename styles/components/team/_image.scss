@@ -1,7 +1,7 @@
 @mixin base {
     // height: 200px;
-    height: 50%;
     position: relative;
+    width: 100%;
 
     @media screen and (min-width: 560px) {
         // height: 280px;

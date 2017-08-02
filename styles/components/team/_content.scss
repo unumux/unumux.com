@@ -28,12 +28,33 @@
 &__content {
     @include base;
 
-    // all this positions the biographies on the team page, at larger sizes. Edit the nth-child selector to work with your grid once you get smaller pictures. 
-    .team__item:not(:nth-child(3n)) [data-active="true"] & {
-        @include teamBio(right);
+    // this positions the biographies on the team page, at larger sizes. Edit the nth-child selector to work with your grid once you get smaller pictures. 
+    @media screen and (min-width: 768px) {
+        .team__item:not(:nth-child(3n)) [data-active="true"] & {
+            @include teamBio(right);
+        }
+
+        .team__item:nth-child(3n) [data-active="true"] & {
+            @include teamBio(left);
+        }
     }
 
-    .team__item:nth-child(3n) [data-active="true"] & {
-        @include teamBio(left);
+    @media screen and (min-width: 1200px) {
+        .team__item:nth-child(3n) [data-active="true"] & {
+            @include teamBio(right);
+        }
+        
+        .team__item:nth-child(3n+3) [data-active="true"] & {
+            @include teamBio(left);
+        }
+
+        .team__item:nth-child(4n+4) [data-active="true"] & {
+            @include teamBio(left);
+        }
+
+
+        // .team__item:not(:nth-child(4n)) [data-active="true"] & {
+        //     @include teamBio(right);
+        // }
     }
 }

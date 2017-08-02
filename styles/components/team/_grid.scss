@@ -1,21 +1,21 @@
 @mixin base {
     display: grid;
-    // one row and one column at smallest sizes
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    justify-items: center;
     grid-gap: 20px;
+    width: 100%;
+    justify-content: center;
 
-    @media screen and (min-width: 660px) {
-        // two columns (idk how we get the rows out of this, but we do!)
-        grid-template-columns: 1fr 1fr;
+
+    @media screen and (min-width: 600px) {
+        justify-content: start;
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    // Figure out in here where your media queries need to be and how many columns you need
+    @media screen and (min-width: 700px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
 
-    @media screen and (min-width: 768px) {
-        // grid-template-columns: 1fr 1fr 1fr 1fr;
-        justify-items: start;
+    @media screen and (min-width: 1200px) {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
