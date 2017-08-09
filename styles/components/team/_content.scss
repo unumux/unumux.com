@@ -1,5 +1,5 @@
 @mixin base {
-    // controlling the look and positioning of the content inside the modal on mobile
+    // controls the look and positioning of the content inside the modal on mobile
     background-color: $deep-navy-blue;
     max-width: 320px;
     padding: 20px;
@@ -28,38 +28,30 @@
 &__content {
     @include base;
 
-    // this positions the biographies on the team page, at larger sizes. Edit the nth-child selector to work with your grid once you get smaller pictures. 
     @media screen and (min-width: 768px) {
-        .team__item:not(:nth-child(3n)) [data-active="true"] & {
-            @include teamBio(right);
+        // sets all to right by default
+        .team__item [data-active="true"] & {
+            @include teamBio(right)
         }
-
+        // sets every 3rd to left
         .team__item:nth-child(3n) [data-active="true"] & {
             @include teamBio(left);
         }
     }
 
-    // Im sure theres a far more efficient way to do this
 
     @media screen and (min-width: 1200px) {
+        // this one overwrites the 768 media query
         .team__item:nth-child(3n) [data-active="true"] & {
             @include teamBio(right);
         }
-
-        .team__item:nth-child(0n+3) [data-active="true"] & {
-            @include teamBio(left);
+        // this one selects the 3rd, 7th, and 11th
+        .team__item:nth-child(4n+3) [data-active="true"] & {
+            @include teamBio(left)
         }
-
+        // this one selects the 4th and 8th
         .team__item:nth-child(4n+4) [data-active="true"] & {
-            @include teamBio(left);
-        }
-
-        .team__item:nth-child(0n+7) [data-active="true"] & {
-            @include teamBio(left);
-        }
-
-        .team__item:nth-child(0n+11) [data-active="true"] & {
-            @include teamBio(left);
+            @include teamBio(left)
         }
     }
 }
