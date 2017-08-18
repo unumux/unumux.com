@@ -1,21 +1,28 @@
 @mixin base {
     display: grid;
+    display: -ms-grid;
     grid-gap: 20px;
     width: 100%;
     justify-content: center;
+    margin: 0 auto;
 
 
     @media screen and (min-width: 600px) {
         justify-content: start;
         grid-template-columns: repeat(2, 1fr);
+        -ms-grid-columns: repeat(2, 1fr);
+        // grid-template-rows: repeat(2, 2fr);
+        // -ms-grid-rows: repeat(2, 2fr);
     }
 
     @media screen and (min-width: 700px) {
         grid-template-columns: repeat(3, 1fr);
+        -ms-grid-columns: repeat(3, 1fr);
     }
 
     @media screen and (min-width: 1200px) {
         grid-template-columns: repeat(4, 1fr);
+        -ms-grid-columns: repeat(4, 1fr);
     }
 }
 
